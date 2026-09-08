@@ -1,6 +1,7 @@
 """Search Naukri, Indeed, Instahyre, Foundit, Cutshort, Shine, Hirist, and more."""
 from __future__ import annotations
 
+import html
 import json
 import re
 import ssl
@@ -8,7 +9,6 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-import xml.etree.ElementTree as ET
 from pathlib import Path
 
 import apply_now
@@ -48,7 +48,7 @@ def fetch(url: str, data=None, headers=None, timeout=22):
         h.update(headers)
     req = urllib.request.Request(url, data=data, headers=h, method="POST" if data else "GET")
     try:
-        with urllib.request.urlopen(req, context=CTX, timeout=timeout) as resp:
+        with urllib.request.urlopen(req, context=CTX, timeout=timeout) as resp:  # nosec B310
             raw = resp.read()
             text = raw.decode("utf-8", errors="replace")
             return text, resp.status, dict(resp.headers)
@@ -164,6 +164,23 @@ def pull_foundit(jobs):
     print(f"  Foundit cards {cards}", flush=True)
 
 
+def _rss_items(text: str) -> list[dict[str, str]]:
+    """Safely extract item information from RSS/XML without parsing untrusted XML."""
+    items: list[dict[str, str]] = []
+    for match in re.finditer(r"<item\b[^>]*>(.*?)</item>", text, re.I | re.S):
+        block = match.group(1)
+        title = re.search(r"<title(?:\s[^>]*)?>(.*?)</title>", block, re.I | re.S)
+        link = re.search(r"<link(?:\s[^>]*)?>(.*?)</link>", block, re.I | re.S)
+        desc = re.search(r"<description(?:\s[^>]*)?>(.*?)</description>", block, re.I | re.S)
+        if not title:
+            continue
+        title_text = html.unescape(re.sub(r"<[^>]+>", " ", title.group(1))).strip()
+        link_text = html.unescape(re.sub(r"<[^>]+>", " ", link.group(1))).strip() if link else ""
+        desc_text = html.unescape(re.sub(r"<[^>]+>", " ", desc.group(1))) if desc else ""
+        items.append({"title": title_text, "link": link_text, "description": desc_text})
+    return items
+
+
 def pull_indeed(jobs):
     print("Indeed India RSS...", flush=True)
     cards = 0
@@ -176,19 +193,14 @@ def pull_indeed(jobs):
         if status != 200 or not text or "<item" not in text.lower():
             print(f"  {q!r} status {status} bytes {len(text or '')}", flush=True)
             continue
-        try:
-            root = ET.fromstring(text)
-        except Exception as e:
-            print(f"  {q!r} xml {e}", flush=True)
-            continue
-        ns = {"a": "http://www.w3.org/2005/Atom"}
-        items = root.findall("channel/item") or root.findall(".//{http://purl.org/rss/1.0/}item")
+        items = _rss_items(text)
         if not items:
-            items = list(root.iter("item"))
+            print(f"  {q!r} rss parse no items", flush=True)
+            continue
         for item in items:
-            title = (item.findtext("title") or "").strip()
-            link = (item.findtext("link") or "").strip()
-            desc = item.findtext("description") or ""
+            title = item["title"]
+            link = item["link"]
+            desc = item["description"]
             loc = "Hyderabad, India"
             if re.search(r"remote|hyderabad|telangana|india", desc, re.I):
                 loc = re.sub(r"<[^>]+>", " ", desc)[:80] + " Hyderabad India"
@@ -430,10 +442,10 @@ def pull_remote_boards(jobs):
     text, status, _ = fetch("https://weworkremotely.com/categories/remote-programming-jobs.rss")
     n = 0
     if status == 200 and text and "<item" in text:
-        for item in ET.fromstring(text).iter("item"):
-            title = item.findtext("title") or ""
-            link = item.findtext("link") or ""
-            desc = item.findtext("description") or ""
+        for item in _rss_items(text):
+            title = item["title"]
+            link = item["link"]
+            desc = item["description"]
             loc = "Remote"
             if re.search(r"india|hyderabad|telangana", title + desc, re.I):
                 loc = "Remote India"
