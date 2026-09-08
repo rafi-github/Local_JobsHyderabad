@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import io
 import re
+import shutil
 import struct
 import time
 import urllib.request
@@ -156,6 +157,28 @@ COPILOT_STATE_JS = """() => {
 }"""
 
 
+def _safe_extract_zip(zf: zipfile.ZipFile, target_dir: Path) -> None:
+    """Extract a zip archive while rejecting any path traversal entries."""
+    root = target_dir.resolve()
+    for info in zf.infolist():
+        name = info.filename.replace("\\", "/")
+        if name in {"", "."}:
+            continue
+        if name.startswith("/") or name.startswith("../") or "/../" in name or name == "..":
+            raise ValueError(f"Refusing to extract unsafe zip member: {info.filename!r}")
+        dest = (target_dir / name).resolve()
+        try:
+            dest.relative_to(root)
+        except ValueError as exc:
+            raise ValueError(f"Refusing to extract unsafe zip member: {info.filename!r}") from exc
+        if info.is_dir():
+            dest.mkdir(parents=True, exist_ok=True)
+            continue
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        with zf.open(info, "r") as src, open(dest, "wb") as dst:
+            shutil.copyfileobj(src, dst)
+
+
 def ensure_extension() -> Path:
     """Download Simplify Copilot CRX into data/tools/simplify-ext if needed."""
     manifest = EXT_DIR / "manifest.json"
@@ -168,14 +191,14 @@ def ensure_extension() -> Path:
         f"&x=id%3D{EXT_ID}%26installsource%3Dondemand%26uc"
     )
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 Chrome/148.0.0.0"})
-    with urllib.request.urlopen(req, timeout=60) as resp:
+    with urllib.request.urlopen(req, timeout=60) as resp:  # nosec B310
         data = resp.read()
     if data[:4] != b"Cr24":
         raise RuntimeError(f"Simplify CRX magic was {data[:8]!r}")
     header_size = struct.unpack("<I", data[8:12])[0]
     zdata = data[12 + header_size :]
     with zipfile.ZipFile(io.BytesIO(zdata)) as zf:
-        zf.extractall(EXT_DIR)
+        _safe_extract_zip(zf, EXT_DIR)
     print(f"  Installed Simplify Copilot into {EXT_DIR}", flush=True)
     return EXT_DIR
 
@@ -220,7 +243,7 @@ def start_application(page) -> str:
                 loc.first.click(timeout=2000)
                 hit = "Start Application"
         except Exception:
-            pass
+            hit = ""
     if hit:
         print(f"  Simplify Copilot: clicked '{hit}'.", flush=True)
         page.wait_for_timeout(2500)
@@ -257,7 +280,7 @@ def autofill(page) -> bool:
             page.keyboard.up("Shift")
             page.keyboard.up("Alt")
         except Exception:
-            pass
+            print("  Simplify Copilot: keyboard fallback unavailable on this page.", flush=True)
     page.wait_for_timeout(4000)
     try:
         hit = page.evaluate(CLICK_FILL_PAGE_JS) or ""
@@ -394,5 +417,5 @@ def follow(page) -> str:
                 page.wait_for_timeout(800)
                 return "clicked"
         except Exception:
-            pass
+            return ""
     return ""
