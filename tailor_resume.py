@@ -1,0 +1,728 @@
+"""Tailor Rafi's resume to each job description without inventing skills.
+
+The visual/content base is data/resume/Mohammed_Abdul_Rafi_Ahmed_Resume.docx
+(the uploaded formatted resume). Per-JD tailoring copies that file and overlays
+headline, summary, and competency order using only facts in master.json and
+keywords that already appear on the base resume / JD. Never invent skills.
+"""
+from __future__ import annotations
+
+import html as htmlmod
+import json
+import re
+import ssl
+import time
+import urllib.request
+import zipfile
+from pathlib import Path
+from xml.sax.saxutils import escape
+
+ROOT = Path(__file__).resolve().parent
+MASTER = json.loads((ROOT / "data" / "resume" / "master.json").read_text(encoding="utf-8"))
+OUT_DIR = ROOT / "data" / "resume" / "tailored"
+JD_DIR = ROOT / "data" / "resume" / "jds"
+BASE_RESUME = ROOT / "data" / "resume" / "Mohammed_Abdul_Rafi_Ahmed_Resume.docx"
+
+# Stock strings from the uploaded base docx (word/document.xml). Used only as
+# anchors so overlay does not rebuild the formatted package from scratch.
+_BASE_SUMMARY = (
+    "Technical architect with expertise in technology architecture, software "
+    "development, and system design. Demonstrated leadership in managing complex "
+    "technical projects and delivering innovative solutions. Strong problem-solving, "
+    "strategic planning, and communication skills contribute to successful project "
+    "outcomes and enhanced operational efficiency."
+)
+_BASE_CONTACT = "+91 8790251698 | rafi.success@gmail.com | Hyderabad, India"
+_BASE_COMPETENCY_ITEMS = [
+    "System & Distributed Systems Design",
+    "Microservices Architecture",
+    "API & Integration Design",
+    "Event-Driven Architecture (Kafka, RabbitMQ)",
+    "Domain-Driven Design",
+    "Design Patterns",
+    "Non-Functional Requirements (Scalability, Reliability, Performance)",
+    "Cloud Architecture (AWS, Azure)",
+    "Containerization & Orchestration (Docker, Kubernetes)",
+    "CI/CD (Jenkins, Git)",
+    "High Availability & Disaster Recovery",
+    ".NET Core / ASP.NET Core",
+    "C#",
+    "Entity Framework",
+    "LINQ",
+    "React",
+    "Angular",
+    "SQL Server",
+    "PostgreSQL",
+    "REST API Design",
+    "Technical Standards & Governance",
+    "Code Reviews & Mentoring",
+    "Cross-Team Architecture Alignment",
+    "Stakeholder Management",
+    "Agile/Scrum Delivery",
+]
+CTX = ssl.create_default_context()
+UA = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+)
+
+CURRENT: dict = {}
+
+TITLE_MAP = [
+    (r"solution.?s? architect", "Solutions Architect"),
+    (r"technical architect", "Technical Architect"),
+    (r"software architect", "Software Architect"),
+    (r"cloud architect", "Cloud Architect"),
+    (r"application architect", "Application Architect"),
+    (r"backend architect", "Backend Architect"),
+    (r"full.?stack architect", "Full Stack Architect"),
+    (r"\.net architect|dotnet architect", ".NET Architect"),
+    (r"principal (software )?engineer|principal swe|principal sde", "Principal Software Engineer"),
+    (r"staff (software )?engineer|staff swe|staff sde", "Staff Software Engineer"),
+    (r"senior staff", "Senior Staff Software Engineer"),
+    (r"engineering manager", "Engineering Manager"),
+    (r"technical lead|lead software|engineering lead", "Technical Lead"),
+    (r"senior \.net|senior (software|backend|full.?stack)", "Senior Software Engineer"),
+]
+
+SKILL_ALIASES = {
+    ".net": [".net", "dotnet", ".net core", "asp.net", "c#", "csharp"],
+    "azure": ["azure", "microsoft azure", "app service", "aks"],
+    "aws": ["aws", "amazon web services", "eks", "ec2", "s3"],
+    "microservices": ["microservice", "microservices", "distributed"],
+    "kafka": ["kafka", "event streaming", "event-driven"],
+    "rabbitmq": ["rabbitmq", "message queue", "messaging"],
+    "kubernetes": ["kubernetes", "k8s", "container orchestr"],
+    "docker": ["docker", "container"],
+    "react": ["react"],
+    "angular": ["angular"],
+    "sql server": ["sql server", "mssql", "t-sql"],
+    "postgresql": ["postgres", "postgresql"],
+    "rest": ["rest", "web api", "restful"],
+    "ci/cd": ["ci/cd", "jenkins", "devops pipeline", "continuous integration"],
+}
+
+FORBIDDEN = re.compile(
+    r"\b(java|spring boot|python|golang|\bgo\b|node\.?js|salesforce|servicenow|"
+    r"\bpega\b|guidewire|sap hana|oracle erp)\b",
+    re.I,
+)
+
+
+def _slug(text: str, n: int = 40) -> str:
+    s = re.sub(r"[^a-z0-9]+", "_", (text or "").lower()).strip("_")
+    return (s[:n] or "job").strip("_")
+
+
+def fetch_jd(job: dict) -> str:
+    JD_DIR.mkdir(parents=True, exist_ok=True)
+    jid = _slug(str(job.get("job_id") or job.get("url") or "x"), 60)
+    cache = JD_DIR / f"{jid}.txt"
+    if cache.exists() and cache.stat().st_size > 80:
+        return cache.read_text(encoding="utf-8", errors="replace")
+    url = job.get("url") or job.get("apply_url") or ""
+    blob = f"{job.get('title') or ''} {job.get('company') or ''} {job.get('location') or ''}"
+    if url and re.search(r"linkedin\.com/(in|recruiter|sales)/", url, re.I):
+        cache.write_text(blob, encoding="utf-8")
+        return blob
+    if url:
+        req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "text/html,*/*"})
+        try:
+            with urllib.request.urlopen(req, context=CTX, timeout=12) as resp:
+                raw = resp.read().decode("utf-8", errors="replace")
+        except Exception:
+            raw = ""
+        if raw:
+            for m in re.finditer(
+                r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+                raw,
+                re.I | re.S,
+            ):
+                try:
+                    data = json.loads(htmlmod.unescape(m.group(1)))
+                except Exception:
+                    continue
+                rows = data if isinstance(data, list) else [data]
+                for row in rows:
+                    if isinstance(row, dict) and (
+                        "JobPosting" in str(row.get("@type") or "") or row.get("description")
+                    ):
+                        desc = row.get("description") or ""
+                        if len(str(desc)) > 80:
+                            blob = htmlmod.unescape(re.sub(r"<[^>]+>", " ", str(desc)))
+                            break
+            if len(blob) < 200:
+                cleaned = re.sub(r"(?is)<(script|style)[^>]*>.*?</\1>", " ", raw)
+                cleaned = re.sub(r"(?is)<[^>]+>", " ", cleaned)
+                cleaned = htmlmod.unescape(re.sub(r"\s+", " ", cleaned))
+                blob = f"{job.get('title') or ''} {cleaned}"[:12000]
+    cache.write_text(blob, encoding="utf-8")
+    return blob
+
+
+def _has(text: str, needle: str) -> bool:
+    n = (needle or "").lower()
+    if not n:
+        return False
+    if re.search(r"[^a-z0-9]", n) or len(n) <= 4 or n in {"scala", "rest", "git", "api", "aws", "azure"}:
+        return bool(re.search(rf"(?<![a-z0-9]){re.escape(n)}(?![a-z0-9])", text, re.I))
+    return n in text.lower()
+
+
+def mapped_title(job: dict, jd: str) -> str:
+    blob = f"{job.get('title') or ''} {jd[:1500]}"
+    for pat, title in TITLE_MAP:
+        if re.search(pat, blob, re.I):
+            return title
+    return "Technical Architect"
+
+
+def matched_skills(jd: str) -> list[str]:
+    t = jd.lower()
+    found = []
+    for canon, aliases in SKILL_ALIASES.items():
+        if any(_has(t, a) for a in aliases):
+            found.append(canon)
+    for skill in MASTER["ownedSkills"]:
+        if skill not in found and _has(t, skill):
+            found.append(skill)
+    return found
+
+
+def headline_for(title: str, skills: list[str]) -> str:
+    show = []
+    labels = {
+        ".net": ".NET", "ci/cd": "CI/CD", "sql server": "SQL Server",
+        "aws": "AWS", "azure": "Azure", "kubernetes": "Kubernetes",
+        "microservices": "Microservices", "rabbitmq": "RabbitMQ",
+        "kafka": "Kafka", "react": "React", "angular": "Angular",
+    }
+    for s in skills:
+        label = labels.get(s, s.title())
+        if label not in show:
+            show.append(label)
+        if len(show) == 3:
+            break
+    if not show:
+        show = [".NET", "Cloud", "Distributed Systems"]
+    elif ".NET" not in show:
+        show = [".NET"] + show[:2]
+    return f"{title} — {' · '.join(show)}"
+
+
+def summary_for(title: str, job: dict, jd: str, skills: list[str]) -> str:
+    company = job.get("company") or "the company"
+    loc = job.get("location") or "Hyderabad"
+    skill_txt = ", ".join(
+        {".net": ".NET Core / C#", "azure": "Azure", "aws": "AWS", "kafka": "Kafka",
+         "kubernetes": "Kubernetes", "microservices": "microservices",
+         "react": "React", "angular": "Angular"}.get(s, s)
+        for s in skills[:5]
+    ) or ".NET Core, AWS/Azure, and microservices"
+    domain = ""
+    jl = jd.lower()
+    if any(w in jl for w in ("health", "payer", "claim", "clinical")):
+        domain = " including large-scale healthcare platforms at UnitedHealth Group"
+    elif any(w in jl for w in ("retail", "pos", "payment", "transaction")):
+        domain = " including high-volume retail/POS platforms at NCR"
+    elif any(w in jl for w in ("broker", "wealth", "trading", "capital market", "fintech", "bank")):
+        domain = " across enterprise platforms with strong API, messaging, and reliability needs"
+    return (
+        f"{title} with 15+ years designing distributed, cloud-native systems and leading engineering "
+        f"delivery{domain}. Deep hands-on background in {skill_txt}, with ownership of service boundaries, "
+        f"API contracts, event-driven messaging, and deployment topology. "
+        f"Seeking the {job.get('title') or title} role at {company} ({loc}) — ready to start immediately "
+        f"from Hyderabad and contribute from day one on architecture, technical direction, and shipped software."
+    )
+
+
+def order_skills(jd: str) -> dict[str, list[str]]:
+    t = jd.lower()
+    out = {}
+    for group, items in MASTER["skillGroups"].items():
+        scored = []
+        for item in items:
+            score = sum(1 for w in re.findall(r"[a-z0-9.#+]+", item.lower()) if len(w) > 2 and w in t)
+            scored.append((score, item))
+        scored.sort(key=lambda x: (-x[0], x[1]))
+        # keep original items, just reordered; drop Scala unless JD mentions it
+        kept = []
+        for _, item in scored:
+            if item.lower() == "scala" and "scala" not in t:
+                continue
+            kept.append(item)
+        out[group] = kept
+    # If Azure-heavy, rename cloud group emphasis by putting Azure line first — already scored
+    return out
+
+
+def order_roles(jd: str) -> list[dict]:
+    t = jd.lower()
+    roles = []
+    for role in MASTER["roles"]:
+        bullets = []
+        for b in role["bullets"]:
+            score = sum(1 for w in re.findall(r"[a-z0-9.#+]+", b.lower()) if len(w) > 3 and w in t)
+            if any(d in t for d in role.get("domains") or []):
+                score += 3
+            bullets.append((score, b))
+        bullets.sort(key=lambda x: -x[0])
+        roles.append({**role, "bullets": [b for _, b in bullets]})
+    # Keep chronological (current first). Domain-matching roles already have stronger bullets first.
+    return roles
+
+
+def cover_for(title: str, job: dict, skills: list[str]) -> str:
+    skill_txt = ", ".join(s.upper() if s in {"aws"} else s for s in skills[:4]) or ".NET, Azure/AWS, microservices"
+    return (
+        f"I am applying for {job.get('title') or title} at {job.get('company') or 'your team'}. "
+        f"I am a Technical Architect / Technical Lead with 15+ years in {skill_txt}, "
+        f"currently Principal Analyst (Technical Architect) at Nemetschek in Hyderabad. "
+        f"I have led teams (including 10 engineers at UnitedHealth Group), owned microservices and API architecture "
+        f"on .NET Core, and shipped on AWS and Azure with Kafka/RabbitMQ and Kubernetes. "
+        f"Notice period is immediate. Expected CTC is 60 LPA."
+    )
+
+
+def _p(text: str, *, bold=False, size=22, center=False, color=None, after=80, before=0, border=False) -> str:
+    jc = "<w:jc w:val=\"center\"/>" if center else ""
+    bdr = (
+        "<w:pBdr><w:bottom w:val=\"single\" w:color=\"1F3864\" w:sz=\"4\" w:space=\"2\"/></w:pBdr>"
+        if border else ""
+    )
+    rpr = (
+        f"<w:rFonts w:ascii=\"Calibri\" w:hAnsi=\"Calibri\" w:cs=\"Calibri\"/>"
+        f"{'<w:b/>' if bold else ''}"
+        f"{f'<w:color w:val=\"{color}\"/>' if color else ''}"
+        f"<w:sz w:val=\"{size}\"/><w:szCs w:val=\"{size}\"/>"
+    )
+    return (
+        f"<w:p><w:pPr>{bdr}<w:spacing w:after=\"{after}\" w:before=\"{before}\"/>{jc}</w:pPr>"
+        f"<w:r><w:rPr>{rpr}</w:rPr><w:t xml:space=\"preserve\">{escape(text)}</w:t></w:r></w:p>"
+    )
+
+
+def _bullet(text: str) -> str:
+    return (
+        "<w:p><w:pPr><w:pStyle w:val=\"ListParagraph\"/>"
+        "<w:numPr><w:ilvl w:val=\"0\"/><w:numId w:val=\"1\"/></w:numPr>"
+        "<w:spacing w:after=\"60\"/></w:pPr>"
+        f"<w:r><w:rPr><w:rFonts w:ascii=\"Calibri\" w:hAnsi=\"Calibri\"/><w:sz w:val=\"21\"/></w:rPr>"
+        f"<w:t xml:space=\"preserve\">{escape(text)}</w:t></w:r></w:p>"
+    )
+
+
+def _skill_line(label: str, items: list[str]) -> str:
+    return (
+        "<w:p><w:pPr><w:spacing w:after=\"60\"/></w:pPr>"
+        "<w:r><w:rPr><w:rFonts w:ascii=\"Calibri\" w:hAnsi=\"Calibri\"/><w:b/><w:sz w:val=\"20\"/></w:rPr>"
+        f"<w:t xml:space=\"preserve\">{escape(label)}: </w:t></w:r>"
+        "<w:r><w:rPr><w:rFonts w:ascii=\"Calibri\" w:hAnsi=\"Calibri\"/><w:sz w:val=\"20\"/></w:rPr>"
+        f"<w:t xml:space=\"preserve\">{escape(', '.join(items))}</w:t></w:r></w:p>"
+    )
+
+
+def competency_line(jd: str) -> str:
+    """Reorder the base competency list so JD-matching items come first."""
+    ordered_groups = order_skills(jd)
+    picked: list[str] = []
+    seen: set[str] = set()
+    for items in ordered_groups.values():
+        for item in items:
+            match = next((b for b in _BASE_COMPETENCY_ITEMS if b.lower() == item.lower()), None)
+            if match and match not in seen:
+                picked.append(match)
+                seen.add(match)
+    # Also promote items whose tokens appear in the JD even if not in skillGroups
+    t = jd.lower()
+    scored = []
+    for item in _BASE_COMPETENCY_ITEMS:
+        if item in seen:
+            continue
+        score = sum(1 for w in re.findall(r"[a-z0-9.#+]+", item.lower()) if len(w) > 2 and w in t)
+        scored.append((score, item))
+    scored.sort(key=lambda x: (-x[0], _BASE_COMPETENCY_ITEMS.index(x[1])))
+    for _, item in scored:
+        if item not in seen:
+            picked.append(item)
+            seen.add(item)
+    for item in _BASE_COMPETENCY_ITEMS:
+        if item not in seen:
+            picked.append(item)
+    return ", ".join(picked)
+
+
+def _rewrite_base_docx(dest: Path, headline: str, summary: str, competencies: str) -> None:
+    """Copy the uploaded resume and overlay JD headline / summary / competencies."""
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_bytes(BASE_RESUME.read_bytes())
+    with zipfile.ZipFile(dest, "r") as zin:
+        parts = {name: zin.read(name) for name in zin.namelist()}
+    xml = parts["word/document.xml"].decode("utf-8")
+    if _BASE_SUMMARY not in xml:
+        raise RuntimeError("base resume summary anchor missing; refusing to overwrite")
+    xml = xml.replace(_BASE_SUMMARY, escape(summary), 1)
+
+    contact_close = f"{_BASE_CONTACT}</w:t></w:r></w:p>"
+    if contact_close in xml and headline:
+        headline_p = (
+            '<w:p w14:paraId="A1B2C3D4" w14:textId="11111111" '
+            'w:rsidR="002E7CA7" w:rsidRDefault="00000000">'
+            '<w:pPr><w:spacing w:after="80" w:line="240" w:lineRule="auto"/>'
+            '<w:jc w:val="center"/></w:pPr>'
+            '<w:r><w:rPr><w:b/><w:sz w:val="22"/><w:szCs w:val="22"/></w:rPr>'
+            f'<w:t xml:space="preserve">{escape(headline)}</w:t></w:r></w:p>'
+        )
+        xml = xml.replace(contact_close, contact_close + headline_p, 1)
+
+    start = xml.find("System &amp; Distributed Systems Design")
+    end = xml.find("Agile/Scrum Delivery")
+    if start != -1 and end != -1:
+        end += len("Agile/Scrum Delivery")
+        xml = xml[:start] + escape(competencies) + xml[end:]
+
+    parts["word/document.xml"] = xml.encode("utf-8")
+    with zipfile.ZipFile(dest, "w", zipfile.ZIP_DEFLATED) as zout:
+        for name, data in parts.items():
+            zout.writestr(name, data)
+
+
+def _para_text(para: str) -> str:
+    return htmlmod.unescape("".join(re.findall(r"<w:t[^>]*>([^<]*)</w:t>", para)))
+
+
+def _set_para_text(para: str, text: str) -> str:
+    """Put text in the first w:t of a paragraph; empty the rest so Word stays valid."""
+    first = True
+
+    def repl(m: re.Match) -> str:
+        nonlocal first
+        if first:
+            first = False
+            return f"{m.group(1)}{escape(text)}{m.group(3)}"
+        return f"{m.group(1)}{m.group(3)}"
+
+    updated, n = re.subn(r"(<w:t[^>]*>)([^<]*)(</w:t>)", repl, para)
+    if n:
+        return updated
+    return para
+
+
+def _set_matching_run(para: str, match: re.Pattern, text: str) -> str | None:
+    """Replace one w:t whose current text matches, leave other runs (e.g. name) alone."""
+    found = False
+
+    def repl(m: re.Match) -> str:
+        nonlocal found
+        current = htmlmod.unescape(m.group(2))
+        if not found and match.search(current):
+            found = True
+            return f"{m.group(1)}{escape(text)}{m.group(3)}"
+        return m.group(0)
+
+    updated = re.sub(r"(<w:t[^>]*>)([^<]*)(</w:t>)", repl, para)
+    return updated if found else None
+
+
+def overlay_base_docx(path: Path, doc: dict) -> None:
+    """Copy the uploaded resume and overlay JD-specific headline, summary, competencies."""
+    if not BASE_RESUME.exists():
+        raise FileNotFoundError(f"Base resume missing: {BASE_RESUME}")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(BASE_RESUME.read_bytes())
+    with zipfile.ZipFile(path, "r") as zin:
+        xml = zin.read("word/document.xml").decode("utf-8")
+        extras = {name: zin.read(name) for name in zin.namelist() if name != "word/document.xml"}
+        compress = {info.filename: info.compress_type for info in zin.infolist()}
+
+    paras = re.findall(r"<w:p\b[^>]*>.*?</w:p>", xml, flags=re.S)
+    texts = [_para_text(p).strip() for p in paras]
+
+    # Replace the existing headline under the name (or fill the empty line
+    # after LinkedIn on older base files).
+    headline = (doc.get("headline") or "").strip()
+    if headline:
+        replaced = False
+        headline_run = re.compile(
+            r"technical architect\s*\|.*distributed systems|technical architect\s*\|\s*technical lead",
+            re.I,
+        )
+        for i, text in enumerate(texts):
+            if headline_run.search(text) or (
+                "distributed systems" in text.lower() and "architect" in text.lower()
+                and "mohammed" not in text.lower()
+            ):
+                patched = _set_matching_run(paras[i], headline_run, headline)
+                paras[i] = patched if patched is not None else _set_para_text(paras[i], headline)
+                texts[i] = _para_text(paras[i]).strip()
+                replaced = True
+                break
+        if not replaced:
+            for i, text in enumerate(texts):
+                if text.lower().startswith("linkedin"):
+                    for j in range(i + 1, min(i + 3, len(paras))):
+                        if not texts[j]:
+                            paras[j] = _set_para_text(paras[j], headline)
+                            texts[j] = headline
+                            break
+                    break
+
+    # Replace the Professional Summary body (first non-empty para after the heading).
+    summary = (doc.get("summary") or "").strip()
+    if summary:
+        for i, text in enumerate(texts):
+            if text.upper() == "PROFESSIONAL SUMMARY":
+                for j in range(i + 1, len(paras)):
+                    if texts[j] and texts[j].upper() not in {"ACCOMPLISHMENTS", "SKILLS"}:
+                        paras[j] = _set_para_text(paras[j], summary)
+                        break
+                break
+
+    # Reorder Core Technical Competencies by JD match. Do not add or invent items.
+    wanted: list[str] = []
+    for items in (doc.get("skills") or {}).values():
+        wanted.extend(items)
+    wanted_l = [w.lower() for w in wanted]
+    start = None
+    for i, text in enumerate(texts):
+        if text.upper() == "CORE TECHNICAL COMPETENCIES":
+            start = i + 1
+            break
+    if start is not None and wanted_l:
+        tail = paras[start:]
+
+        def score(para: str) -> int:
+            t = _para_text(para).lower()
+            for n, w in enumerate(wanted_l):
+                if w in t or t in w:
+                    return n
+            return 900
+
+        tail.sort(key=score)
+        paras[start:] = tail
+
+    it = iter(paras)
+    new_xml = re.sub(r"<w:p\b[^>]*>.*?</w:p>", lambda _m: next(it), xml, flags=re.S)
+    tmp = path.with_suffix(".tmp.docx")
+    with zipfile.ZipFile(tmp, "w") as zout:
+        for name, data in extras.items():
+            zout.writestr(name, data, compress_type=compress.get(name, zipfile.ZIP_DEFLATED))
+        zout.writestr(
+            "word/document.xml",
+            new_xml.encode("utf-8"),
+            compress_type=compress.get("word/document.xml", zipfile.ZIP_DEFLATED),
+        )
+    tmp.replace(path)
+
+
+def write_docx(path: Path, doc: dict) -> None:
+    body = []
+    body.append(_p(MASTER["fullName"], bold=True, size=32, center=True, color="1F3864", after=40))
+    body.append(_p(doc["headline"], center=True, size=22, after=40))
+    contact = f"{MASTER['location']} | {MASTER['phone']} | {MASTER['email']} | LinkedIn"
+    body.append(_p(contact, center=True, size=20, after=160, border=True))
+    body.append(_p("PROFESSIONAL SUMMARY", bold=True, size=22, color="1F3864", before=120, after=80, border=True))
+    body.append(_p(doc["summary"], size=21, after=120))
+    body.append(_p("CORE TECHNICAL COMPETENCIES", bold=True, size=22, color="1F3864", before=80, after=80, border=True))
+    for label, items in doc["skills"].items():
+        if items:
+            body.append(_skill_line(label, items))
+    body.append(_p("PROFESSIONAL EXPERIENCE", bold=True, size=22, color="1F3864", before=160, after=80, border=True))
+    for role in doc["roles"]:
+        line = f"{role['title']} — {role['company']}   {role['dates']}"
+        body.append(_p(line, bold=True, size=21, before=120, after=40))
+        for b in role["bullets"]:
+            body.append(_bullet(b))
+    edu = MASTER["education"]
+    body.append(_p("EDUCATION", bold=True, size=22, color="1F3864", before=160, after=80, border=True))
+    body.append(_p(f"{edu['degree']}", bold=True, size=21, after=20))
+    body.append(_p(f"{edu['school']} — {edu['dates']}", size=21, after=80))
+    if doc.get("keywords"):
+        body.append(_p("SELECTED KEYWORDS (from experience)", bold=True, size=20, color="1F3864", before=80, after=40))
+        body.append(_p(", ".join(doc["keywords"]), size=20, after=40))
+
+    document_xml = (
+        "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
+        "<w:document xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\">"
+        "<w:body>"
+        + "".join(body)
+        + "<w:sectPr><w:pgSz w:w=\"12240\" w:h=\"15840\"/>"
+        "<w:pgMar w:top=\"720\" w:right=\"720\" w:bottom=\"720\" w:left=\"720\"/></w:sectPr>"
+        "</w:body></w:document>"
+    )
+    numbering = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:numbering xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:abstractNum w:abstractNumId="0">
+    <w:lvl w:ilvl="0"><w:start w:val="1"/><w:numFmt w:val="bullet"/>
+    <w:lvlText w:val="•"/><w:lvlJc w:val="left"/>
+    <w:pPr><w:ind w:left="360" w:hanging="180"/></w:pPr></w:lvl>
+  </w:abstractNum>
+  <w:num w:numId="1"><w:abstractNumId w:val="0"/></w:num>
+</w:numbering>"""
+    content_types = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+  <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
+  <Default Extension="xml" ContentType="application/xml"/>
+  <Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
+  <Override PartName="/word/numbering.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.numbering+xml"/>
+  <Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/>
+</Types>"""
+    rels = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
+</Relationships>"""
+    doc_rels = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/numbering" Target="numbering.xml"/>
+  <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>
+</Relationships>"""
+    styles = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:style w:type="paragraph" w:styleId="ListParagraph"><w:name w:val="List Paragraph"/>
+  <w:pPr><w:ind w:left="360"/></w:pPr></w:style>
+</w:styles>"""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as z:
+        z.writestr("[Content_Types].xml", content_types)
+        z.writestr("_rels/.rels", rels)
+        z.writestr("word/document.xml", document_xml)
+        z.writestr("word/_rels/document.xml.rels", doc_rels)
+        z.writestr("word/numbering.xml", numbering)
+        z.writestr("word/styles.xml", styles)
+
+
+def for_job(job: dict) -> str:
+    """Copy the uploaded base resume and overlay JD-specific text."""
+    jd = fetch_jd(job)
+    title = mapped_title(job, jd)
+    skills = matched_skills(jd)
+    doc = {
+        "headline": headline_for(title, skills),
+        "summary": summary_for(title, job, jd, skills),
+        "skills": order_skills(jd),
+        "roles": order_roles(jd),
+        "keywords": [s for s in skills if s in MASTER["ownedSkills"] or s in SKILL_ALIASES][:12],
+    }
+    company = _slug(job.get("company") or "company", 24)
+    jid = _slug(str(job.get("job_id") or title), 28)
+    fname = f"Rafi_Ahmed_{_slug(title, 28)}_{company}_{jid}.docx"
+    path = OUT_DIR / fname
+    if not BASE_RESUME.exists():
+        print(f"  Base resume missing ({BASE_RESUME.name}); refusing to build the XML stub.", flush=True)
+        raise FileNotFoundError(f"Base resume missing: {BASE_RESUME}")
+    overlay_base_docx(path, doc)
+    latest = ROOT / "data" / "resume" / "Rafi_Resume_Latest.docx"
+    latest.write_bytes(path.read_bytes())
+    cover = cover_for(title, job, skills)
+    (path.with_suffix(".cover.txt")).write_text(cover, encoding="utf-8")
+    CURRENT.update({
+        "path": str(path.resolve()),
+        "cover": cover,
+        "headline": doc["headline"],
+        "title": title,
+        "skills": skills,
+        "job_id": str(job.get("job_id") or ""),
+        "base": str(BASE_RESUME.resolve()) if BASE_RESUME.exists() else "",
+    })
+    return CURRENT["path"]
+
+
+def is_tailored_path(path: str | None) -> bool:
+    """True only for a per-JD overlay, never the base file or the old XML stub."""
+    if not path:
+        return False
+    p = Path(path)
+    try:
+        p = p.resolve()
+    except Exception:
+        return False
+    if not p.exists() or p.stat().st_size < 50_000:
+        return False
+    name = p.name.lower()
+    if "technical_architect" in name and "tailored" not in str(p).lower():
+        return False
+    try:
+        if p == BASE_RESUME.resolve():
+            return False
+    except Exception:
+        pass
+    return "tailored" in str(p).lower() or name.startswith("rafi_ahmed_")
+
+
+def require_for_job(job: dict) -> str:
+    """Build a tailored resume or raise. Never fall back to the untailored base."""
+    last: Exception | None = None
+    for _ in range(2):
+        try:
+            path = for_job(job)
+            if is_tailored_path(path):
+                return path
+            last = RuntimeError(f"tailor wrote a non-tailored file: {path}")
+        except Exception as exc:
+            last = exc
+    raise RuntimeError(f"tailored resume required before apply: {last}")
+
+
+def upload(page, path: str | None = None) -> bool:
+    """Overwrite file inputs with the tailored resume (beats Copilot's generic file)."""
+    path = path or CURRENT.get("path")
+    if not path or not Path(path).exists():
+        return False
+    ok = False
+    for sel in (
+        "#resume",
+        "input#resume",
+        "input[name='resume']",
+        "input[name='resumeFile']",
+        "input[data-test='resume']",
+        "input[type=file]",
+    ):
+        try:
+            loc = page.locator(sel)
+            n = loc.count() if hasattr(loc, "count") else 0
+            for i in range(min(n or 0, 3)):
+                try:
+                    el = loc.nth(i)
+                    try:
+                        if not el.is_visible():
+                            continue
+                    except Exception:
+                        continue
+                    el.set_input_files(path, timeout=800)
+                    ok = True
+                except Exception:
+                    continue
+            if ok:
+                break
+        except Exception:
+            continue
+    # LinkedIn / Easy Apply: click the tailored or master resume label if radios are hidden
+    for label in (
+        "Mohammed_Abdul_Rafi",
+        "Rafi_Ahmed",
+        "Rafi_Resume_Architect",
+        "Rafi_Resume_Technical",
+        "Rafi_Resume_Latest",
+    ):
+        try:
+            page.get_by_text(label, exact=False).first.click(timeout=800)
+            ok = True
+            break
+        except Exception:
+            continue
+    return ok
+
+
+if __name__ == "__main__":
+    import apply_now
+    apply_now.BATCH = apply_now.load_all_discovered()
+    jobs = apply_now.queue()[:3]
+    if not jobs:
+        print("No queued jobs to tailor.")
+    for job in jobs:
+        p = for_job(job)
+        print(f"{job.get('company')}: {job.get('title')}")
+        print(f"  {CURRENT.get('headline')}")
+        print(f"  skills: {', '.join(CURRENT.get('skills') or [])}")
+        print(f"  {p}")
+        time.sleep(0.2)

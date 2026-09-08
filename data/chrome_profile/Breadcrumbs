@@ -1,0 +1,49 @@
+0:07:07 Tab15 FinishNav280
+0:07:07 Tab15 PageLoad
+0:07:07 Tab15 StartNav281 #typed
+0:07:11 Tab15 FinishNav281
+0:07:13 Tab15 PageLoad
+0:07:13 Tab15 StartNav282 #renderer-script #link
+0:07:13 Tab15 FinishNav282
+0:07:15 Tab15 StartNav283 #renderer-script #auto_subframe
+0:07:15 Tab15 FinishNav283
+0:07:15 Tab15 PageLoad
+0:07:15 Tab15 StartNav284 #renderer-script #auto_subframe
+0:07:15 Tab15 FinishNav284
+0:07:15 Tab15 PageLoad
+0:07:16 Widget Closed: StatusBubble
+0:07:16 Browser1 Insert active Tab16 at 3
+0:07:16 Tab16 StartNav285 #renderer-user #link
+0:07:16 Tab16 FinishNav285
+0:07:16 Tab16 StartNav286 #renderer-script #link
+0:07:16 Tab16 FinishNav286
+0:07:17 Tab16 PageLoad
+0:07:17 Tab16 StartNav287 #renderer-script #link
+0:07:17 Tab16 FinishNav287
+0:07:17 Tab16 StartNav288 #renderer-script #auto_subframe
+0:07:18 Tab16 FinishNav288
+0:07:18 Tab16 StartNav289 #renderer-script #auto_subframe
+0:07:18 Tab16 PageLoad
+0:07:18 Tab16 FinishNav289
+0:07:18 Tab16 PageLoad
+0:07:19 Widget Closed: PopupViewViews
+0:07:20 Autofill_ShowedProfileSuggestions
+0:07:20 Autofill_PopupInteraction_PopupLevel_0_SuggestionShown
+0:07:20 Widget Closed: PopupViewViews
+0:07:20 Autofill_ShowedProfileSuggestions
+0:07:20 Autofill_ShowedProfileSuggestions
+0:07:20 Autofill_ShowedProfileSuggestions
+0:07:20 Autofill_ShowedProfileSuggestions
+0:07:20 Autofill_ShowedProfileSuggestions
+0:07:21 Autofill_ShowedProfileSuggestions
+0:07:21 Autofill_ShowedProfileSuggestions
+0:07:21 Autofill_ShowedProfileSuggestions
+0:07:21 Autofill_ShowedProfileSuggestions
+0:07:21 Autofill_ShowedProfileSuggestions
+0:07:21 Autofill_ShowedProfileSuggestions
+0:07:21 Autofill_ShowedProfileSuggestions
+0:07:21 Widget Closed: PopupViewViews
+0:11:56 Browser1 Closed 4 tabs
+0:11:56 Widget Closed: BrowserWidget
+0:11:56 Widget Closed: RoundedOmniboxResultsFrameWindow
+0:11:56 Widget Closed: RoundedOmniboxResultsFrameWindow
