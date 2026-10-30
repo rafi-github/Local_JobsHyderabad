@@ -5086,8 +5086,13 @@ def apply_one(page, job: dict, wait_seconds: int = 0, navigate: bool = True, all
         except Exception:
             u = ""
         job_u = (url or "").lower()
-        if any(x in u or x in job_u for x in ("applymanually", "/apply/", "icims.com", "avature.net", "myworkdayjobs", "oraclecloud", "smartrecruiters", "linkedin.com", "naukri.com", "indeed.com", "foundit.in", "instahyre", "cutshort")):
+        if any(x in u or x in job_u for x in ("applymanually", "/apply/", "job_app", "icims.com", "avature.net", "myworkdayjobs", "oraclecloud", "smartrecruiters", "greenhouse.io", "lever.co", "ashbyhq.com", "linkedin.com", "naukri.com", "indeed.com", "foundit.in", "instahyre", "cutshort")):
+            # Greenhouse embed URLs are /embed/job_app, not /apply/. A 15s stay
+            # expired every day before the thank-you page, so those were the
+            # only leftovers and discovery never ran.
             stay = wait_seconds if wait_seconds else 90
+            if any(x in u or x in job_u for x in ("greenhouse.io", "lever.co", "ashbyhq.com")) and not OWNER_PRESENT:
+                stay = min(stay, 120)
         if "naukri.com" in u or "naukri.com" in job_u:
             stay = min(stay, 40) if not OWNER_PRESENT else stay
         if "instahyre.com/job-" in u:
@@ -5913,19 +5918,41 @@ def _naukri_srp_url(slug: str, page_no: int) -> str:
     return f"{base}-{page_no}"
 
 
+# LinkedIn is session-skipped (9 AM automation). Two stuck Greenhouse
+# leftovers used to count as "queue not empty", so discovery never ran
+# and the daily apply submitted 0. Refresh when fewer than this many
+# non-LinkedIn leftovers are actually actionable.
+MIN_READY_TO_APPLY = int(apply_now.C.get("dailyApplyTarget") or 50)
+
+
+def _load_ready_jobs() -> tuple[list[dict], list[dict], list[dict]]:
+    apply_now.BATCH = apply_now.load_all_discovered()
+    queue = apply_now.queue()
+    try_jobs, blocked = public_queue(queue, allow_aggregators=True)
+    try_jobs = leftover_career_jobs(try_jobs)
+    return queue, try_jobs, blocked
+
+
+def _needs_discovery(try_jobs: list[dict]) -> bool:
+    return len(try_jobs) < MIN_READY_TO_APPLY
+
+
 def _refresh_boards_no_browser() -> None:
-    """When leftover Naukri/career is empty, pull more boards without a second Chrome."""
-    print("  Leftover Naukri/career empty. No-browser discover_everywhere + hyd_gcc...", flush=True)
-    try:
-        import discover_everywhere
-        discover_everywhere.main()
-    except Exception as exc:
-        print(f"  discover_everywhere failed ({exc}).", flush=True)
+    """Pull fresh Hyderabad career portals and India boards without a second Chrome."""
+    print(
+        "  Discovering fresh Hyderabad career portals and India boards...",
+        flush=True,
+    )
     try:
         import discover_hyd_gcc
         discover_hyd_gcc.main()
     except Exception as exc:
         print(f"  discover_hyd_gcc failed ({exc}).", flush=True)
+    try:
+        import discover_everywhere
+        discover_everywhere.main()
+    except Exception as exc:
+        print(f"  discover_everywhere failed ({exc}).", flush=True)
     apply_now.BATCH = apply_now.load_all_discovered()
 
 
@@ -6059,9 +6086,18 @@ def main(
     seed_parked_captcha_urls()
     persist_existing_closed()
     seed_session_skips_from_today()
-    queue = apply_now.queue()
-    try_jobs, blocked_board = public_queue(queue, allow_aggregators=True)
-    try_jobs = leftover_career_jobs(try_jobs)
+    queue, try_jobs, blocked_board = _load_ready_jobs()
+    boards_refreshed = False
+    if _needs_discovery(try_jobs) and not WATCH_OPEN:
+        print(
+            f"  Only {len(try_jobs)} actionable leftovers "
+            f"(under {MIN_READY_TO_APPLY}). "
+            "LinkedIn stays with the 9 AM automation. Discovering more.",
+            flush=True,
+        )
+        _refresh_boards_no_browser()
+        boards_refreshed = True
+        queue, try_jobs, blocked_board = _load_ready_jobs()
     career_n = sum(
         1 for j in try_jobs
         if apply_now.is_company_career_portal(j) and not apply_now.is_aggregator_board(j)
@@ -6137,7 +6173,8 @@ def main(
             and not GOOGLE_SIGNIN_BLOCKED
             and not GOOGLE_2FA_PARKED
             and not NAUKRI_BOT_BLOCKED
-            and not leftover_career_jobs(pending)
+            and _needs_discovery(leftover_career_jobs(pending))
+            and _naukri_leftover_n(leftover_career_jobs(pending)) == 0
         ):
             print("  Searching Naukri in Chrome for Quick apply leftovers...", flush=True)
             discover_naukri_in_chrome(context)
@@ -6155,8 +6192,9 @@ def main(
                 f"({career_n} career, {_naukri_leftover_n(try_jobs)} Naukri).",
                 flush=True,
             )
-            if _naukri_leftover_n(try_jobs) == 0 and career_n == 0:
+            if _needs_discovery(try_jobs) and not boards_refreshed:
                 _refresh_boards_no_browser()
+                boards_refreshed = True
                 apply_now.BATCH = apply_now.load_all_discovered()
                 queue = apply_now.queue()
                 try_jobs, _blocked = public_queue(queue, allow_aggregators=True)
@@ -6276,27 +6314,24 @@ def main(
                     page = context.new_page()
                 row = apply_one(page, job, wait_seconds=wait_seconds, navigate=navigate)
                 results.append(row)
-                # Retry WAITING_EXPIRED / STUCK on the next leftover pass after a fix.
-                if row.get("ok") or row.get("status") in {
-                    "SUBMITTED", "CLOSED", "AUTH_FAILED", "CAPTCHA",
-                    "OWNER_SIGNIN", "NEED_INPUT",
-                }:
-                    SESSION_SKIP_KEYS.update(apply_now.job_match_keys(row) | apply_now.job_match_keys(job))
-                elif row.get("status") == "STUCK":
+                # One attempt per posting this run. Repeating WAITING_EXPIRED
+                # on the same two Greenhouse forms used up the daily run.
+                if row.get("status") == "STUCK":
                     stuck_u = (
                         (row.get("apply_url") or row.get("url") or row.get("final_url") or "")
                         + " "
                         + str(row.get("company") or job.get("company") or "")
                     ).lower()
-                    # iCIMS/Schwab login loops are captcha/rate-limit — do not hammer.
                     if "icims.com" in stuck_u or "schwab" in stuck_u:
-                        SESSION_SKIP_KEYS.update(
-                            apply_now.job_match_keys(row) | apply_now.job_match_keys(job)
-                        )
                         print(
                             "  Session-skip this iCIMS/Schwab leftover (do not hammer login).",
                             flush=True,
                         )
+                if row.get("ok") or row.get("status") in {
+                    "SUBMITTED", "CLOSED", "AUTH_FAILED", "CAPTCHA",
+                    "OWNER_SIGNIN", "NEED_INPUT", "WAITING_EXPIRED", "STUCK",
+                }:
+                    SESSION_SKIP_KEYS.update(apply_now.job_match_keys(row) | apply_now.job_match_keys(job))
                 if row.get("ok") and row.get("status") == "SUBMITTED":
                     apply_now.persist_applied(row, row.get("note") or "cloud_apply submitted")
                     note = (row.get("note") or "").lower()

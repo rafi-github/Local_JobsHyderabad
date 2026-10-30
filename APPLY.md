@@ -14,8 +14,10 @@ Profile on every form: current CTC **52 LPA**, expected CTC **60 LPA**
 ## Every run must
 
 1. Apply to leftover matching Hyderabad / Remote-India jobs. Do not only discover
-   or tailor. Queue first (`apply_now.queue()`), then discover more if the
-   career-portal queue is empty.
+   or tailor. Queue first (`apply_now.queue()`), then discover more whenever
+   actionable non-LinkedIn leftovers are under `dailyApplyTarget` (50). A couple
+   of stuck Greenhouse leftovers must not block discovery. LinkedIn stays with
+   the 9 AM automation.
 2. Run headed Chrome on `DISPLAY=:1`:
    `python3 cloud_apply.py --headed --wait 360 --limit 80`
    Naukri / LinkedIn / Indeed / Cutshort / Foundit / Instahyre run in the same
