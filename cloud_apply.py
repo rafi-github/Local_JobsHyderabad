@@ -1170,23 +1170,47 @@ INSTAHYRE_APPLY_HITS_JS = r"""() => {
 }"""
 
 
-def _instahyre_screen_click(page, box: dict) -> None:
+def _instahyre_playwright_click(page, box: dict) -> None:
+    label = (box.get("t") or "Apply").strip()
     try:
-        info = page.evaluate(
-            """() => ({
-              sx: window.screenX || 0,
-              sy: window.screenY || 0,
-              oh: window.outerHeight || 0,
-              ih: window.innerHeight || 0,
-            })"""
+        loc = page.get_by_role("button", name=re.compile(rf"^{re.escape(label)}$", re.I)).first
+        if not loc.count():
+            loc = page.get_by_role("link", name=re.compile(rf"^{re.escape(label)}$", re.I)).first
+        if loc.count() and loc.is_visible():
+            loc.click(timeout=2000, force=True)
+            return
+    except Exception:
+        pass
+    try:
+        page.mouse.click(
+            float(box["x"]) + float(box["w"]) / 2,
+            float(box["y"]) + float(box["h"]) / 2,
         )
     except Exception:
-        info = {}
-    chrome_top = max(0, int((info.get("oh") or 0) - (info.get("ih") or 0)))
-    _xdotool_click(
-        (info.get("sx") or 0) + box["x"] + box["w"] / 2,
-        (info.get("sy") or 0) + chrome_top + box["y"] + box["h"] / 2,
-    )
+        pass
+
+
+def _instahyre_screen_click(page, box: dict) -> None:
+    """Real OS click on Linux. Playwright click when xdotool is not the desktop."""
+    if os.name != "nt":
+        try:
+            info = page.evaluate(
+                """() => ({
+                  sx: window.screenX || 0,
+                  sy: window.screenY || 0,
+                  oh: window.outerHeight || 0,
+                  ih: window.innerHeight || 0,
+                })"""
+            )
+        except Exception:
+            info = {}
+        chrome_top = max(0, int((info.get("oh") or 0) - (info.get("ih") or 0)))
+        _xdotool_click(
+            (info.get("sx") or 0) + box["x"] + box["w"] / 2,
+            (info.get("sy") or 0) + chrome_top + box["y"] + box["h"] / 2,
+        )
+        return
+    _instahyre_playwright_click(page, box)
 
 
 def _instahyre_pick_hit(hits: list[dict], prefer_modal: bool) -> dict | None:
@@ -1260,10 +1284,141 @@ def naukri_external_apply_label(label: str) -> bool:
         return False
     return bool(
         re.search(
-            r"company.?site|apply attempted|iimjobs|apply on (?!naukri)",
+            r"company.?(site|website)|apply attempted|iimjobs|apply on (?!naukri)",
             t,
         )
     )
+
+
+def _aggregator_page(url: str) -> bool:
+    u = (url or "").lower()
+    return any(h in u for h in ("naukri.com", "indeed.com", "foundit.in", "instahyre.com"))
+
+
+def _career_destination(url: str) -> bool:
+    """A tab opened from an aggregator that is the company career page."""
+    u = (url or "").lower()
+    if not u.startswith("http"):
+        return False
+    if any(
+        x in u
+        for x in (
+            "mail.google.com",
+            "accounts.google.com",
+            "chrome://",
+            "chrome-extension://",
+            "linkedin.com/checkpoint",
+            "naukri.com",
+            "facebook.com",
+            "instagram.com",
+        )
+    ):
+        return False
+    return True
+
+
+def _progress_url(url: str) -> str:
+    """Full apply path, so Workday /apply/step changes count as progress."""
+    return (url or "").split("?")[0].split("#")[0].rstrip("/").lower()
+
+
+def _note_company_site(page, job: dict) -> None:
+    """Remember the career URL so later tab switches stay on this application."""
+    try:
+        landed = page.url or ""
+    except Exception:
+        return
+    if not _career_destination(landed):
+        return
+    if isinstance(job, dict):
+        job["apply_url"] = landed
+    print(f"  Opened company site from Naukri: {landed[:100]}", flush=True)
+
+
+def leave_naukri_for_company_site(page, job: dict):
+    """Open the company career page a Naukri JD points at. None if it stays on Naukri."""
+    try:
+        if "naukri.com" not in (page.url or "").lower():
+            return page
+    except Exception:
+        return None
+    before: set[int] = set()
+    try:
+        before = {id(p) for p in page.context.pages}
+    except Exception:
+        before = set()
+    href = ""
+    try:
+        info = page.evaluate(
+            """() => {
+              const nodes = [...document.querySelectorAll('#apply-button, button.apply-button, a, button')];
+              for (const el of nodes) {
+                const t = ((el.innerText || '') + ' ' + (el.getAttribute('aria-label') || ''))
+                  .replace(/\\s+/g, ' ').trim();
+                if (!/company\\s*(site|website)|apply on/i.test(t)) continue;
+                if (/\\bnaukri\\b/i.test(t) && !/company/i.test(t)) continue;
+                const a = el.tagName === 'A' ? el : (el.closest('a') || el.querySelector('a'));
+                const href = (a && a.href) || el.getAttribute('data-href') || el.getAttribute('data-url') || '';
+                const r = el.getBoundingClientRect();
+                if (r.width < 8 || r.height < 8) continue;
+                return {href};
+              }
+              return null;
+            }"""
+        ) or {}
+        href = str((info or {}).get("href") or "")
+    except Exception:
+        href = ""
+    try:
+        loc = page.get_by_role(
+            "button",
+            name=re.compile(r"company.?(site|website)|apply on (?!naukri)", re.I),
+        ).first
+        if not loc.count():
+            loc = page.get_by_role(
+                "link",
+                name=re.compile(r"company.?(site|website)|apply on (?!naukri)", re.I),
+            ).first
+        if loc.count() and loc.is_visible():
+            loc.click(timeout=2500, force=True)
+            page.wait_for_timeout(1500)
+    except Exception:
+        pass
+    page = adopt_newest_page(page, before, job)
+    try:
+        still = "naukri.com" in (page.url or "").lower()
+    except Exception:
+        still = True
+    if still:
+        try:
+            page.wait_for_timeout(1200)
+        except Exception:
+            pass
+        page = adopt_newest_page(page, before, job)
+        try:
+            still = "naukri.com" in (page.url or "").lower()
+        except Exception:
+            still = True
+    if still and href.startswith("http") and "naukri.com" not in href.lower():
+        try:
+            page.goto(href, wait_until="domcontentloaded", timeout=35000)
+            page.wait_for_timeout(800)
+        except Exception:
+            return None
+    try:
+        landed = page.url or ""
+    except Exception:
+        return None
+    if not landed.startswith("http") or landed.startswith("about:"):
+        try:
+            page.wait_for_load_state("domcontentloaded", timeout=8000)
+            landed = page.url or ""
+        except Exception:
+            pass
+    if not _career_destination(landed):
+        return None
+    _note_company_site(page, job)
+    return page
 
 
 def naukri_human_challenge(page) -> bool:
@@ -1583,9 +1738,6 @@ def click_naukri_quick_apply(page) -> str:
             label = ((foot.inner_text() or "") + " " + (foot.get_attribute("aria-label") or "")).strip()
             if re.search(r"applied", label, re.I):
                 print("  Naukri footer shows already applied.", flush=True)
-                return ""
-            if naukri_external_apply_label(label):
-                print("  Naukri company-site / external apply. Next leftover.", flush=True)
                 return ""
             foot.click(timeout=2500, force=True)
             print(f"  Clicked Naukri footer {label[:40]!r}.", flush=True)
@@ -2707,6 +2859,77 @@ def fill_workday_required_questions(page) -> int:
     return filled
 
 
+def fill_greenhouse_form(page) -> int:
+    """Fill Greenhouse name, email, phone, and empty question boxes before Submit."""
+    try:
+        url = (page.url or "").lower()
+    except Exception:
+        return 0
+    if "greenhouse.io" not in url:
+        return 0
+    a = form_memory._answers()
+    filled = 0
+    for eid, value in (
+        ("first_name", a.get("firstName")),
+        ("last_name", a.get("lastName")),
+        ("email", a.get("email")),
+        ("phone", a.get("phone")),
+    ):
+        if not value:
+            continue
+        try:
+            loc = page.locator(f"#{eid}").first
+            if not loc.count() or not loc.is_visible():
+                continue
+            cur = ""
+            try:
+                cur = (loc.input_value() or "").strip()
+            except Exception:
+                cur = ""
+            if cur:
+                continue
+            loc.fill(str(value), timeout=1500)
+            filled += 1
+        except Exception:
+            continue
+    try:
+        boxes = page.locator("input[id^='question_'], textarea[id^='question_']")
+        count = min(boxes.count(), 24)
+    except Exception:
+        count = 0
+    for i in range(count):
+        try:
+            loc = boxes.nth(i)
+            if not loc.is_visible():
+                continue
+            cur = ""
+            try:
+                cur = (loc.input_value() or "").strip()
+            except Exception:
+                cur = ""
+            if cur:
+                continue
+            label = " ".join(
+                filter(
+                    None,
+                    [
+                        loc.get_attribute("aria-label") or "",
+                        loc.get_attribute("placeholder") or "",
+                    ],
+                )
+            )
+            answer = form_memory.infer_answer(label, [])
+            if not answer:
+                continue
+            loc.fill(str(answer), timeout=1200)
+            filled += 1
+        except Exception:
+            continue
+    if filled:
+        print(f"  Filled {filled} Greenhouse field(s).", flush=True)
+    return filled
+
+
 def fill_workday_form(page) -> int:
     """Fill Workday easy-apply fields by data-automation-id. Copilot often never attaches."""
     try:
@@ -2789,35 +3012,33 @@ def fill_workday_form(page) -> int:
 
 
 def icims_auth0_blocked(page) -> bool:
-    """Auth0 /u/login/password rate-limit or Oops page. Do not keep POSTing."""
-    ctx = getattr(page, "context", None)
-    pages = list(ctx.pages) if ctx is not None else [page]
-    for p in pages:
-        try:
-            if p.is_closed():
-                continue
-            u = (p.url or "").lower()
-        except Exception:
-            continue
-        if "login.icims.com" not in u:
-            continue
-        blob = ""
-        try:
-            blob += " " + (p.title() or "")
-        except Exception:
-            pass
-        try:
-            blob += " " + (p.inner_text("body") or "")[:2000]
-        except Exception:
-            pass
-        try:
-            blob += " " + (p.evaluate("() => (document.body && document.body.innerText) || ''") or "")[:2000]
-        except Exception:
-            pass
-        t = blob.lower()
-        if "rate limit" in t or "oops, something went wrong" in t or "invalid_request" in t:
-            return True
-    return False
+    """Auth0 /u/login/password rate-limit or Oops page. Do not keep POSTing.
+
+    Check only this tab. Scanning every open tab's body text wedged the daily
+    run for hours when one Auth0 or LinkedIn tab stopped answering.
+    """
+    try:
+        if page is None or page.is_closed():
+            return False
+        u = (page.url or "").lower()
+    except Exception:
+        return False
+    if "login.icims.com" not in u:
+        return False
+    # Password / identifier walls are not a form we can finish unattended.
+    if "/u/login" in u:
+        return True
+    blob = ""
+    try:
+        blob += " " + (page.title() or "")
+    except Exception:
+        pass
+    try:
+        blob += " " + (page.inner_text("body", timeout=3000) or "")[:1500]
+    except Exception:
+        pass
+    t = blob.lower()
+    return "rate limit" in t or "oops, something went wrong" in t or "invalid_request" in t
 
 
 def fill_icims_login(page) -> int:
@@ -3734,6 +3955,7 @@ def unstick_stuck_form(page, job: dict, resume: str) -> str:
     fill_smartrecruiters_form(page, job)
     fill_oracle_form(page, job)
     fill_workday_form(page)
+    fill_greenhouse_form(page)
     ats_fill.fill_phenom_acknowledgment(page)
     ats_fill.fill_empty_dropdowns(page, form_memory.infer_answer)
     accept_terms(page)
@@ -4160,7 +4382,10 @@ def adopt_newest_page(page, before_ids: set[int] | None = None, job: dict | None
             if "login.icims.com" in url.lower() and "icims.com" not in (page.url or "").lower():
                 continue
             if _foreign_or_parked_tab(url, job, page.url or ""):
-                continue
+                # Naukri "Apply on company site" opens Workday/Greenhouse in a new tab.
+                # That host is not in the Naukri job URL, so it is this application.
+                if not (_aggregator_page(page.url or "") and _career_destination(url)):
+                    continue
             opened.append(p)
         except Exception:
             continue
@@ -4288,6 +4513,7 @@ def fill_and_advance(page, job: dict, resume: str) -> str:
     fill_smartrecruiters_form(page, job)
     fill_oracle_form(page, job)
     fill_workday_form(page)
+    fill_greenhouse_form(page)
     ats_fill.fill_phenom_acknowledgment(page)
     ats_fill.fill_empty_dropdowns(page, form_memory.infer_answer)
     accept_terms(page)
@@ -4312,6 +4538,7 @@ def fill_and_advance(page, job: dict, resume: str) -> str:
     fill_smartrecruiters_form(page, job)
     fill_oracle_form(page, job)
     fill_workday_form(page)
+    fill_greenhouse_form(page)
     ats_fill.fill_phenom_acknowledgment(page)
     ats_fill.fill_empty_dropdowns(page, form_memory.infer_answer)
     accept_terms(page)
@@ -4348,7 +4575,7 @@ def wait_for_human(page, job: dict, seconds: int, resume: str | None = None) -> 
     linkedin_checkpoint_hits = 0
     linkedin_signup_hits = 0
     try:
-        hold_url = _stable_apply_url(page.url or "")
+        hold_url = _progress_url(page.url or "")
     except Exception:
         hold_url = ""
     url_hold_from = time.time()
@@ -4571,7 +4798,7 @@ def wait_for_human(page, job: dict, seconds: int, resume: str | None = None) -> 
                     "note": "submitted after unstick",
                     "learned": learned,
                 }
-            if unsticks >= 2:
+            if unsticks >= 6:
                 try:
                     loop_url = (page.url or "").lower()
                 except Exception:
@@ -4609,33 +4836,34 @@ def wait_for_human(page, job: dict, seconds: int, resume: str | None = None) -> 
         req = required_field_issues(page)
         if req:
             stuck_required += 1
-            if stuck_required >= 2 and not notified_input:
+            if stuck_required >= 6 and not notified_input:
                 notify_needs_input(job, page, req)
                 notified_input = True
                 if not OWNER_PRESENT:
-                    print("  Owner is away. Leftover fields remain — next job.", flush=True)
-                    return {
-                        "ok": False,
-                        "status": "STUCK",
-                        "note": "leftover fields; owner sleeping — next job",
-                        "learned": learned,
-                    }
-                print(
-                    "  Paused. Fill the leftover fields; I will learn them and continue.",
-                    flush=True,
-                )
+                    print("  Leftover fields remain. Still filling until this stay ends.", flush=True)
+                else:
+                    print(
+                        "  Paused. Fill the leftover fields; I will learn them and continue.",
+                        flush=True,
+                    )
         else:
             stuck_required = 0
             if notified_input and OWNER_PRESENT:
                 notified_input = False
         try:
-            now_url = _stable_apply_url(page.url or "")
+            now_url = _progress_url(page.url or "")
         except Exception:
             now_url = hold_url
         if now_url != hold_url:
             hold_url = now_url
             url_hold_from = time.time()
-        elif _ats_loop_host(now_url) and time.time() - url_hold_from > 30 and not OWNER_PRESENT:
+            same_fp = 0
+        elif (
+            _ats_loop_host(now_url)
+            and same_fp >= 4
+            and time.time() - url_hold_from > 75
+            and not OWNER_PRESENT
+        ):
             print("  ATS page did not advance. Next leftover.", flush=True)
             return {
                 "ok": False,
@@ -4854,6 +5082,16 @@ def apply_one(page, job: dict, wait_seconds: int = 0, navigate: bool = True, all
             hit = click_apply_gate(page)
             page.wait_for_timeout(1000)
             page = adopt_newest_page(page, before, job)
+            try:
+                landed = page.url or ""
+            except Exception:
+                landed = ""
+            if (
+                "naukri.com" in (url or "").lower()
+                and _career_destination(landed)
+            ):
+                _note_company_site(page, job)
+                url = landed
             if page.url == last_url:
                 same_url_hits += 1
             else:
@@ -4884,12 +5122,15 @@ def apply_one(page, job: dict, wait_seconds: int = 0, navigate: bool = True, all
                 row["final_url"] = page.url
                 return row
             if naukri_external_apply_label(nlabel):
-                print("  Naukri company-site / external apply. Next leftover.", flush=True)
-                row["status"] = "STUCK"
-                row["note"] = "Naukri company-site apply"
-                row["final_url"] = page.url
-                apply_now.persist_skipped(row, row["note"])
-                return row
+                followed = leave_naukri_for_company_site(page, job)
+                if followed is None:
+                    print("  Naukri company-site link did not open. Next leftover.", flush=True)
+                    row["status"] = "STUCK"
+                    row["note"] = "Naukri company-site apply"
+                    row["final_url"] = page.url
+                    return row
+                page = followed
+                url = page.url or url
             if naukri_browse_only(page):
                 print("  Naukri listing has no Quick apply (Browse other jobs). Next leftover.", flush=True)
                 row["status"] = "STUCK"
@@ -4971,16 +5212,6 @@ def apply_one(page, job: dict, wait_seconds: int = 0, navigate: bool = True, all
             if now_stable != apply_hold:
                 apply_hold = now_stable
                 apply_hold_from = time.time()
-            elif (
-                _ats_loop_host(now_stable)
-                and time.time() - apply_hold_from > 30
-                and not OWNER_PRESENT
-            ):
-                print("  ATS page did not advance. Next leftover.", flush=True)
-                row["status"] = "STUCK"
-                row["note"] = "ATS URL unchanged — next job"
-                row["final_url"] = page.url
-                return row
             step = fill_and_advance(page, job, resume)
             try:
                 after_stable = _stable_apply_url(page.url or "")
@@ -4989,16 +5220,6 @@ def apply_one(page, job: dict, wait_seconds: int = 0, navigate: bool = True, all
             if after_stable != apply_hold:
                 apply_hold = after_stable
                 apply_hold_from = time.time()
-            elif (
-                _ats_loop_host(after_stable)
-                and time.time() - apply_hold_from > 30
-                and not OWNER_PRESENT
-            ):
-                print("  ATS page did not advance. Next leftover.", flush=True)
-                row["status"] = "STUCK"
-                row["note"] = "ATS URL unchanged — next job"
-                row["final_url"] = page.url
-                return row
             if step == "submitted" or is_success(page):
                 row["ok"] = True
                 row["status"] = "SUBMITTED"
@@ -5328,6 +5549,11 @@ def launch_context(pw, headed: bool):
         browser = pw.chromium.connect_over_cdp(CDP, timeout=25000)
         print("  CDP connected.", flush=True)
         context = browser.contexts[0]
+        try:
+            context.set_default_timeout(20000)
+            context.set_default_navigation_timeout(45000)
+        except Exception:
+            pass
         signed_in = False
         for p in list(context.pages):
             try:
@@ -6113,6 +6339,8 @@ def main(
     results: list[dict] = []
     emailed = False
     context = None
+    new_submits = 0
+    already_n = 0
     if send_email:
         def _email_on_exit() -> None:
             if emailed:
@@ -6225,12 +6453,49 @@ def main(
             f"({career_n} career, {_naukri_leftover_n(try_jobs)} Naukri).",
             flush=True,
         )
-        for attempt in range(1, 4):
+        discover_passes = 0
+        idle_passes = 0
+        while new_submits < MIN_READY_TO_APPLY and idle_passes < 3:
             leftover = interleave_boards_and_career(
                 leftover_career_jobs(try_jobs), limit
             )
             if not leftover:
-                break
+                if discover_passes >= 2:
+                    print(
+                        f"  {new_submits} new submits after discovery. "
+                        f"Target is {MIN_READY_TO_APPLY}. Stopping.",
+                        flush=True,
+                    )
+                    break
+                discover_passes += 1
+                print(
+                    f"  Only {new_submits} new submits "
+                    f"(target {MIN_READY_TO_APPLY}). Discovering more leftovers.",
+                    flush=True,
+                )
+                _refresh_boards_no_browser()
+                if (
+                    not GOOGLE_SIGNIN_BLOCKED
+                    and not GOOGLE_2FA_PARKED
+                    and not NAUKRI_BOT_BLOCKED
+                ):
+                    discover_naukri_in_chrome(context)
+                queue, try_jobs, _blocked = _load_ready_jobs()
+                career_n = sum(
+                    1 for j in try_jobs
+                    if apply_now.is_company_career_portal(j)
+                    and not apply_now.is_aggregator_board(j)
+                )
+                print(
+                    f"  After discovery pass {discover_passes}: leftover {len(try_jobs)} "
+                    f"({career_n} career, {_naukri_leftover_n(try_jobs)} Naukri).",
+                    flush=True,
+                )
+                if not leftover_career_jobs(try_jobs):
+                    print("  Discovery added no actionable leftovers.", flush=True)
+                    break
+                continue
+            idle_passes += 1
             print(
                 f"\n=== Apply leftover jobs ({len(leftover)}), other-boards mixed in ===",
                 flush=True,
@@ -6336,11 +6601,23 @@ def main(
                     apply_now.persist_applied(row, row.get("note") or "cloud_apply submitted")
                     note = (row.get("note") or "").lower()
                     if "already applied" in note:
+                        already_n += 1
                         print("  Already applied earlier. Closing this tab and moving on.", flush=True)
                     else:
+                        new_submits += 1
                         notify_submitted(job, row)
-                        print("  Submitted. Closing this tab and moving to the next application.", flush=True)
+                        print(
+                            f"  Submitted ({new_submits} new this run). "
+                            "Closing this tab and moving to the next application.",
+                            flush=True,
+                        )
                     close_apply_page(page)
+                    if new_submits >= MIN_READY_TO_APPLY:
+                        print(
+                            f"  Reached {MIN_READY_TO_APPLY} new submits. Stopping this run.",
+                            flush=True,
+                        )
+                        break
                 elif row.get("status") == "CLOSED":
                     print("  Posting closed. Closing this tab and moving to the next application.", flush=True)
                     close_apply_page(page)
@@ -6365,7 +6642,8 @@ def main(
                 save_cloud(results)
                 print(f"  {row.get('status')} ok={row.get('ok')} {row.get('final_url')}", flush=True)
                 time.sleep(0.6)
-            pending = leftover_career_jobs(pending)
+            if new_submits >= MIN_READY_TO_APPLY:
+                break
         if headed:
             print("  Leaving rafi.success@gmail.com Chrome open.", flush=True)
         elif browser:
@@ -6380,14 +6658,15 @@ def main(
             except Exception as exc:
                 print(f"  Daily completion email failed ({exc}).", flush=True)
 
-    submitted = sum(1 for r in results if r.get("ok") and r.get("status") == "SUBMITTED")
     still = leftover_career_jobs(try_jobs)
     still_career = sum(
         1 for j in still
         if apply_now.is_company_career_portal(j) and not apply_now.is_aggregator_board(j)
     )
     print(
-        f"\nCloud apply done. Submitted {submitted}. "
+        f"\nCloud apply done. Submitted {new_submits} new "
+        f"({already_n} already on file, not counted). "
+        f"Target {MIN_READY_TO_APPLY}. "
         f"Still leftover: {len(still)} ({still_career} career portals).",
         flush=True,
     )
