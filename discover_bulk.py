@@ -5,6 +5,7 @@ import json
 import re
 import ssl
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from collections import Counter
@@ -123,6 +124,19 @@ APPLIED = {
 }
 
 
+def _close_http_error(exc: BaseException) -> None:
+    if not isinstance(exc, urllib.error.HTTPError):
+        return
+    try:
+        exc.read()
+    except Exception:
+        pass
+    try:
+        exc.close()
+    except Exception:
+        pass
+
+
 def get_json(url, data=None, headers=None, timeout=18):
     h = {"User-Agent": UA, "Accept": "application/json"}
     if headers:
@@ -131,7 +145,8 @@ def get_json(url, data=None, headers=None, timeout=18):
     try:
         with urllib.request.urlopen(req, context=CTX, timeout=timeout) as resp:
             return json.loads(resp.read().decode("utf-8", errors="replace")), resp.status
-    except Exception:
+    except Exception as exc:
+        _close_http_error(exc)
         return None, 0
 
 

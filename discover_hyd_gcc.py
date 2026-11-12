@@ -243,6 +243,20 @@ FACET_HYD = re.compile(
 REQ_ID = re.compile(r"(20\d{2}-\d{5,}|JR-?\d+|[A-Z]{2,}\d{4,})", re.I)
 
 
+def _close_http_error(exc: BaseException) -> None:
+    """Read and close urllib HTTP errors so Python 3.15 does not warn on stderr."""
+    if not isinstance(exc, urllib.error.HTTPError):
+        return
+    try:
+        exc.read()
+    except Exception:
+        pass
+    try:
+        exc.close()
+    except Exception:
+        pass
+
+
 def get_text(url: str, data: bytes | None = None, headers: dict | None = None, timeout: int = 10) -> str:
     h = {"User-Agent": UA, "Accept": "text/html,application/json,*/*"}
     if headers:
@@ -251,7 +265,8 @@ def get_text(url: str, data: bytes | None = None, headers: dict | None = None, t
     try:
         with urllib.request.urlopen(req, context=CTX, timeout=timeout) as resp:
             return resp.read().decode("utf-8", errors="replace")
-    except Exception:
+    except Exception as exc:
+        _close_http_error(exc)
         return ""
 
 
@@ -358,24 +373,31 @@ def workday_search(api: str, site: str, company: str, jobs: list):
     print(f"  Workday {company}", flush=True)
     before = len(jobs)
     ok = False
-    for q in ("Hyderabad architect", "Hyderabad senior software", "Hyderabad engineering manager"):
-        payload = json.dumps({"appliedFacets": {}, "limit": 20, "offset": 0, "searchText": q}).encode()
-        data = get_json(api, data=payload, headers={"Content-Type": "application/json", "Accept": "application/json"})
-        time.sleep(0.08)
-        if not isinstance(data, dict):
-            if not ok:
-                print("    skip (no API)", flush=True)
-                return
-            continue
-        ok = True
-        for item in data.get("jobPostings") or []:
-            path = item.get("externalPath") or ""
-            if not path:
+    try:
+        for q in ("Hyderabad architect", "Hyderabad senior software", "Hyderabad engineering manager"):
+            payload = json.dumps({"appliedFacets": {}, "limit": 20, "offset": 0, "searchText": q}).encode()
+            data = get_json(api, data=payload, headers={"Content-Type": "application/json", "Accept": "application/json"})
+            time.sleep(0.08)
+            if not isinstance(data, dict):
+                if not ok:
+                    print("    skip (no API)", flush=True)
+                    return
                 continue
-            add_job(
-                jobs, company, item.get("title") or "", item.get("locationsText") or "",
-                site.rstrip("/") + path, "Workday", path.rstrip("/").split("/")[-1],
-            )
+            ok = True
+            for item in data.get("jobPostings") or []:
+                path = item.get("externalPath") or ""
+                if not path:
+                    continue
+                loc = item.get("locationsText") or ""
+                if not isinstance(loc, str):
+                    loc = " ".join(str(x) for x in loc) if isinstance(loc, (list, tuple)) else str(loc)
+                add_job(
+                    jobs, company, str(item.get("title") or ""), loc,
+                    site.rstrip("/") + path, "Workday", path.rstrip("/").split("/")[-1],
+                )
+    except Exception as exc:
+        print(f"    skip ({exc})", flush=True)
+        return
     print(f"    +{len(jobs) - before} rows", flush=True)
 
 

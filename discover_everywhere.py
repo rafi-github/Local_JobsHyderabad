@@ -38,6 +38,15 @@ QUERIES = [
 ]
 
 
+def _close_http_error(exc: BaseException) -> None:
+    if not isinstance(exc, urllib.error.HTTPError):
+        return
+    try:
+        exc.close()
+    except Exception:
+        pass
+
+
 def fetch(url: str, data=None, headers=None, timeout=22):
     h = {
         "User-Agent": UA,
@@ -57,8 +66,11 @@ def fetch(url: str, data=None, headers=None, timeout=22):
             body = e.read().decode("utf-8", errors="replace")
         except Exception:
             body = ""
-        return body, e.code, {}
+        code = e.code
+        _close_http_error(e)
+        return body, code, {}
     except Exception as e:
+        _close_http_error(e)
         return str(e), 0, {}
 
 

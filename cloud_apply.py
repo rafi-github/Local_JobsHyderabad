@@ -6,6 +6,13 @@ is empty, apply Naukri / LinkedIn / Indeed / Cutshort / Foundit / Instahyre.
 """
 from __future__ import annotations
 
+import warnings
+
+# Python 3.15 shows ResourceWarning by default. Unclosed HTTP errors during
+# discovery print to stderr, and run-local.ps1 used to treat that as fatal
+# before any application started.
+warnings.filterwarnings("ignore", category=ResourceWarning)
+
 import argparse
 import atexit
 import json
@@ -6173,12 +6180,12 @@ def _refresh_boards_no_browser() -> None:
         import discover_hyd_gcc
         discover_hyd_gcc.main()
     except Exception as exc:
-        print(f"  discover_hyd_gcc failed ({exc}).", flush=True)
+        print(f"  discover_hyd_gcc failed ({exc}). Continuing with leftovers.", flush=True)
     try:
         import discover_everywhere
         discover_everywhere.main()
     except Exception as exc:
-        print(f"  discover_everywhere failed ({exc}).", flush=True)
+        print(f"  discover_everywhere failed ({exc}). Continuing with leftovers.", flush=True)
     apply_now.BATCH = apply_now.load_all_discovered()
 
 
