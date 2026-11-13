@@ -7,13 +7,21 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 EMAIL = "rafi.success@gmail.com"
-ENV_PATHS = (
-    ROOT / ".env",
-    ROOT / "data" / ".secrets.env",
-    ROOT / "job-apply-secrets.env",
-    ROOT / "data" / "job-apply-secrets.env",
-    Path.home() / ".job-apply-secrets.env",
-)
+def _secret_env_paths() -> tuple[Path, ...]:
+    paths = [
+        ROOT / ".env",
+        ROOT / "data" / ".secrets.env",
+        ROOT / "job-apply-secrets.env",
+        ROOT / "data" / "job-apply-secrets.env",
+        Path.home() / ".job-apply-secrets.env",
+    ]
+    local = os.environ.get("LOCALAPPDATA") or ""
+    if local:
+        paths.append(Path(local) / "job-apply-secrets.env")
+    return tuple(paths)
+
+
+ENV_PATHS = _secret_env_paths()
 # Live prompt only. Gitignored — never commit this file.
 TWO_FA_PATH = ROOT / "data" / "applications" / "GOOGLE_2FA.md"
 _LAST_ANNOUNCED_2FA = ""

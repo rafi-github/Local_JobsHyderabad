@@ -6139,6 +6139,7 @@ def main(
     send_email: bool = True,
 ) -> list[dict]:
     global FOUNDIT_AKAMAI_BLOCKED, NAUKRI_BOT_BLOCKED
+    google_auth.load_all_env()
     apply_now.BATCH = apply_now.load_all_discovered()
     form_memory.seed_from_learned()
     seed_parked_captcha_urls()

@@ -2,6 +2,21 @@ $ErrorActionPreference = "Stop"
 $Root = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $Root
 
+# Keep applying while the workstation is locked (session stays alive; CDP on 9222).
+Add-Type @"
+using System;
+using System.Runtime.InteropServices;
+public class RunnerPower {
+  [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+  public static extern uint SetThreadExecutionState(uint esFlags);
+}
+"@ -ErrorAction SilentlyContinue
+$script:RunnerExecState = 0
+if ([RunnerPower]) {
+  $script:RunnerExecState = 0x80000000 -bor 0x00000001 -bor 0x00000002
+  [void][RunnerPower]::SetThreadExecutionState($script:RunnerExecState)
+}
+
 function Import-DotEnvFile {
     param([string]$Path)
     if (-not (Test-Path -LiteralPath $Path)) { return }
@@ -69,4 +84,7 @@ try {
 }
 
 Write-LogLine "Runner exiting with code $exitCode."
+if ([RunnerPower] -and $script:RunnerExecState) {
+  [void][RunnerPower]::SetThreadExecutionState(0x80000000)
+}
 exit $exitCode
