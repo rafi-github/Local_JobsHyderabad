@@ -13,3 +13,546 @@ Hyderabad GCC career portals...
   Phenom DTCC careers.dtcc.com
     +0 rows
   Workday State Street
+    +8 rows
+  Workday BNY Mellon
+    skip (no API)
+  Phenom Invesco careers.invesco.com
+    +0 rows
+  Workday Franklin Templeton
+    skip (no API)
+  Phenom Synchrony jobs.synchrony.com
+    +0 rows
+  Phenom UBS jobs.ubs.com
+    +0 rows
+  Workday SS&C
+    skip (no API)
+  Phenom ICE careers.ice.com
+    +0 rows
+  Apple jobs.apple.com
+    +0 rows
+  Workday Analog Devices
+    skip (no API)
+  Workday Western Digital
+    skip (no API)
+  Workday Applied Materials
+    +0 rows
+  Phenom Cotiviti careers.cotiviti.com
+    +0 rows
+  Extra Eightfold Hyd GCCs
+    +0 rows
+New GCC raw rows: 13
+Preferred campus career search...
+  Workday Wells Fargo
+    skip (no API)
+  Workday Bank of America
+    skip (no API)
+  Workday HSBC
+    skip (no API)
+  Workday Thomson Reuters
+    skip (no API)
+  Workday Qualcomm
+    skip (no API)
+  Workday Broadcom
+    +3 rows
+  Workday IBM
+    skip (no API)
+  Workday Oracle
+    skip (no API)
+  Workday Optum
+    skip (no API)
+  Workday Amgen
+    +7 rows
+  Workday Novartis
+    skip (no API)
+  Workday Deloitte
+    skip (no API)
+  Workday KPMG
+    skip (no API)
+  Workday GE Vernova
+    skip (no API)
+  Workday Accenture
+    skip (no API)
+  Workday Cognizant
+    skip (no API)
+  Workday Verizon
+    skip (no API)
+  Workday OpenText
+    skip (no API)
+  Workday Parexel
+    skip (no API)
+  Workday Syneos Health
+    skip (no API)
+  Workday GE Vernova
+    skip (no API)
+Microsoft careers...
+  Apple jobs.apple.com
+    +0 rows
+  Amazon.jobs Hyderabad
+    +4 rows
+  Phenom Synchrony jobs.synchrony.com
+    +0 rows
+  Phenom Electronic Arts jobs.ea.com
+    +0 rows
+  Phenom Parexel jobs.parexel.com
+    +0 rows
+  Phenom ArcelorMittal jobs.arcelormittal.com
+    +0 rows
+  Phenom McDonalds careers.mcdonalds.com
+    +0 rows
+  Eightfold preferred campuses
+    +0 rows
+  Greenhouse preferred campuses
+    +3 rows
+  Meta careers Hyderabad
+    +0 rows
+Preferred campus raw rows now: 30
+
+Unique 1265 open 506 ready 412
+Open ATS {'Greenhouse': 5, 'Amazon': 2, 'Workday': 5, 'Foundit': 449, 'SmartRecruiters': 1, 'Naukri': 41, 'Instahyre': 3}
+Open companies [('Microsoft Corp', 23), ('Renesas Electronics', 17), ('Google India', 14), ('Vanguard', 14), ('vanguard india', 10), ('Blue Yonder', 9), ('Micron Technology', 9), ('FactSet', 7), ('TriNet', 7), ('providence india', 6), ('Silicon Labs', 6), ('Cendyn', 5), ('innovapptive inc', 5), ('Nasuni', 5), ('solera holdings, llc.', 5), ('Principal Financial Group', 5), ('Synchrony', 4), ('SimCorp', 4), ('Medtronic', 4), ('NomiSo', 4)]
+ 1 Greenhouse | Zenoti | Senior Software Engineer - .NET + AI | Hyderabad, Telangana, India
+ 2 Amazon | Amazon | Sr. Application Architect | IN, TS, Hyderabad Hyderabad, Tel
+ 3 Workday | Amgen | SAP Technical Architect - PFF | India - Hyderabad
+ 4 Workday | Broadcom | Staff Software Architect | IND-Hyderabad 115 IT Park Area
+ 5 Amazon | Amazon | Sr. Principal Software Engineer, Shipping Tech & Services | IN, TS, Hyderabad Hyderabad, Tel
+ 6 Foundit | The Wells Fargo Foundation | Lead Software Engineer (KAFKA, MULESOFT, IDMC, APIGEE, API D | Hyderabad, India
+ 7 Workday | Amgen | Senior Software Engineer, Full Stack ΓÇö Decision Intelligence | India - Hyderabad
+ 8 Foundit | Microsoft Corp | Solution Architect Manager | Hyderabad, India
+ 9 Foundit | People tech | SAP Technical Architect | Hyderabad
+10 Naukri | Tech Mahindra | SAP BTP Solution Architect | 15-24 Yrs Not disclosed Hybrid -
+11 Foundit | Zensar Technologies | SAP ABAP Technical Architect | Hyderabad, India
+12 Foundit | Zensar Technologies | Wealth Management Solution Architect | Hyderabad, India
+13 Foundit | amazon web services (aws) | Solution Architect, AGS-APJ-India-ISV-SA | Hyderabad, India
+14 Foundit | Microsoft Corp | Principal Engineer Architect | Hyderabad, India
+15 Foundit | Syneos Health | Principal Engineer Cloud Automation and Standards | Hyderabad, India
+16 Foundit | Amazon Alliance | Principal Software Engineer, Amazon Shipping | Hyderabad, India
+17 Foundit | Amazon Alliance | Principal Software Engineer, Delivery Experience (DEX) | Hyderabad, India
+18 Foundit | Microsoft Corp | Principal Engineering Manager | Hyderabad, India
+19 Foundit | Microsoft Corp | Principal Software Engineering Manager | Hyderabad, India
+20 Foundit | Microsoft Corp | Principal Software Engineering Manager - Databases | Hyderabad, India
+21 Foundit | Microsoft Corp | Principal Software Engineering Manager- GitHub India | Hyderabad, India
+22 Foundit | Synchrony | AVP , Principal Engineer - AI Agent Engineering | Hyderabad, India
+23 Foundit | Synchrony | AVP Principal Engineer | Hyderabad, India
+24 Foundit | mcdonald's global office in india | Principal Engineer | Hyderabad, India
+25 Foundit | providence india | Principal Engineering Program Manager | Hyderabad, India
+26 Foundit | providence india | Principal Software Engineer | Hyderabad, India
+27 Naukri | Synchrony | AVP Sys Admin & AI Solution Architect (L10) | 7-12 Yrs Not disclosed Hyderabad
+28 Foundit | ge vernova | Staff Software Engineer | Hyderabad, India
+29 Foundit | Cognizant Consulting | Engineering Manager | Hyderabad, India
+30 Foundit | Microsoft Corp | Principal Group Engineering Manager | Hyderabad, India
+31 Foundit | Synchrony | VP Engineering Manager | Hyderabad, India
+32 Foundit | providence india | Lead Software Engineer | Hyderabad, India
+33 Foundit | Microsoft Corp | Senior Software Engineer | Hyderabad, India
+34 Foundit | Microsoft Corp | Senior Software Engineer - Product | Hyderabad, India
+35 Foundit | Microsoft Corp | Senior Software Engineer - Windows Systems | Hyderabad, India
+36 Foundit | providence india | Senior Software Engineer | Hyderabad, India
+37 Foundit | Baker Hughes | SAP HCM/Payroll Solution Architect | Hyderabad, Bengaluru, Malaysia, 
+38 Greenhouse | highradius | Principal Product Solution Architect | Hyderabad, Telangana, India
+39 Foundit | Blue Yonder | Staff Software Engineer I - NodeJS, Microservices, Cloud & T | Hyderabad, India
+40 Foundit | Microchip Technology | Principal Engineer - Characterization | Hyderabad, India
+41 Workday | State Street | Principal Engineer ΓÇô Knowledge, Data & RAG Engineering- Assi | Hyderabad, India
+42 Foundit | TTEC India Customer Solutions Private Limited | Systems Software Principal Engineer | Delhi, Hyderabad, Bengaluru
+43 Foundit | Experian | Senior Staff Engineer ( AI ) | Hyderabad, India
+44 Foundit | Microchip Technology | Technical Staff Engineer - Characterization | Hyderabad, India
+45 Foundit | Experian | Lead Software Engineer - Mainframe | Hyderabad, India
+46 Workday | State Street | PAM Engineering Manager - Vice President | Hyderabad, India
+47 Foundit | Zf Friedrich | Technical Lead-AI/ML, Generative AI & Agentic AI | Hyderabad, India
+48 Greenhouse | coinbase | Staff Software Engineer, Security Platform | Remote - India
+49 Foundit | Microchip Technology | Principal Engineer, Verification | Hyderabad, India
+50 SmartRecruiters | Freshworks | Lead Software Engineer - Machine Learning | Hyderabad  in
+Schwab matched in-scope: 5
+  Senior Manager Software Development And Engineering Lead Pl | Hyderabad | https://www.schwabjobs.com/job/hyderabad/senior-manager-software-development-and-engineering-lead-pl/33995/98043406640
+  Manager Software Development And Engineering | Hyderabad | https://www.schwabjobs.com/job/hyderabad/manager-software-development-and-engineering/33995/101024130304
+  Manager Software Development And Engineering | Hyderabad | https://www.schwabjobs.com/job/hyderabad/manager-software-development-and-engineering/33995/103197791536
+  Solutions Architect Brokerage Services | Hyderabad | https://www.schwabjobs.com/job/hyderabad/solutions-architect-brokerage-services/33995/91969140928
+  Solutions Architect Brokerage Services | Hyderabad | https://www.schwabjobs.com/job/hyderabad/solutions-architect-brokerage-services/33995/91969140928
+Instahyre...
+  stop at offset 0 status 503
+  scanned 0
+Foundit...
+  Foundit cards 687
+Indeed India RSS...
+  'technical architect' status 404 bytes 64944
+  'solution architect' status 404 bytes 64938
+  'software architect' status 403 bytes 27938
+  'principal engineer' status 404 bytes 64938
+  'staff software engineer' status 403 bytes 27953
+  'engineering manager' status 403 bytes 27941
+  'technical lead' status 403 bytes 27926
+  'senior software engineer' status 403 bytes 27956
+  '.net architect' status 404 bytes 64914
+  'lead software engineer' status 404 bytes 64970
+  'principal software engineer' status 404 bytes 65000
+  'staff engineer' status 404 bytes 64914
+  Indeed items 0
+Naukri...
+  api 'technical architect' status 406
+  html 'technical architect' status 200 bytes 38728
+  api 'solution architect' status 406
+  html 'solution architect' status 200 bytes 38721
+  api 'software architect' status 406
+  html 'software architect' status 200 bytes 38721
+  api 'principal engineer' status 406
+  html 'principal engineer' status 200 bytes 38722
+  api 'staff software engineer' status 406
+  html 'staff software engineer' status 200 bytes 38755
+  api 'engineering manager' status 406
+  html 'engineering manager' status 200 bytes 38729
+  Naukri cards 0
+Cutshort...
+  s://cutshort.io/api/jobs 'architect' 404 
+  cutshort.io/explore/jobs 'architect' 404 
+  cutshort.io/profile/jobs 'architect' 200 text/html; charset=utf-8
+  s://cutshort.io/api/jobs 'staff engineer' 404 
+  cutshort.io/explore/jobs 'staff engineer' 404 
+  cutshort.io/profile/jobs 'staff engineer' 200 text/html; charset=utf-8
+  s://cutshort.io/api/jobs 'principal engineer' 404 
+  cutshort.io/explore/jobs 'principal engineer' 404 
+  cutshort.io/profile/jobs 'principal engineer' 200 text/html; charset=utf-8
+  s://cutshort.io/api/jobs 'senior software engineer' 404 
+  cutshort.io/explore/jobs 'senior software engineer' 404 
+  cutshort.io/profile/jobs 'senior software engineer' 200 text/html; charset=utf-8
+  Cutshort cards 0
+Shine...
+  'technical architect' status 404
+  'solution architect' status 404
+  'software architect' status 404
+  'principal engineer' status 404
+  'staff software engineer' status 404
+  'engineering manager' status 404
+  Shine cards 0
+Hirist...
+  'technical architect' status 404
+  'solution architect' status 404
+  'software architect' status 404
+  'principal engineer' status 404
+  'staff software engineer' status 404
+  'engineering manager' status 404
+  Hirist cards 0
+TimesJobs...
+  'technical architect' status 0 bytes 128
+  'solution architect' status 0 bytes 128
+  'software architect' status 0 bytes 128
+  'principal engineer' status 0 bytes 128
+  'staff software engineer' status 0 bytes 128
+  TimesJobs cards 0
+Remote OK / Remotive / WWR...
+  RemoteOK rows 98 status 200
+  Remotive rows 14 status 200
+  WWR items 25 status 200
+LinkedIn guest search...
+  'technical architect' status 200 bytes 31407
+  'solution architect' status 200 bytes 31497
+  'software architect' status 200 bytes 29848
+  LinkedIn cards 30
+Everywhere raw matched rows: 355
+
+Unique 1496 open 715 ready 585
+Open ATS {'Greenhouse': 5, 'Amazon': 2, 'Workday': 5, 'Foundit': 658, 'SmartRecruiters': 1, 'Naukri': 41, 'Instahyre': 3}
+Open companies [('Microsoft Corp', 28), ('Renesas Electronics', 20), ('Google India', 18), ('Vanguard', 16), ('Micron Technology', 15), ('vanguard india', 13), ('Blue Yonder', 9), ('Nasuni', 9), ('FactSet', 9), ('TriNet', 9), ('marriott tech accelerator', 8), ('SimCorp', 7), ('providence india', 6), ('Clean Harbors', 6), ('innovapptive inc', 6), ('Medtronic', 6), ('Silicon Labs', 6), ('Quest Global', 6), ('Globallogic Ukraine', 5), ('Cendyn', 5)]
+ 1 Greenhouse | Zenoti | Senior Software Engineer - .NET + AI | Hyderabad, Telangana, India
+ 2 Amazon | Amazon | Sr. Application Architect | IN, TS, Hyderabad Hyderabad, Tel
+ 3 Workday | Amgen | SAP Technical Architect - PFF | India - Hyderabad
+ 4 Workday | Broadcom | Staff Software Architect | IND-Hyderabad 115 IT Park Area
+ 5 Amazon | Amazon | Sr. Principal Software Engineer, Shipping Tech & Services | IN, TS, Hyderabad Hyderabad, Tel
+ 6 Foundit | The Wells Fargo Foundation | Lead Software Engineer (KAFKA, MULESOFT, IDMC, APIGEE, API D | Hyderabad, India
+ 7 Workday | Amgen | Senior Software Engineer, Full Stack ΓÇö Decision Intelligence | India - Hyderabad
+ 8 Foundit | Deloitte | Application Architect .Net -Lead Architect | Hyderabad, India
+ 9 Foundit | Cognizant Consulting | Solution Architect | Hyderabad, India
+10 Foundit | Cognizant Technology Solutions India Pvt Ltd | Solution Architect | Hyderabad
+11 Foundit | Deloitte | Tax Senior Global Employer Services Technology Center (GESTC | Hyderabad, India
+12 Foundit | Microsoft Corp | Solution Architect Manager | Hyderabad, India
+13 Foundit | People tech | SAP Technical Architect | Hyderabad
+14 Naukri | Tech Mahindra | SAP BTP Solution Architect | 15-24 Yrs Not disclosed Hybrid -
+15 Foundit | Zensar Technologies | SAP ABAP Technical Architect | Hyderabad, India
+16 Foundit | Zensar Technologies | Wealth Management Solution Architect | Hyderabad, India
+17 Foundit | amazon web services (aws) | Solution Architect, AGS-APJ-India-ISV-SA | Hyderabad, India
+18 Foundit | Microsoft Corp | Principal Engineer Architect | Hyderabad, India
+19 Foundit | Syneos Health | Principal Engineer Cloud Automation and Standards | Hyderabad, India
+20 Foundit | Amazon Alliance | Principal Software Engineer, Amazon Shipping | Hyderabad, India
+21 Foundit | Amazon Alliance | Principal Software Engineer, Delivery Experience (DEX) | Hyderabad, India
+22 Foundit | Amazon Alliance | Sr. Principal Software Engineer, Shipping Tech & Services | Hyderabad, India
+23 Foundit | Amazon Robotics | Sr. Principal Software Engineer, Shipping Tech & Services | Hyderabad, India
+24 Foundit | Amazon Thunder | Principal Software Engineer, Amazon Shipping | Hyderabad, India
+25 Foundit | Microsoft Corp | Principal Engineering Manager | Hyderabad, India
+26 Foundit | Microsoft Corp | Principal Software Engineering Manager | Hyderabad, India
+27 Foundit | Microsoft Corp | Principal Software Engineering Manager - Databases | Hyderabad, India
+28 Foundit | Microsoft Corp | Principal Software Engineering Manager- GitHub India | Hyderabad, India
+29 Foundit | Synchrony | AVP , Principal Engineer - AI Agent Engineering | Hyderabad, India
+30 Foundit | Synchrony | AVP Principal Engineer | Hyderabad, India
+31 Foundit | mcdonald's global office in india | Principal Engineer | Hyderabad, India
+32 Foundit | providence india | Principal Engineering Program Manager | Hyderabad, India
+33 Foundit | providence india | Principal Software Engineer | Hyderabad, India
+34 Naukri | Synchrony | AVP Sys Admin & AI Solution Architect (L10) | 7-12 Yrs Not disclosed Hyderabad
+35 Foundit | ge vernova | Staff Software Engineer | Hyderabad, India
+36 Foundit | Apple | Engineering Manager- Finance Engineering | Hyderabad, India
+37 Foundit | Cognizant Consulting | Engineering Manager | Hyderabad, India
+38 Foundit | Microsoft Corp | Principal Group Engineering Manager | Hyderabad, India
+39 Foundit | Synchrony | VP Engineering Manager | Hyderabad, India
+40 Foundit | providence india | Lead Software Engineer | Hyderabad, India
+41 Foundit | Microsoft Corp | Senior Software Engineer - Backend + Cloud | Hyderabad, India
+42 Foundit | Alter Domus | Senior Software Engineer | Hyderabad, India
+43 Foundit | Amazon Alliance | Senior Software Development Engineer, Payroll Tech | Hyderabad, India
+44 Foundit | Amazon Robotics | Senior Software Development Engineer, Payroll Tech | Hyderabad, India
+45 Foundit | Microsoft Corp | Senior Software Engineer | Hyderabad, India
+46 Foundit | Microsoft Corp | Senior Software Engineer - Product | Hyderabad, India
+47 Foundit | Microsoft Corp | Senior Software Engineer - Windows Systems | Hyderabad, India
+48 Foundit | providence india | Senior Software Engineer | Hyderabad, India
+49 Foundit | Baker Hughes | SAP HCM/Payroll Solution Architect | Hyderabad, Bengaluru, Malaysia, 
+50 Greenhouse | highradius | Principal Product Solution Architect | Hyderabad, Telangana, India
+PENDING 445
+  Zenoti | Senior Software Engineer - .NET + AI | Hyderabad, Telangana, India | Greenhouse
+  Amazon | Sr. Application Architect | IN, TS, Hyderabad Hyderabad, Telangana, IND | Amazon
+  Broadcom | Staff Software Architect | IND-Hyderabad 115 IT Park Area | Workday
+  Amazon | Sr. Principal Software Engineer, Shipping Tech & Services | IN, TS, Hyderabad Hyderabad, Telangana, IND | Amazon
+  Amgen | Senior Software Engineer, Full Stack ΓÇö Decision Intelligence | India - Hyderabad | Workday
+  Deloitte | Application Architect .Net -Lead Architect | Hyderabad, India | Foundit
+  Cognizant Consulting | Solution Architect | Hyderabad, India | Foundit
+  Cognizant Technology Solutions India Pvt Ltd | Solution Architect | Hyderabad | Foundit
+  Deloitte | Tax Senior Global Employer Services Technology Center (GESTC) Informatica Solution Architect | Hyderabad, India | Foundit
+  Microsoft Corp | Solution Architect Manager | Hyderabad, India | Foundit
+  Zensar Technologies | Wealth Management Solution Architect | Hyderabad, India | Foundit
+  amazon web services (aws) | Solution Architect, AGS-APJ-India-ISV-SA | Hyderabad, India | Foundit
+  Microsoft Corp | Principal Engineer Architect | Hyderabad, India | Foundit
+  Syneos Health | Principal Engineer Cloud Automation and Standards | Hyderabad, India | Foundit
+  Amazon Alliance | Principal Software Engineer, Amazon Shipping | Hyderabad, India | Foundit
+  Amazon Alliance | Principal Software Engineer, Delivery Experience (DEX) | Hyderabad, India | Foundit
+  Amazon Alliance | Sr. Principal Software Engineer, Shipping Tech & Services | Hyderabad, India | Foundit
+  Amazon Robotics | Sr. Principal Software Engineer, Shipping Tech & Services | Hyderabad, India | Foundit
+  Amazon Thunder | Principal Software Engineer, Amazon Shipping | Hyderabad, India | Foundit
+  Microsoft Corp | Principal Engineering Manager | Hyderabad, India | Foundit
+  Microsoft Corp | Principal Software Engineering Manager | Hyderabad, India | Foundit
+  Microsoft Corp | Principal Software Engineering Manager - Databases | Hyderabad, India | Foundit
+  Microsoft Corp | Principal Software Engineering Manager- GitHub India | Hyderabad, India | Foundit
+  Synchrony | AVP Principal Engineer | Hyderabad, India | Foundit
+  mcdonald's global office in india | Principal Engineer | Hyderabad, India | Foundit
+Queue 445 | leftover career portals 9 | leftover other-board 21 | skipped 0
+Headed Chrome on DISPLAY=:1 ΓÇö complete CAPTCHA/login in the desktop view.
+  Connecting to open Chrome on CDP 9222...
+  CDP connected.
+  Google password not in .env / GOOGLE_PASSWORD; cannot auto sign-in.
+  Closed leftover apply tabs. Google/Gmail and parked CAPTCHA tabs stay open.
+  Using open Chrome profile rafi.success@gmail.com (C:\Code\Local_JobsHyderabad\data\chrome_profile) + Simplify Copilot
+  One application at a time. Next job after submit, closed posting, or locked/rejected portal login.
+  Warming Naukri/Instahyre Google sessions from the signed-in Gmail profile...
+  Opening Naukri Google login...
+  Naukri login page failed (Page.goto: Timeout 35000ms exceeded.
+Call log:
+  - navigating to "https://www.naukri.com/nlogin/login", waiting until "domcontentloaded"
+).
+  Opening Instahyre Google login...
+  Instahyre homepage failed (Page.goto: Timeout 35000ms exceeded.
+Call log:
+  - navigating to "https://www.instahyre.com/", waiting until "domcontentloaded"
+).
+  Searching Naukri in Chrome for Quick apply leftovers...
+  Naukri SRP senior-software-engineer p1...
+  Naukri SRP senior-software-engineer p1 failed (Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.naukri.com/senior-software-engineer-jobs-in-hyderabad-secunderabad", waiting until "domcontentloaded"
+).
+  Naukri SRP senior-software-engineer p2...
+  Naukri SRP senior-software-engineer p2 failed (Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.naukri.com/senior-software-engineer-jobs-in-hyderabad-secunderabad-2", waiting until "domcontentloaded"
+).
+  Naukri SRP lead-software-engineer p1...
+  Naukri SRP lead-software-engineer p1 failed (Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.naukri.com/lead-software-engineer-jobs-in-hyderabad-secunderabad", waiting until "domcontentloaded"
+).
+  Naukri SRP lead-software-engineer p2...
+  Naukri SRP lead-software-engineer p2: +0 jobapi rows.
+  Naukri SRP principal-software-engineer p1...
+  Naukri jobapi captured 20 rows (total 20).
+  Naukri SRP principal-software-engineer p1: +20 jobapi rows.
+  Naukri SRP principal-software-engineer p2...
+  Naukri jobapi captured 20 rows (total 40).
+  Naukri SRP principal-software-engineer p2: +20 jobapi rows.
+  Naukri SRP principal-software-engineer p3...
+  Naukri SRP principal-software-engineer p3: +0 jobapi rows.
+  Naukri SRP staff-software-engineer p1...
+  Naukri jobapi captured 20 rows (total 60).
+  Naukri SRP staff-software-engineer p1: +20 jobapi rows.
+  Naukri SRP staff-software-engineer p2...
+  Naukri jobapi captured 20 rows (total 80).
+  Naukri SRP staff-software-engineer p2: +20 jobapi rows.
+  Naukri SRP staff-software-engineer p3...
+  Naukri SRP staff-software-engineer p3: +0 jobapi rows.
+  Naukri SRP technical-architect p1...
+  Naukri SRP technical-architect p1: +0 jobapi rows.
+  Naukri SRP solution-architect p1...
+  Naukri SRP solution-architect p1: +0 jobapi rows.
+  Naukri SRP software-architect p1...
+  Naukri SRP software-architect p1: +0 jobapi rows.
+  Naukri SRP dot-net p1...
+  Naukri SRP dot-net p1: +0 jobapi rows.
+  Naukri SRP dotnet p1...
+  Naukri jobapi captured 20 rows (total 100).
+  Naukri SRP dotnet p1: +20 jobapi rows.
+  Naukri SRP dotnet p2...
+  Naukri SRP dotnet p2: +0 jobapi rows.
+  Naukri SRP dot-net-developer p1...
+  Naukri SRP dot-net-developer p1: +0 jobapi rows.
+  Naukri SRP c-sharp p1...
+  Naukri SRP c-sharp p1: +0 jobapi rows.
+  Naukri SRP full-stack p1...
+  Naukri SRP full-stack p1: +0 jobapi rows.
+  Naukri SRP backend-developer p1...
+  Naukri SRP backend-developer p1: +0 jobapi rows.
+  Naukri SRP microservices p1...
+  Naukri SRP microservices p1: +0 jobapi rows.
+  Naukri SRP technical-lead p1...
+  Naukri SRP technical-lead p1: +0 jobapi rows.
+  Naukri SRP engineering-manager p1...
+  Naukri SRP engineering-manager p1: +0 jobapi rows.
+  Naukri SRP senior-backend-engineer p1...
+  Naukri jobapi captured 20 rows (total 120).
+  Naukri SRP senior-backend-engineer p1: +20 jobapi rows.
+  Naukri SRP senior-backend-engineer p2...
+  Naukri SRP senior-backend-engineer p2: +0 jobapi rows.
+  Naukri SRP net-architect p1...
+  Naukri jobapi captured 20 rows (total 140).
+  Naukri SRP net-architect p1: +20 jobapi rows.
+  Naukri SRP net-architect p2...
+  Naukri SRP net-architect p2: +0 jobapi rows.
+  Naukri SRP azure p1...
+  Naukri SRP azure p1: +0 jobapi rows.
+  Naukri SRP kafka p1...
+  Naukri SRP kafka p1: +0 jobapi rows.
+
+Unique 1556 open 755 ready 617
+Open ATS {'Greenhouse': 5, 'Amazon': 2, 'Workday': 5, 'Foundit': 658, 'SmartRecruiters': 1, 'Naukri': 81, 'Instahyre': 3}
+Open companies [('Microsoft Corp', 28), ('Renesas Electronics', 20), ('Google India', 18), ('Vanguard', 16), ('Micron Technology', 15), ('vanguard india', 13), ('Blue Yonder', 11), ('Outreach', 10), ('Nasuni', 9), ('FactSet', 9), ('TriNet', 9), ('marriott tech accelerator', 8), ('SimCorp', 7), ('Simcorp', 7), ('providence india', 6), ('Clean Harbors', 6), ('innovapptive inc', 6), ('Medtronic', 6), ('Silicon Labs', 6), ('Quest Global', 6)]
+ 1 Greenhouse | Zenoti | Senior Software Engineer - .NET + AI | Hyderabad, Telangana, India
+ 2 Amazon | Amazon | Sr. Application Architect | IN, TS, Hyderabad Hyderabad, Tel
+ 3 Workday | Amgen | SAP Technical Architect - PFF | India - Hyderabad
+ 4 Workday | Broadcom | Staff Software Architect | IND-Hyderabad 115 IT Park Area
+ 5 Amazon | Amazon | Sr. Principal Software Engineer, Shipping Tech & Services | IN, TS, Hyderabad Hyderabad, Tel
+ 6 Foundit | The Wells Fargo Foundation | Lead Software Engineer (KAFKA, MULESOFT, IDMC, APIGEE, API D | Hyderabad, India
+ 7 Workday | Amgen | Senior Software Engineer, Full Stack ΓÇö Decision Intelligence | India - Hyderabad
+ 8 Foundit | Deloitte | Application Architect .Net -Lead Architect | Hyderabad, India
+ 9 Foundit | Cognizant Consulting | Solution Architect | Hyderabad, India
+10 Foundit | Cognizant Technology Solutions India Pvt Ltd | Solution Architect | Hyderabad
+11 Foundit | Deloitte | Tax Senior Global Employer Services Technology Center (GESTC | Hyderabad, India
+12 Foundit | Microsoft Corp | Solution Architect Manager | Hyderabad, India
+13 Foundit | People tech | SAP Technical Architect | Hyderabad
+14 Naukri | Tech Mahindra | SAP BTP Solution Architect | 15-24 Yrs Not disclosed Hybrid -
+15 Foundit | Zensar Technologies | SAP ABAP Technical Architect | Hyderabad, India
+16 Foundit | Zensar Technologies | Wealth Management Solution Architect | Hyderabad, India
+17 Foundit | amazon web services (aws) | Solution Architect, AGS-APJ-India-ISV-SA | Hyderabad, India
+18 Foundit | Microsoft Corp | Principal Engineer Architect | Hyderabad, India
+19 Foundit | Syneos Health | Principal Engineer Cloud Automation and Standards | Hyderabad, India
+20 Foundit | Amazon Alliance | Principal Software Engineer, Amazon Shipping | Hyderabad, India
+21 Foundit | Amazon Alliance | Principal Software Engineer, Delivery Experience (DEX) | Hyderabad, India
+22 Foundit | Amazon Alliance | Sr. Principal Software Engineer, Shipping Tech & Services | Hyderabad, India
+23 Foundit | Amazon Robotics | Sr. Principal Software Engineer, Shipping Tech & Services | Hyderabad, India
+24 Foundit | Amazon Thunder | Principal Software Engineer, Amazon Shipping | Hyderabad, India
+25 Foundit | Microsoft Corp | Principal Engineering Manager | Hyderabad, India
+26 Foundit | Microsoft Corp | Principal Software Engineering Manager | Hyderabad, India
+27 Foundit | Microsoft Corp | Principal Software Engineering Manager - Databases | Hyderabad, India
+28 Foundit | Microsoft Corp | Principal Software Engineering Manager- GitHub India | Hyderabad, India
+29 Foundit | Synchrony | AVP , Principal Engineer - AI Agent Engineering | Hyderabad, India
+30 Foundit | Synchrony | AVP Principal Engineer | Hyderabad, India
+31 Foundit | mcdonald's global office in india | Principal Engineer | Hyderabad, India
+32 Foundit | providence india | Principal Engineering Program Manager | Hyderabad, India
+33 Foundit | providence india | Principal Software Engineer | Hyderabad, India
+34 Naukri | Synchrony | AVP Sys Admin & AI Solution Architect (L10) | 7-12 Yrs Not disclosed Hyderabad
+35 Naukri | GE VERNOVA | Staff Software Engineer | 3-6 Yrs Not disclosed Hyderabad,
+36 Naukri | Thomson Reuters | Staff Software Engineer I | 6-11 Yrs Not disclosed Hyderabad
+37 Foundit | Apple | Engineering Manager- Finance Engineering | Hyderabad, India
+38 Foundit | Cognizant Consulting | Engineering Manager | Hyderabad, India
+39 Foundit | Microsoft Corp | Principal Group Engineering Manager | Hyderabad, India
+40 Foundit | Synchrony | VP Engineering Manager | Hyderabad, India
+41 Foundit | providence india | Lead Software Engineer | Hyderabad, India
+42 Foundit | Microsoft Corp | Senior Software Engineer - Backend + Cloud | Hyderabad, India
+43 Foundit | Alter Domus | Senior Software Engineer | Hyderabad, India
+44 Foundit | Amazon Alliance | Senior Software Development Engineer, Payroll Tech | Hyderabad, India
+45 Foundit | Amazon Robotics | Senior Software Development Engineer, Payroll Tech | Hyderabad, India
+46 Foundit | Microsoft Corp | Senior Software Engineer | Hyderabad, India
+47 Foundit | Microsoft Corp | Senior Software Engineer - Product | Hyderabad, India
+48 Foundit | Microsoft Corp | Senior Software Engineer - Windows Systems | Hyderabad, India
+49 Foundit | providence india | Senior Software Engineer | Hyderabad, India
+50 Foundit | Baker Hughes | SAP HCM/Payroll Solution Architect | Hyderabad, Bengaluru, Malaysia, 
+  Naukri browser discover: 140 jobapi rows, 138 Quick-apply unique, 33 leftover Naukri in queue.
+  After Naukri search: leftover 63 (9 career, 33 Naukri).
+  Session queue: leftover 63 (9 career, 33 Naukri).
+
+=== Apply leftover jobs (63), other-boards mixed in ===
+
+[1/63] GE VERNOVA: Staff Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_ge_vernova_131026940799.docx
+  Opening Naukri Google login...
+  Clicked Naukri 'Sign in with Google'.
+  Naukri Google login did not finish.
+  Naukri buttons (0): []
+  Filled Google email on the sign-in identifier.
+  Filled Google email on the sign-in identifier.
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Filled Google email on the sign-in identifier.
+  Chose Google account rafi.success@gmail.com.
+  Clicked Naukri Apply ([class*='jhc__apply-button-container'] button).
+  Filled Google email on the sign-in identifier.
+  Filled Google email on the sign-in identifier.
+  Filled Google email on the sign-in identifier.
+  Clicked Naukri Apply ([class*='jhc__apply-button-container'] button).
+  Filled Google email on the sign-in identifier.
+  Filled Google email on the sign-in identifier.
+  Filled Google email on the sign-in identifier.
+  Clicked Naukri Apply ([class*='jhc__apply-button-container'] button).
+  Staying on this form until Submit (up to 40s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Filled Google email on the sign-in identifier.
+  Filled Google email on the sign-in identifier.
+  Filled Google email on the sign-in identifier.
+  Filled Google email on the sign-in identifier.
+  Clicked Naukri Apply ([class*='jhc__apply-button-container'] button).
+  Still no confirmation after 40s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://www.naukri.com/job-listings-staff-software-engineer-ge-renewable-energy-technologies-private-limited-hyderabad-bengaluru-3-to-6-years-131026940799
+  Google 2FA is on screen but the prompt number was not readable. Open Desktop / Take control and read the number.
+
+[2/63] Thomson Reuters: Staff Software Engineer I
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_thomson_reuters_021126500847.docx
+  Staying on this form until Submit (up to 90s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Learned 1 new/changed field(s).
+  Same issue repeated 3 times. Changing tactics on this form.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Still no confirmation after 90s. Learned 1 field(s).
+  Could not finish this form. Moving to the next leftover.
+  ERROR ok=False about:blank
+
+[3/63] Deloitte: Application Architect .Net -Lead Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Application Architect ΓÇö .NET
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_application_architect_deloitte_69791991.docx
+  Staying on this form until Submit (up to 90s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Still no confirmation after 90s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  ERROR ok=False about:blank
+
+[4/63] Zenoti: Senior Software Engineer - .NET + AI
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_zenoti_8004504003.docx
+  Staying on this form until Submit (up to 90s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Still no confirmation after 90s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  ERROR ok=False about:blank
+
+[5/63] Cognizant Technology Solutions India Pvt Ltd: Solution Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_cognizant_technology_sol_69696364.docx
+  Foundit Akamai challenge. Warming session from homepage...

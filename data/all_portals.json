@@ -360,7 +360,7 @@
       "hub": "Financial District",
       "kind": "workday",
       "note": "",
-      "matched_jobs": 7
+      "matched_jobs": 8
     },
     {
       "company": "BNY Mellon",
@@ -1176,7 +1176,7 @@
       "hub": "RMZ Nexity / RMZ Spire",
       "kind": "existing",
       "note": "",
-      "matched_jobs": 10
+      "matched_jobs": 7
     },
     {
       "company": "Novartis",
