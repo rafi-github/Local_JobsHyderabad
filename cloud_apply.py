@@ -6,6 +6,12 @@ is empty, apply Naukri / LinkedIn / Indeed / Cutshort / Foundit / Instahyre.
 """
 from __future__ import annotations
 
+import warnings
+
+# Python 3.15 can emit ResourceWarning on discovery HTTP errors; runners log
+# stderr and must not abort the apply loop because of that warning alone.
+warnings.filterwarnings("ignore", category=ResourceWarning)
+
 import argparse
 import atexit
 import json
@@ -102,6 +108,7 @@ ICIMS_PASSWORD_SUBMITS = 0
 # Owner is at the desktop filling leftover fields. Pause instead of skipping.
 OWNER_PRESENT = False
 WATCH_OPEN = False
+_SESSION: dict = {"pw": None, "browser": None, "context": None, "headed": False}
 
 # These boards are covered by other automations — this runner skips them.
 LOGIN_HOSTS = (
@@ -4667,6 +4674,7 @@ def wait_for_human(page, job: dict, seconds: int, resume: str | None = None) -> 
 def apply_one(page, job: dict, wait_seconds: int = 0, navigate: bool = True, allow_aggregators: bool = True) -> dict:
     global ICIMS_LOGIN_CLICKED, ICIMS_CONTINUE_CLICKS, ICIMS_PASSWORD_SUBMITS, FOUNDIT_AKAMAI_BLOCKED, NAUKRI_BOT_BLOCKED
     url = job.get("apply_url") or apply_now.apply_url(job) or job.get("url") or ""
+    url = normalize_greenhouse_url(url, job)
     kind = classify_url(url, job, allow_aggregators=allow_aggregators)
     row = {
         **{k: job.get(k) for k in ("company", "title", "location", "url", "ats", "job_id")},
@@ -4710,6 +4718,13 @@ def apply_one(page, job: dict, wait_seconds: int = 0, navigate: bool = True, all
                 return row
             page.goto(url, wait_until="domcontentloaded", timeout=35000)
             page.wait_for_timeout(800)
+            try:
+                cur_u = (page.url or "").lower()
+            except Exception:
+                cur_u = ""
+            if (not cur_u or cur_u in {"about:blank", "chrome://newtab/"}) and url:
+                page.goto(url, wait_until="domcontentloaded", timeout=35000)
+                page.wait_for_timeout(600)
         else:
             page.wait_for_timeout(400)
         title0 = ""
@@ -5266,6 +5281,49 @@ def save_cloud(rows: list[dict]) -> None:
     RESULTS.write_text(json.dumps(list(by_id.values()), indent=2, ensure_ascii=False), encoding="utf-8")
 
 
+def normalize_greenhouse_url(url: str, job: dict) -> str:
+    """Greenhouse /embed/job_app iframes often stall; open the full job page."""
+    u = (url or "").strip()
+    if "greenhouse.io" not in u.lower():
+        return u
+    if "/embed/" not in u.lower() and "job_app" not in u.lower():
+        return u.split("?")[0]
+    jid = str(job.get("job_id") or "")
+    if not jid:
+        m = re.search(r"[?&](?:token|gh_jid)=([^&]+)", u, re.I)
+        if m:
+            jid = m.group(1)
+    slug = re.sub(r"[^a-z0-9]", "", (job.get("company") or "").lower())
+    m_for = re.search(r"[?&]for=([^&]+)", u, re.I)
+    if m_for:
+        slug = re.sub(r"[^a-z0-9]", "", m_for.group(1).lower()) or slug
+    m_path = re.search(r"job-boards\.greenhouse\.io/([^/]+)/jobs/(\d+)", u, re.I)
+    if m_path:
+        slug = slug or m_path.group(1).lower()
+        jid = jid or m_path.group(2)
+    if jid and slug:
+        return f"https://job-boards.greenhouse.io/{slug}/jobs/{jid}"
+    return u
+
+
+def open_apply_page(context):
+    """Open one apply tab; reconnect CDP if Chrome closed the Playwright context."""
+    try:
+        return context.new_page()
+    except Exception as exc:
+        if "closed" not in str(exc).lower() and "TargetClosed" not in type(exc).__name__:
+            raise
+        pw = _SESSION.get("pw")
+        headed = bool(_SESSION.get("headed"))
+        if pw is None:
+            raise
+        print(f"  Chrome context closed ({type(exc).__name__}); reconnecting...", flush=True)
+        browser, context, _page = launch_context(pw, headed)
+        _SESSION["browser"] = browser
+        _SESSION["context"] = context
+        return context.new_page()
+
+
 def _cdp_up() -> bool:
     import urllib.request
     try:
@@ -5309,8 +5367,8 @@ def start_real_chrome() -> None:
         stderr=subprocess.DEVNULL,
         start_new_session=True,
     )
-    for _ in range(50):
-        time.sleep(0.4)
+    for _ in range(90):
+        time.sleep(0.5)
         if _cdp_up():
             return
     raise RuntimeError("Chrome did not open CDP 9222 for the rafi.success@gmail.com profile")
@@ -6149,6 +6207,7 @@ def main(
         )
     with sync_playwright() as pw:
         browser, context, page = launch_context(pw, headed)
+        _SESSION.update({"pw": pw, "browser": browser, "context": context, "headed": headed})
         mark_google_2fa_parked(context=context, page=page, force=True)
         if headed and not GOOGLE_2FA_PARKED and not GOOGLE_SIGNIN_BLOCKED:
             print("  Warming Naukri/Instahyre Google sessions from the signed-in Gmail profile...", flush=True)
@@ -6307,11 +6366,13 @@ def main(
                         page = open_page
                         navigate = False
                     else:
-                        page = context.new_page()
+                        page = open_apply_page(context)
+                        context = _SESSION["context"]
                 else:
                     for extra in list(context.pages):
                         close_apply_page(extra)
-                    page = context.new_page()
+                    page = open_apply_page(context)
+                    context = _SESSION["context"]
                 row = apply_one(page, job, wait_seconds=wait_seconds, navigate=navigate)
                 results.append(row)
                 # One attempt per posting this run. Repeating WAITING_EXPIRED

@@ -276,11 +276,12 @@ def apply_url(job: dict) -> str:
         if m:
             return f"https://jobs.smartrecruiters.com/{m.group(1)}/{m.group(2)}"
     if ats == "Greenhouse" and jid:
-        if "greenhouse.io" in url:
+        if "greenhouse.io" in url and "/embed/" not in url.lower() and "job_app" not in url.lower():
             return url.split("?")[0]
         slug = re.sub(r"[^a-z0-9]", "", company)
-        if slug in {"highradius", "inovalon"}:
-            return f"https://boards.greenhouse.io/embed/job_app?for={slug}&token={jid}"
+        m_for = re.search(r"[?&]for=([^&]+)", url, re.I)
+        if m_for:
+            slug = re.sub(r"[^a-z0-9]", "", m_for.group(1).lower()) or slug
         return f"https://job-boards.greenhouse.io/{slug}/jobs/{jid}"
     if ats == "Lever" and jid:
         m = re.search(r"jobs\.lever\.co/([^/]+)/", url)

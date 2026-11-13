@@ -251,6 +251,12 @@ def get_text(url: str, data: bytes | None = None, headers: dict | None = None, t
     try:
         with urllib.request.urlopen(req, context=CTX, timeout=timeout) as resp:
             return resp.read().decode("utf-8", errors="replace")
+    except urllib.error.HTTPError as e:
+        try:
+            e.read()
+        except Exception:
+            pass
+        return ""
     except Exception:
         return ""
 

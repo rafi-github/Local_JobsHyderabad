@@ -5,6 +5,7 @@ import json
 import re
 import ssl
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from collections import Counter
@@ -131,6 +132,12 @@ def get_json(url, data=None, headers=None, timeout=18):
     try:
         with urllib.request.urlopen(req, context=CTX, timeout=timeout) as resp:
             return json.loads(resp.read().decode("utf-8", errors="replace")), resp.status
+    except urllib.error.HTTPError as e:
+        try:
+            e.read()
+        except Exception:
+            pass
+        return None, e.code
     except Exception:
         return None, 0
 

@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import html as htmlmod
 import json
+import os
 import re
 import ssl
 import time
@@ -512,7 +513,33 @@ def overlay_base_docx(path: Path, doc: dict) -> None:
             new_xml.encode("utf-8"),
             compress_type=compress.get("word/document.xml", zipfile.ZIP_DEFLATED),
         )
-    tmp.replace(path)
+    try:
+        os.replace(tmp, path)
+    except OSError:
+        time.sleep(0.35)
+        os.replace(tmp, path)
+
+
+def _safe_write_latest(src: Path, dest: Path) -> None:
+    """Copy the per-job resume to Rafi_Resume_Latest.docx without failing tailoring."""
+    try:
+        data = src.read_bytes()
+    except Exception:
+        return
+    tmp = dest.with_suffix(".tmp.docx")
+    try:
+        tmp.write_bytes(data)
+        os.replace(tmp, dest)
+    except OSError as exc:
+        try:
+            tmp.unlink(missing_ok=True)
+        except Exception:
+            pass
+        print(
+            f"  Could not refresh convenience resume copy ({exc}); "
+            "continuing with the per-job tailored resume.",
+            flush=True,
+        )
 
 
 def write_docx(path: Path, doc: dict) -> None:
@@ -612,7 +639,7 @@ def for_job(job: dict) -> str:
         raise FileNotFoundError(f"Base resume missing: {BASE_RESUME}")
     overlay_base_docx(path, doc)
     latest = ROOT / "data" / "resume" / "Rafi_Resume_Latest.docx"
-    latest.write_bytes(path.read_bytes())
+    _safe_write_latest(path, latest)
     cover = cover_for(title, job, skills)
     (path.with_suffix(".cover.txt")).write_text(cover, encoding="utf-8")
     CURRENT.update({
