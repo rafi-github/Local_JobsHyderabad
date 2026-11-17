@@ -518,10 +518,17 @@ def main() -> None:
         action="store_true",
         help="If Resend/SMTP fail, start headed Chrome and send via Gmail compose",
     )
+    parser.add_argument(
+        "--strict-exit",
+        action="store_true",
+        help="Exit with code 1 when email was not sent (default: 0 so apply runs still succeed)",
+    )
     args = parser.parse_args()
     sent = send(args.day, allow_start_chrome=args.allow_start_chrome)
-    if not sent:
+    if not sent and args.strict_exit:
         sys.exit(1)
+    if not sent:
+        print("  Daily email not sent; exiting 0 (use --strict-exit for CI failure).", flush=True)
 
 
 if __name__ == "__main__":

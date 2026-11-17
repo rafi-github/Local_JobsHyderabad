@@ -41,7 +41,134 @@ OPTION_SELECTORS = (
 
 PLACEHOLDER_VALUES = {
     "", "select", "select...", "choose", "please select", "please specify",
+    "select an option", "select one", "select a value", "select...", "--",
+    "n/a", "none", "type to search", "search", "pick one",
 }
+
+SCAN_REQUIRED_EMPTY_JS = """() => {
+  const ph = new Set(['', 'select', 'select...', 'choose', 'please select', 'please specify',
+    'select an option', 'select one', 'select a value', '--', 'type to search', 'search', 'pick one']);
+  const questionLabel = (el) => {
+    let label = el.getAttribute('aria-label') || el.getAttribute('placeholder') || '';
+    if (!label && el.id) {
+      const forLab = document.querySelector('label[for="' + CSS.escape(el.id) + '"]');
+      if (forLab) label = forLab.innerText;
+    }
+    const wrap = el.closest('fieldset, [class*="question" i], [class*="Question"], [data-test-id], li, .field, label, [role="group"], spl-form-field, spl-autocomplete');
+    if (wrap) {
+      const t = wrap.querySelector('legend, label, [class*="label" i], h2, h3, h4, p, span');
+      const text = (t && t.innerText) || wrap.innerText;
+      if (text && text.trim().length > (label || '').length) label = text;
+    }
+    if (!label) {
+      const prev = el.previousElementSibling;
+      if (prev) label = prev.innerText;
+    }
+  return String(label || '').replace(/\\s+/g, ' ').trim().slice(0, 220);
+  };
+  const isRequired = (el, label) => {
+    if (el.required) return true;
+    if (el.getAttribute('aria-required') === 'true') return true;
+    if (/[*✱]|\\(required\\)|required field/i.test(label)) return true;
+    const wrap = el.closest('.required, .field-required, [class*="required" i], .ng-invalid, spl-autocomplete[errorstate]');
+    if (wrap && /required|\\*/.test((wrap.className && wrap.className.toString()) || '') ) return true;
+    if (el.getAttribute('aria-invalid') === 'true') return true;
+    return false;
+  };
+  const isEmptyValue = (el, type, value, options) => {
+    const v = (value || '').trim().toLowerCase();
+    if (type === 'checkbox' || type === 'radio') return !el.checked;
+    if (el.tagName === 'SELECT') {
+      if (!v || ph.has(v)) return true;
+      const opt = el.options[el.selectedIndex];
+      const t = ((opt && opt.text) || '').trim().toLowerCase();
+      return !t || ph.has(t);
+    }
+    if (el.getAttribute('role') === 'combobox' || type === 'combobox') {
+      return !v || ph.has(v);
+    }
+    return !v || ph.has(v);
+  };
+  const items = [];
+  const seen = new Set();
+  const nodes = document.querySelectorAll('input, textarea, select, [role="combobox"]');
+  for (const el of nodes) {
+    const type = (el.getAttribute('type') || el.tagName).toLowerCase();
+    if (['hidden', 'file', 'submit', 'button', 'password', 'image'].includes(type)) continue;
+    const r = el.getBoundingClientRect();
+    if (r.width < 6 && r.height < 6 && type !== 'checkbox' && type !== 'radio') continue;
+    const label = questionLabel(el);
+    if (!isRequired(el, label) && !el.getAttribute('aria-invalid')) continue;
+    let value = '';
+    let options = [];
+    if (type === 'checkbox' || type === 'radio') {
+      value = el.checked ? 'checked' : '';
+    } else if (el.tagName === 'SELECT') {
+      const opt = el.options[el.selectedIndex];
+      value = ((opt && opt.text) || el.value || '').trim();
+      options = Array.from(el.options).map(o => (o.text || '').trim()).filter(Boolean).slice(0, 40);
+    } else {
+      value = (el.value || el.innerText || '').trim();
+    }
+    if (!isEmptyValue(el, type, value, options)) continue;
+    const key = (el.id || el.name || '') + '|' + label.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    items.push({
+      id: el.id || '',
+      name: el.name || '',
+      label,
+      type,
+      options,
+      required: true,
+    });
+  }
+  // Unchecked required radio groups (legend shows * but no input checked)
+  for (const fs of document.querySelectorAll('fieldset')) {
+    const leg = fs.querySelector('legend');
+    const lab = (leg && leg.innerText) || '';
+    if (!/[*✱]|required/i.test(lab)) continue;
+    const radios = fs.querySelectorAll('input[type=radio]');
+    if (!radios.length) continue;
+    let any = false;
+    for (const r of radios) { if (r.checked) { any = true; break; } }
+    if (any) continue;
+    const key = 'fieldset|' + lab.toLowerCase().slice(0, 80);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    items.push({
+      id: '',
+      name: (radios[0] && radios[0].name) || '',
+      label: lab.replace(/\\s+/g, ' ').trim().slice(0, 220),
+      type: 'radio',
+      options: Array.from(radios).map(r => {
+        const lb = r.id ? document.querySelector('label[for="' + CSS.escape(r.id) + '"]') : null;
+        return ((lb && lb.innerText) || r.value || '').trim();
+      }).filter(Boolean).slice(0, 12),
+      required: true,
+    });
+  }
+  return items;
+}"""
+
+SCAN_VALIDATION_ERRORS_JS = """() => {
+  const out = [];
+  const push = (t) => {
+    t = String(t || '').replace(/\\s+/g, ' ').trim();
+    if (t.length < 6 || t.length > 200) return;
+    if (out.includes(t)) return;
+    out.push(t);
+  };
+  for (const el of document.querySelectorAll('[aria-invalid="true"], .error, .field-error, .validation-error, [class*="error-message" i], spl-autocomplete[errorstate]')) {
+    push(el.innerText || el.getAttribute('aria-label') || '');
+  }
+  for (const el of document.querySelectorAll('input:invalid, select:invalid, textarea:invalid')) {
+    const lab = el.id ? document.querySelector('label[for="' + CSS.escape(el.id) + '"]') : null;
+    const name = ((lab && lab.innerText) || el.getAttribute('aria-label') || el.name || 'Field').trim();
+    push(name + ' is required');
+  }
+  return out.slice(0, 16);
+}"""
 
 CLICK_ATS_SUBMIT_JS = """() => {
   const skipRe = /simplify|tailor resume|resume builder|proxy-submit|autofill/i;
@@ -269,6 +396,164 @@ def _click_best_option(page, value: str) -> bool:
         return True
     except Exception:
         return False
+
+
+def scan_required_empty(page) -> list:
+    try:
+        return page.evaluate(SCAN_REQUIRED_EMPTY_JS) or []
+    except Exception:
+        return []
+
+
+def scan_validation_errors(page) -> list[str]:
+    try:
+        return page.evaluate(SCAN_VALIDATION_ERRORS_JS) or []
+    except Exception:
+        return []
+
+
+def _fill_required_row(page, row: dict, infer, value: str) -> bool:
+    """Fill one required empty control."""
+    if not value and row.get("type") not in {"checkbox"}:
+        return False
+    ftype = (row.get("type") or "").lower()
+    label = row.get("label") or ""
+    eid = row.get("id") or ""
+    name = row.get("name") or ""
+    try:
+        if ftype in {"checkbox"}:
+            sel = f'#{eid}' if eid else f'[name="{name}"]'
+            loc = page.locator(sel).first
+            if loc.count() and loc.is_visible():
+                try:
+                    if not loc.is_checked():
+                        loc.check(force=True, timeout=800)
+                        return True
+                except Exception:
+                    loc.click(force=True, timeout=800)
+                    return True
+            return False
+        if ftype == "radio":
+            want = (value or "No").strip()
+            try:
+                scope = page.get_by_text(re.compile(re.escape(label[:50]), re.I)).first
+                if scope.count():
+                    box = scope.locator(
+                        "xpath=ancestor::*[self::fieldset or self::li or self::div][1]"
+                    )
+                    opt = box.get_by_text(re.compile(rf"^{re.escape(want)}$", re.I)).first
+                    if opt.count():
+                        opt.click(timeout=1000, force=True)
+                        return True
+            except Exception:
+                pass
+            if name:
+                loc = page.locator(f'input[type=radio][name="{name}"]').first
+                if loc.count():
+                    page.get_by_role("radio", name=re.compile(rf"^{re.escape(want)}$", re.I)).first.click(
+                        timeout=1000, force=True
+                    )
+                    return True
+            return False
+        sel = f"#{eid}" if eid else (f'[name="{name}"]' if name else "")
+        if not sel:
+            return False
+        loc = page.locator(sel).first
+        if not loc.count() or not loc.is_visible():
+            return False
+        tag = (loc.evaluate("n => (n.tagName || '').toLowerCase()") or "")
+        if tag == "select" or loc.get_attribute("role") == "combobox":
+            options = row.get("options") or []
+            chosen = best_option(str(value), options) or value
+            return handle_dropdown(page, loc, str(chosen))
+        if native_fill(loc, str(value)):
+            return True
+        loc.fill(str(value), timeout=1200)
+        return True
+    except Exception:
+        return False
+
+
+def fill_required_fields(page, infer, *, passes: int = 2) -> int:
+    """Second pass: DOM scan for required empties HTML5 / aria / asterisk labels."""
+    filled = 0
+    for _ in range(passes):
+        rows = scan_required_empty(page)
+        if not rows:
+            break
+        round_n = 0
+        for row in rows:
+            label = row.get("label") or ""
+            opts = row.get("options") or []
+            want = infer(label, opts)
+            if not want and row.get("type") in {"checkbox"}:
+                want = "Yes"
+            if not want:
+                continue
+            if _fill_required_row(page, row, infer, str(want)):
+                round_n += 1
+        filled += round_n
+        if round_n == 0:
+            break
+        try:
+            page.wait_for_timeout(350)
+        except Exception:
+            pass
+    if filled:
+        print(f"  Filled {filled} required empty field(s) from DOM scan.", flush=True)
+    return filled
+
+
+def commit_open_comboboxes(page, infer) -> int:
+    """Type-ahead boxes with text but no committed list option block Next."""
+    fixed = 0
+    try:
+        boxes = page.evaluate(
+            """() => [...document.querySelectorAll('input[role=combobox], [role=combobox] input, select + input')]
+              .map(el => {
+                const r = el.getBoundingClientRect();
+                return {
+                  id: el.id, name: el.name,
+                  value: (el.value || '').trim(),
+                  invalid: el.getAttribute('aria-invalid') === 'true',
+                  q: (el.getAttribute('aria-label') || el.placeholder || el.name || '').slice(0, 120),
+                  vis: r.width > 8 && r.height > 8,
+                };
+              }).filter(x => x.vis && x.value)"""
+        ) or []
+    except Exception:
+        return 0
+    for box in boxes:
+        val = (box.get("value") or "").strip()
+        if not val or val.lower() in PLACEHOLDER_VALUES:
+            continue
+        if not box.get("invalid") and len(val) > 40:
+            continue
+        want = infer(box.get("q") or "", []) or val
+        sel = f'#{box["id"]}' if box.get("id") else f'[name="{box.get("name")}"]'
+        try:
+            loc = page.locator(sel).first
+            if loc.count() and handle_dropdown(page, loc, str(want)):
+                fixed += 1
+        except Exception:
+            continue
+    if fixed:
+        print(f"  Committed {fixed} open combobox selection(s).", flush=True)
+    return fixed
+
+
+def fill_required_gaps(page, infer, *, passes: int = 2) -> int:
+    """Run required scan, combobox commit, and dropdown fill before Next/Submit."""
+    total = 0
+    for _ in range(max(1, passes)):
+        total += commit_open_comboboxes(page, infer)
+        total += fill_required_fields(page, infer, passes=1)
+        total += fill_empty_dropdowns(page, infer)
+        try:
+            page.wait_for_timeout(250)
+        except Exception:
+            pass
+    return total
 
 
 def fill_empty_dropdowns(page, infer) -> int:

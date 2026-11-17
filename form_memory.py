@@ -24,6 +24,13 @@ NOISE_VALUES = {
 LIST_FIELDS_JS = """() => {
   const items = [];
   const seen = new Set();
+  const isRequired = (el, label) => {
+    if (el.required) return true;
+    if (el.getAttribute('aria-required') === 'true') return true;
+    if (/[*✱]|\\(required\\)/i.test(label)) return true;
+    if (el.getAttribute('aria-invalid') === 'true') return true;
+    return false;
+  };
   const questionLabel = (el) => {
     let label = el.getAttribute('aria-label') || el.getAttribute('placeholder') || '';
     if (!label && el.id) {
@@ -74,7 +81,7 @@ LIST_FIELDS_JS = """() => {
     const key = label.toLowerCase() + '|' + (el.id || el.name || '');
     if (seen.has(key)) continue;
     seen.add(key);
-    items.push({label, value, name: el.name || el.id || '', type, options});
+    items.push({label, value, name: el.name || el.id || '', type, options, required: isRequired(el, label)});
   }
   return items;
 }"""
@@ -131,8 +138,11 @@ def _answers() -> dict:
         "company": c.get("currentEmployer") or "Nemetschek",
         "title": c.get("currentRole") or "Principal Analyst (Technical Architect)",
         "years": "15",
-        "notice": "Immediate",
-        "noticeDays": "0",
+        "notice": c.get("noticePeriod") or L.get("noticePeriod") or "Immediate",
+        "noticeDays": str(c.get("noticeDays") or L.get("noticeDays") or "0"),
+        "relocate": c.get("willingToRelocate") or L.get("willingToRelocate") or "No",
+        "sponsorship": c.get("visaSponsorship") or L.get("visaSponsorship") or "No",
+        "workAuth": c.get("workAuthorizedIndia") or L.get("workAuthorizedIndia") or "Yes",
         "start": "Immediate / ASAP",
         "currentCtc": str(cur_inr),
         "expectedCtc": str(exp_inr),
@@ -264,7 +274,8 @@ def infer_answer(label: str, options: list[str] | None = None) -> str | None:
         if "sponsor" in q:
             return pick("no") or "No"
     if any(x in q for x in ("sponsor", "visa", "immigration", "work permit required")):
-        return pick("no") or "No"
+        prefer = (a.get("sponsorship") or "No").lower()
+        return pick(prefer, "no", "yes") or ("No" if prefer.startswith("n") else "Yes")
     if any(x in q for x in ("authoriz", "right to work", "legally permitted", "eligible to work", "work eligibility")):
         return pick("yes", "citizen", "permanently") or "Yes"
     if "currently a" in q and "employee" in q:
@@ -320,8 +331,9 @@ def infer_answer(label: str, options: list[str] | None = None) -> str | None:
         return "0"
     if "non-compet" in q or "noncompet" in q:
         return pick("no") or "No"
-    if "relocat" in q:
-        return pick("no") or "No"
+    if "relocat" in q or "willing to move" in q or "willing to travel" in q:
+        prefer = a.get("relocate") or "No"
+        return pick(prefer.lower(), "no", "yes") or prefer
     if "disability" in q:
         return pick("do not have a disability", "no") or a["disability"]
     if "veteran" in q:
@@ -619,6 +631,10 @@ def fill_visible(page) -> int:
             # Oracle/India typeaheads store full names; TG/TS return no results.
             current = ""
         if current and norm(current) not in NOISE_VALUES:
+            continue
+        if current and field.get("required") and norm(current) in NOISE_VALUES:
+            pass
+        elif current:
             continue
         value = infer_answer(label, field.get("options") or [])
         if not value:

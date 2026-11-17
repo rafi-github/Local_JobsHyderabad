@@ -366,6 +366,65 @@ def already_applied_visible(page) -> bool:
     ))
 
 
+def submission_confirmed(page, *, allow_copilot: bool = True) -> bool:
+    """True only when the ATS shows a real confirmation — not a Copilot guess."""
+    if is_success(page) or already_applied_visible(page):
+        return True
+    if not allow_copilot:
+        return False
+    if simplify_copilot.submitted(page):
+        try:
+            blob = page_text(page)[:3000]
+        except Exception:
+            blob = ""
+        if SUCCESS_RE.search(blob):
+            return True
+    return False
+
+
+_GH_SUBMIT_TRIES: dict[str, int] = {}
+
+
+def clear_greenhouse_submit_tries(page_url: str = "") -> None:
+    if not page_url:
+        _GH_SUBMIT_TRIES.clear()
+        return
+    prefix = (page_url or "").split("?")[0]
+    for key in list(_GH_SUBMIT_TRIES):
+        if key.startswith(prefix):
+            _GH_SUBMIT_TRIES.pop(key, None)
+
+
+def greenhouse_submit_allowed(page) -> bool:
+    u = (page.url or "").lower()
+    if "greenhouse.io" not in u:
+        return True
+    key = form_fingerprint(page)
+    if _GH_SUBMIT_TRIES.get(key, 0) >= 2:
+        print(
+            "  Greenhouse: Submit already tried twice without confirmation — stopping.",
+            flush=True,
+        )
+        return False
+    return True
+
+
+def greenhouse_note_submit(page) -> None:
+    u = (page.url or "").lower()
+    if "greenhouse.io" not in u:
+        return
+    key = form_fingerprint(page)
+    _GH_SUBMIT_TRIES[key] = _GH_SUBMIT_TRIES.get(key, 0) + 1
+
+
+def instahyre_zero_jobs_visible(page) -> bool:
+    try:
+        blob = page_text(page)[:2500]
+    except Exception:
+        blob = ""
+    return bool(re.search(r"apply to\s*0\s*job", blob, re.I))
+
+
 def linkedin_account_restricted(page) -> bool:
     global LINKEDIN_RESTRICTED, LINKEDIN_RESTRICTED_NOTE
     try:
@@ -411,14 +470,18 @@ def persist_skip_all_linkedin(note: str | None = None) -> int:
 
 
 def fill_identity(page) -> None:
+    a = form_memory._answers()
     pairs = [
         ("input[name='name'], input[name='full_name'], #name", C["fullName"]),
         ("input[name='first_name'], #first_name, input[autocomplete='given-name'], #first-name-input", C["firstName"]),
         ("input[name='last_name'], #last_name, input[autocomplete='family-name'], #last-name-input", C["lastName"]),
         ("input[name='phone'], #phone, input[type=tel]", C["phoneNational"]),
         ("input[name='org'], input[name='company']", C["currentEmployer"]),
-        ("input[name='urls[LinkedIn]'], input[name='linkedin'], #linkedin-input, input[placeholder*='LinkedIn' i]", C["linkedIn"]),
-        ("#location-input, input[name='location'], input[placeholder*='Location' i]", "Hyderabad, India"),
+        ("input[name='urls[LinkedIn]'], input[name='linkedin'], #linkedin-input, input[placeholder*='LinkedIn' i]", C.get("linkedIn") or a["linkedin"]),
+        ("#location-input, input[name='location'], input[placeholder*='Location' i]", C.get("location") or a["location"]),
+        ("input[name*='notice' i], input[id*='notice' i]", a["notice"]),
+        ("input[name*='salary' i], input[id*='salary' i], input[name*='ctc' i]", a["salaryText"]),
+        ("input[name*='relocation' i], input[id*='relocation' i]", a.get("relocate") or "No"),
     ]
     for sel, value in pairs:
         try:
@@ -1158,7 +1221,8 @@ INSTAHYRE_APPLY_HITS_JS = r"""() => {
     const t = labelOf(el);
     if (!t || t.length > 48) continue;
     if (/^applied$/i.test(t) || /already applied/i.test(t)) continue;
-    if (!/^(apply( to .+)?|apply now|confirm|yes,? apply!?|submit application|send application)$/i.test(t)) {
+    if (/apply to\\s*0\\s*job/i.test(t)) continue;
+    if (!/^(apply( to [1-9][^]*)?|apply now|confirm|yes,? apply!?|submit application|send application)$/i.test(t)) {
       continue;
     }
     const r = el.getBoundingClientRect();
@@ -1252,6 +1316,9 @@ def click_instahyre_apply(page) -> str:
         return ""
     if already_applied_visible(page):
         return ""
+    if instahyre_zero_jobs_visible(page):
+        print("  Instahyre: Apply to 0 jobs — job not selected; not clicking.", flush=True)
+        return ""
     last = ""
     for prefer_modal in (False, True, True):
         if already_applied_visible(page) or is_success(page):
@@ -1267,13 +1334,22 @@ def click_instahyre_apply(page) -> str:
             if hits:
                 print(f"  Instahyre apply hits unused: {[(h.get('t'), h.get('y'), h.get('inDialog')) for h in hits][:8]}", flush=True)
             continue
+        if instahyre_zero_jobs_visible(page):
+            print("  Instahyre: Apply to 0 jobs — stopping apply clicks.", flush=True)
+            return ""
         _instahyre_screen_click(page, box)
         last = (box.get("t") or "Apply").strip()[:40]
+        if re.search(r"apply to\s*0\s*job", last, re.I):
+            print("  Instahyre: refusing Apply to 0 jobs button.", flush=True)
+            return ""
         print(f"  Clicked Instahyre '{last}'.", flush=True)
         try:
             page.wait_for_timeout(1800)
         except Exception:
             pass
+        if instahyre_zero_jobs_visible(page):
+            print("  Instahyre: still Apply to 0 jobs after click — stopping.", flush=True)
+            return ""
         try:
             try_board_google_signin(page)
             click_google_account_chooser(page)
@@ -1327,6 +1403,45 @@ def _career_destination(url: str) -> bool:
 def _progress_url(url: str) -> str:
     """Full apply path, so Workday /apply/step changes count as progress."""
     return (url or "").split("?")[0].split("#")[0].rstrip("/").lower()
+
+
+def naukri_extract_external_apply_url(page) -> str:
+    """Pull a company career URL from a Naukri JD when the footer button fails."""
+    try:
+        href = page.evaluate(
+            """() => {
+              const out = [];
+              const push = (h) => {
+                if (!h || !/^https?:/i.test(h)) return;
+                if (/naukri\\.com|facebook\\.com|twitter\\.com|instagram\\.com/i.test(h)) return;
+                out.push(h);
+              };
+              for (const el of document.querySelectorAll('a[href]')) {
+                const t = ((el.innerText||'') + ' ' + (el.getAttribute('aria-label')||'')).toLowerCase();
+                if (/company|career|apply|website/i.test(t)) push(el.href);
+              }
+              for (const s of document.querySelectorAll('script[type="application/ld+json"]')) {
+                try {
+                  const j = JSON.parse(s.textContent || '{}');
+                  if (j.url) push(j.url);
+                  if (j.hiringOrganization && j.hiringOrganization.sameAs) push(j.hiringOrganization.sameAs);
+                } catch (e) {}
+              }
+              const apply = document.querySelector('#apply-button, [data-apply-url], [data-href]');
+              if (apply) {
+                push(apply.getAttribute('data-apply-url') || apply.getAttribute('data-href') || '');
+                const a = apply.closest('a') || apply.querySelector('a');
+                if (a) push(a.href);
+              }
+              return out[0] || '';
+            }"""
+        ) or ""
+    except Exception:
+        href = ""
+    href = str(href or "").strip()
+    if href.startswith("http") and "naukri.com" not in href.lower():
+        return href
+    return ""
 
 
 def _note_company_site(page, job: dict) -> None:
@@ -1412,6 +1527,15 @@ def leave_naukri_for_company_site(page, job: dict):
             page.wait_for_timeout(800)
         except Exception:
             return None
+    if still:
+        ext = naukri_extract_external_apply_url(page)
+        if ext:
+            try:
+                page.goto(ext, wait_until="domcontentloaded", timeout=35000)
+                page.wait_for_timeout(800)
+                still = "naukri.com" in (page.url or "").lower()
+            except Exception:
+                still = True
     try:
         landed = page.url or ""
     except Exception:
@@ -2356,6 +2480,30 @@ def _pick_workday_list_option(page, typed: str = "Career Site") -> bool:
             opts = page.locator("[role='option']")
         if not opts.count():
             break
+        if typed and re.search(r"[.#]|microservice|terraform|react|docker|kubernetes", typed, re.I):
+            try:
+                n = min(opts.count(), 24)
+            except Exception:
+                n = 0
+            best_i, best_s = -1, 0.0
+            for i in range(n):
+                try:
+                    text = (opts.nth(i).inner_text() or "").strip()
+                except Exception:
+                    continue
+                if not text or text.lower() in {"no items", "no results", "search"}:
+                    continue
+                score = ats_fill.fuzzy_score(typed, text)
+                if score > best_s:
+                    best_s, best_i = score, i
+            if best_i >= 0 and best_s >= 0.48:
+                try:
+                    opts.nth(best_i).click(timeout=1500, force=True)
+                    page.wait_for_timeout(400)
+                    picked = True
+                    return True
+                except Exception:
+                    pass
         preferred = (
             r"^naukri$",
             r"^iimjobs$",
@@ -2466,34 +2614,33 @@ def _workday_prompt_committed(field) -> bool:
 
 
 WORKDAY_SKILL_SEARCHES = (
-    "Azure",
-    "Microsoft Azure",
-    "Amazon Web Services (AWS)",
-    "AWS",
-    "SQL",
-    "SQL Server",
-    "Microsoft SQL Server",
-    "Agile",
-    "Agile Methodologies",
     "C#",
-    "C Sharp",
     "C# (Programming Language)",
     ".NET",
-    ".NET Framework",
     ".NET Core",
-    "ASP.NET",
     "ASP.NET Core",
-    "Kubernetes",
-    "Docker",
-    "Angular",
-    "AngularJS",
-    "React.js",
-    "React",
+    "Amazon Web Services (AWS)",
+    "AWS",
     "Microservices",
-    "Apache Kafka",
-    "Kafka",
     "REST",
     "RESTful WebServices",
+    "SQL Server",
+    "Microsoft SQL Server",
+    "React.js",
+    "React",
+    "Docker",
+    "Kubernetes",
+    "Terraform",
+    "Azure",
+    "Microsoft Azure",
+    "SQL",
+    "Agile",
+    "Agile Methodologies",
+    "C Sharp",
+    ".NET Framework",
+    "ASP.NET",
+    "Apache Kafka",
+    "Kafka",
     "API",
     "Software Development",
     "Software Engineering",
@@ -2900,6 +3047,44 @@ def fill_greenhouse_form(page) -> int:
         except Exception:
             continue
     try:
+        selects = page.locator("select[id^='question_']")
+        scount = min(selects.count(), 16)
+    except Exception:
+        scount = 0
+    for i in range(scount):
+        try:
+            loc = selects.nth(i)
+            if not loc.is_visible():
+                continue
+            opts = loc.evaluate(
+                "e => [...e.options].map(o => (o.text || '').trim()).filter(Boolean).slice(0, 40)"
+            ) or []
+            cur = ""
+            try:
+                idx = loc.evaluate("e => e.selectedIndex")
+                cur = (opts[idx] if idx is not None and 0 <= idx < len(opts) else "") or ""
+            except Exception:
+                cur = ""
+            if cur and cur.lower() not in ats_fill.PLACEHOLDER_VALUES:
+                continue
+            label = " ".join(
+                filter(
+                    None,
+                    [
+                        loc.get_attribute("aria-label") or "",
+                        loc.get_attribute("name") or "",
+                    ],
+                )
+            )
+            answer = form_memory.infer_answer(label, opts)
+            if not answer:
+                continue
+            chosen = ats_fill.best_option(str(answer), opts) or answer
+            if ats_fill.handle_dropdown(page, loc, str(chosen)):
+                filled += 1
+        except Exception:
+            continue
+    try:
         boxes = page.locator("input[id^='question_'], textarea[id^='question_']")
         count = min(boxes.count(), 24)
     except Exception:
@@ -2932,6 +3117,27 @@ def fill_greenhouse_form(page) -> int:
             filled += 1
         except Exception:
             continue
+    try:
+        for sel in (
+            "#legal_disclaimer",
+            "#gdpr_consent",
+            "input[name*='consent' i]",
+            "input[id*='consent' i]",
+        ):
+            loc = page.locator(sel).first
+            if loc.count() and loc.is_visible():
+                try:
+                    if not loc.is_checked():
+                        loc.check(force=True, timeout=800)
+                        filled += 1
+                except Exception:
+                    try:
+                        loc.click(timeout=800, force=True)
+                        filled += 1
+                    except Exception:
+                        pass
+    except Exception:
+        pass
     if filled:
         print(f"  Filled {filled} Greenhouse field(s).", flush=True)
     return filled
@@ -3299,7 +3505,7 @@ def click_next_or_submit(page) -> str:
     """Click one navigation control. Returns clicked|submitted|none."""
     collapse_copilot_panel(page)
     dismiss_overlays(page)
-    if is_success(page):
+    if submission_confirmed(page):
         return "submitted"
     try:
         nav_url = (page.url or "").lower()
@@ -3314,17 +3520,23 @@ def click_next_or_submit(page) -> str:
             return "clicked"
         return "none"
     # Real ATS Submit, not Copilot #proxy-submit-button (Phenom review stays put otherwise).
-    if ats_fill.click_ats_submit(page):
+    if greenhouse_submit_allowed(page) and ats_fill.click_ats_submit(page):
+        greenhouse_note_submit(page)
         for _ in range(6):
-            if is_success(page) or simplify_copilot.submitted(page):
+            if submission_confirmed(page):
                 return "submitted"
             page.wait_for_timeout(800)
         return "clicked"
     for label in ("Submit application", "Submit Application", "Submit", "Save and Next", "Next"):
+        is_submit = label in {"Submit application", "Submit Application", "Submit"}
+        if is_submit and not greenhouse_submit_allowed(page):
+            continue
         if click_spl_button(page, label):
+            if is_submit:
+                greenhouse_note_submit(page)
             print(f"  Clicked ATS '{label}'.", flush=True)
             page.wait_for_timeout(800)
-            return "submitted" if is_success(page) else "clicked"
+            return "submitted" if submission_confirmed(page) else "clicked"
     for sel in (
         "button:has-text('Submit application')",
         "button:has-text('Submit Application')",
@@ -3344,10 +3556,14 @@ def click_next_or_submit(page) -> str:
                 el_id = loc.get_attribute("id") or ""
                 if el_id == "proxy-submit-button" or SIMPLIFY_RE.search(text) or SKIP_APPLY_LABEL.search(text):
                     continue
+                if re.search(r"submit", text, re.I) and not greenhouse_submit_allowed(page):
+                    continue
                 loc.scroll_into_view_if_needed(timeout=1500)
                 loc.click(timeout=2000, force=True)
+                if re.search(r"submit", text, re.I) or "submit" in sel.lower():
+                    greenhouse_note_submit(page)
                 page.wait_for_timeout(1800)
-                return "submitted" if is_success(page) else "clicked"
+                return "submitted" if submission_confirmed(page) else "clicked"
         except Exception:
             continue
     for sel in (
@@ -3384,7 +3600,7 @@ def click_next_or_submit(page) -> str:
             if aria and not re.search(r"required fields to continue", aria, re.I):
                 loc.click(timeout=2000, force=True)
                 page.wait_for_timeout(1600)
-                return "submitted" if is_success(page) else "clicked"
+                return "submitted" if submission_confirmed(page) else "clicked"
     except Exception:
         pass
     return "none"
@@ -3455,11 +3671,26 @@ def notify_amazon_signin(job: dict, page) -> None:
 
 def required_field_issues(page) -> list[str]:
     """Visible required-field messages the owner may need to complete."""
+    out: list[str] = []
+    try:
+        for line in ats_fill.scan_validation_errors(page):
+            if line not in out:
+                out.append(line)
+    except Exception:
+        pass
+    try:
+        for row in ats_fill.scan_required_empty(page):
+            lab = (row.get("label") or "").strip()
+            if lab and 4 < len(lab) < 200:
+                hint = re.sub(r"\s+", " ", lab).strip()
+                if hint not in out and not any(hint in x for x in out):
+                    out.append(f"{hint} (required)")
+    except Exception:
+        pass
     try:
         blob = page_text(page)
     except Exception:
-        return []
-    out: list[str] = []
+        return out[:12]
     for raw in blob.splitlines():
         line = re.sub(r"\s+", " ", raw).strip()
         if re.search(
@@ -3468,7 +3699,7 @@ def required_field_issues(page) -> list[str]:
             r"^institution\*|^institution required|"
             r"this field is required|please select a value|"
             r"enter n/a if not applicable|please select one of the below|"
-            r"errors found",
+            r"required fields to continue|errors found|field cannot be blank",
             line,
             re.I,
         ):
@@ -3964,7 +4195,7 @@ def unstick_stuck_form(page, job: dict, resume: str) -> str:
     fill_workday_form(page)
     fill_greenhouse_form(page)
     ats_fill.fill_phenom_acknowledgment(page)
-    ats_fill.fill_empty_dropdowns(page, form_memory.infer_answer)
+    ats_fill.fill_required_gaps(page, form_memory.infer_answer, passes=3)
     accept_terms(page)
     # Prefer the ATS Next/Submit, not Copilot Continue on an invalid form.
     if click_spl_button(page, "Submit") or click_spl_button(page, "Submit application"):
@@ -4492,7 +4723,7 @@ def fill_and_advance(page, job: dict, resume: str) -> str:
     except Exception:
         pass
     click_google_account_chooser(page)
-    if is_success(page) or simplify_copilot.submitted(page):
+    if submission_confirmed(page):
         return "submitted"
     recover_wrong_board(page, job)
     cancel_incomplete_editors(page)
@@ -4522,7 +4753,7 @@ def fill_and_advance(page, job: dict, resume: str) -> str:
     fill_workday_form(page)
     fill_greenhouse_form(page)
     ats_fill.fill_phenom_acknowledgment(page)
-    ats_fill.fill_empty_dropdowns(page, form_memory.infer_answer)
+    ats_fill.fill_required_gaps(page, form_memory.infer_answer)
     accept_terms(page)
     try:
         upload_resume(page, resume)
@@ -4531,13 +4762,17 @@ def fill_and_advance(page, job: dict, resume: str) -> str:
     copilot_step = ""
     if use_copilot:
         copilot_step = simplify_copilot.follow(page)
-    if copilot_step == "submitted" or is_success(page):
+    if copilot_step == "submitted" and submission_confirmed(page):
+        return "submitted"
+    if submission_confirmed(page):
         return "submitted"
     if copilot_step == "stuck":
         fill_workday_form(page)
         form_memory.fill_visible(page)
         step = click_next_or_submit(page)
-        if step == "submitted" or is_success(page) or simplify_copilot.submitted(page):
+        if step == "submitted" and submission_confirmed(page):
+            return "submitted"
+        if submission_confirmed(page):
             return "submitted"
         return step or "clicked"
     form_memory.fill_visible(page)
@@ -4547,7 +4782,7 @@ def fill_and_advance(page, job: dict, resume: str) -> str:
     fill_workday_form(page)
     fill_greenhouse_form(page)
     ats_fill.fill_phenom_acknowledgment(page)
-    ats_fill.fill_empty_dropdowns(page, form_memory.infer_answer)
+    ats_fill.fill_required_gaps(page, form_memory.infer_answer)
     accept_terms(page)
     if captcha_puzzle_visible(page):
         return "captcha"
@@ -4556,8 +4791,11 @@ def fill_and_advance(page, job: dict, resume: str) -> str:
         click_apply_gate(page)
         page.wait_for_timeout(800)
         page = adopt_newest_page(page, before, job)
+    ats_fill.fill_required_gaps(page, form_memory.infer_answer, passes=1)
     step = click_next_or_submit(page)
-    if step == "submitted" or is_success(page) or simplify_copilot.submitted(page):
+    if step == "submitted" and submission_confirmed(page):
+        return "submitted"
+    if submission_confirmed(page):
         return "submitted"
     return step
 
@@ -4721,7 +4959,7 @@ def wait_for_human(page, job: dict, seconds: int, resume: str | None = None) -> 
                 }
         try:
             step = fill_and_advance(page, job, resume)
-            if step == "submitted" or is_success(page):
+            if submission_confirmed(page):
                 if already_applied_visible(page):
                     print("  Already applied on this board. Next leftover.", flush=True)
                     return {
@@ -4797,7 +5035,7 @@ def wait_for_human(page, job: dict, seconds: int, resume: str | None = None) -> 
             unsticks += 1
             same_fp = 0
             last_fp = form_fingerprint(page)
-            if step == "submitted" or is_success(page):
+            if submission_confirmed(page):
                 print("  Submitted after unstick. Learning this form for later runs.", flush=True)
                 return {
                     "ok": True,
@@ -4915,6 +5153,7 @@ def apply_one(page, job: dict, wait_seconds: int = 0, navigate: bool = True, all
     if kind != "TRY":
         row["note"] = "login board skipped without opening"
         return row
+    clear_greenhouse_submit_tries(url)
     if google_password_create_parked(page) and any(
         x in (url or "").lower() for x in ("linkedin.com", "cutshort.io", "cutshort.com")
     ):
@@ -5132,19 +5371,25 @@ def apply_one(page, job: dict, wait_seconds: int = 0, navigate: bool = True, all
                 followed = leave_naukri_for_company_site(page, job)
                 if followed is None:
                     print("  Naukri company-site link did not open. Next leftover.", flush=True)
-                    row["status"] = "STUCK"
-                    row["note"] = "Naukri company-site apply"
+                    row["status"] = "NO_APPLICATION_URL"
+                    row["note"] = "Naukri company-site apply URL not found"
                     row["final_url"] = page.url
                     return row
                 page = followed
                 url = page.url or url
             if naukri_browse_only(page):
                 print("  Naukri listing has no Quick apply (Browse other jobs). Next leftover.", flush=True)
-                row["status"] = "STUCK"
+                row["status"] = "NO_APPLICATION_URL"
                 row["note"] = "Naukri browse-other-jobs / no Quick apply"
                 row["final_url"] = page.url
-                apply_now.persist_skipped(row, row["note"])
                 return row
+
+        if "instahyre.com" in (url or "").lower() and instahyre_zero_jobs_visible(page):
+            print("  Instahyre Apply to 0 jobs — selection missing. Next leftover.", flush=True)
+            row["status"] = "STUCK"
+            row["note"] = "Instahyre Apply to 0 jobs — job not selected"
+            row["final_url"] = page.url
+            return row
 
         fill_identity(page)
         auth = try_portal_auth(page)
@@ -5206,11 +5451,11 @@ def apply_one(page, job: dict, wait_seconds: int = 0, navigate: bool = True, all
                 pass
             dismiss_overlays(page)
             recover_wrong_board(page, job)
-            if is_success(page) or simplify_copilot.submitted(page):
+            if submission_confirmed(page):
                 row["ok"] = True
                 row["status"] = "SUBMITTED"
                 row["final_url"] = page.url
-                row["note"] = row.get("note") or "Simplify Copilot"
+                row["note"] = row.get("note") or "ATS confirmation verified"
                 return row
             try:
                 now_stable = _stable_apply_url(page.url or "")
@@ -5227,11 +5472,11 @@ def apply_one(page, job: dict, wait_seconds: int = 0, navigate: bool = True, all
             if after_stable != apply_hold:
                 apply_hold = after_stable
                 apply_hold_from = time.time()
-            if step == "submitted" or is_success(page):
+            if submission_confirmed(page):
                 row["ok"] = True
                 row["status"] = "SUBMITTED"
                 row["final_url"] = page.url
-                row["note"] = "Simplify Copilot"
+                row["note"] = "ATS confirmation verified"
                 return row
             if step == "auth_failed":
                 row["status"] = "AUTH_FAILED"
