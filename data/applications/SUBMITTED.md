@@ -128,3 +128,11 @@
   https://www.instahyre.com/job-435678-engineering-lead-at-adosx-hyderabad/
 - **2026-09-08T06:32:07Z** SUBMITTED **Accenture** — Solution Architect
   https://www.foundit.in/job/solution-architect-accenture-hyderabad-secunderabad-telangana-63144656?&autoApply=true
+- **2026-11-15T17:03:09Z** SUBMITTED **Nagarro** — Senior Staff Engineer, Cloud
+  https://jobs.smartrecruiters.com/oneclick-ui/company/Nagarro1/publication/080e735d-1569-43e3-93dc-78c9c356ca74/success?dcr_ci=Nagarro1
+- **2026-11-15T17:20:28Z** SUBMITTED **Nagarro** — Senior Staff Engineer
+  https://jobs.smartrecruiters.com/oneclick-ui/company/Nagarro1/publication/f6860223-c73b-4bb9-bf44-1abd12948f43/success?dcr_ci=Nagarro1
+- **2026-11-15T18:06:15Z** SUBMITTED **Skyspecs** — Sr Software Engineer
+  https://skyspecs.breezy.hr/p/d9399b066206-senior-software-engineer/apply
+- **2026-11-16T18:20:38Z** SUBMITTED **Nityo Infotech** — Technical Lead - Frontend & Mobile App Architecture (10-16 yrs)
+  https://www.hirist.tech/j/technical-lead-frontend-mobile-app-architecture-1683709?ref=naukri_tt&utm_source=naukri_tt

@@ -19,3 +19,11 @@
 - **NEED CAPTCHA** Charles Schwab — Sr Manager Software Development And Engineering Senior Pl
   https://career-ind-schwab.icims.com/jobs/124303/sr-manager%2c-software-development-%26-engineering-senior-%28pl%29/login
   iCIMS hCaptcha on returning-candidate login. Solve in Desktop / Take control. Do not persist-skip. Do not hammer login.
+- **NEED CAPTCHA** Outreach — Staff Software Engineer
+  https://jobs.lever.co/outreach/18e15790-4e2f-4d5f-b072-8ed74c604ad3/apply
+- **NEED CAPTCHA** Outreach — Staff Software Engineer, Mobile
+  https://jobs.lever.co/outreach/565a94cf-8197-4f03-979c-e97dcda97b76/apply
+- **NEED CAPTCHA** Outreach — Sr. Staff Software Engineer, Mobile
+  https://jobs.lever.co/outreach/f2707d54-16cb-4d5b-be8f-a50365e8a25c/apply
+- **NEED CAPTCHA** Turvo — Sr Software Engineer
+  https://jobs.lever.co/turvo/5e981703-698d-46e1-bf1a-177ba8d055ea/apply

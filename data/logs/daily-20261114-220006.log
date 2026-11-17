@@ -1,0 +1,2323 @@
+﻿[22:00:06] Runner started. Log: C:\Code\Local_JobsHyderabad\data\logs\daily-20261114-220006.log
+Queue 486 | leftover career portals 10 | leftover other-board 62 | skipped 0
+Headed Chrome on DISPLAY=:1 ΓÇö complete CAPTCHA/login in the desktop view.
+  Connecting to open Chrome on CDP 9222...
+  CDP connected.
+  Google password not in .env / GOOGLE_PASSWORD; cannot auto sign-in.
+  Closed leftover apply tabs. Google/Gmail and parked CAPTCHA tabs stay open.
+  Using open Chrome profile rafi.success@gmail.com (C:\Code\Local_JobsHyderabad\data\chrome_profile) + Simplify Copilot
+  One application at a time. Next job after submit, closed posting, or locked/rejected portal login.
+  Warming Naukri/Instahyre Google sessions from the signed-in Gmail profile...
+  Opening Naukri Google login...
+  Opening Instahyre Google login...
+  Instahyre session already logged in.
+  Session queue: leftover 72 (10 career, 33 Naukri).
+
+=== Apply leftover jobs (72), other-boards mixed in ===
+
+[1/72] GE VERNOVA: Staff Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_ge_vernova_131026940799.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-staff-software-engineer-ge-renewable-energy-technologies-private-limited-hyderabad-bengaluru-3-to-6-years-131026940799
+
+[2/72] Thomson Reuters: Staff Software Engineer I
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_thomson_reuters_021126500847.docx
+  Naukri buttons (14): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '2.1K Reviews', 'w': 69, 'h': 15, 'x': 1121, 'y': 460}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 635}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1054, 'y': 635}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1104, 'y': 635}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1154, 'y': 635}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1204, 'y': 635}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1254, 'y': 635}, {'id': '', 'cls': '!mb-4 ml-auto text-title14Sb text-n200 underline', 't': 'View all', 'w': 50, 'h': 22, 'x': 1267, 'y': 1442}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-staff-software-engineer-i-thomson-reuters-india-pvt-ltd-hyderabad-6-to-11-years-021126500847
+
+[3/72] Deloitte: Application Architect .Net -Lead Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Application Architect ΓÇö .NET
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_application_architect_deloitte_69791991.docx
+  Foundit Akamai challenge. Warming session from homepage...
+  Foundit challenge cleared.
+  Simplify Copilot: clicked 'Apply Now'.
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69791991
+
+[4/72] Zenoti: Senior Software Engineer - .NET + AI
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ Azure ┬╖ AWS
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_zenoti_8004504003.docx
+  Filled 1 email / confirm-email field(s).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Auto-filled 4 field(s) from profile and learned answers.
+  Learned 3 new/changed field(s).
+  Clicked reCAPTCHA I'm not a robot.
+  Filled career-site account fields (email=1 password_boxes=0).
+  Simplify Copilot needs 'Submit application'. Clicked it.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Clicked 'Apply for a role @ Zenoti'.
+  Clicked ATS submit 'Submit application' (open-source handler, skipped Copilot overlay).
+  Clicked reCAPTCHA I'm not a robot.
+  Filled career-site account fields (email=1 password_boxes=0).
+  Simplify Copilot needs 'Submit application'. Clicked it.
+  Auto-filled 2 field(s) from profile and learned answers.
+  Clicked ATS submit 'Submit application' (open-source handler, skipped Copilot overlay).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Skipping repeated Copilot 'Submit application' ΓÇö no page change.
+  Auto-filled 2 field(s) from profile and learned answers.
+  Clicked ATS submit 'Submit application' (open-source handler, skipped Copilot overlay).
+  Staying on this form until Submit (up to 90s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Learned 3 new/changed field(s).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Skipping repeated Copilot 'Submit application' ΓÇö no page change.
+  Auto-filled 2 field(s) from profile and learned answers.
+  Clicked ATS submit 'Submit application' (open-source handler, skipped Copilot overlay).
+  Learned 3 new/changed field(s).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Skipping repeated Copilot 'Submit application' ΓÇö no page change.
+  Auto-filled 2 field(s) from profile and learned answers.
+  Clicked ATS submit 'Submit application' (open-source handler, skipped Copilot overlay).
+  Learned 3 new/changed field(s).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Skipping repeated Copilot 'Submit application' ΓÇö no page change.
+  Auto-filled 2 field(s) from profile and learned answers.
+  Clicked ATS submit 'Submit application' (open-source handler, skipped Copilot overlay).
+  Learned 3 new/changed field(s).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Skipping repeated Copilot 'Submit application' ΓÇö no page change.
+  Auto-filled 2 field(s) from profile and learned answers.
+  Clicked ATS submit 'Submit application' (open-source handler, skipped Copilot overlay).
+  Same issue repeated 3 times. Changing tactics on this form.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Clicked ATS submit 'Submit application' (open-source handler, skipped Copilot overlay).
+  Still no confirmation after 90s. Learned 12 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://job-boards.greenhouse.io/zenoti/jobs/8004504003
+
+[5/72] Zensar Technologies Limited: Senior Software Engineer .NET Core, AWS & SQL Server
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ AWS ┬╖ SQL Server
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_zensar_technologies_limi_69799232.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Simplify Copilot: clicked 'Apply Now'.
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69799232
+
+[6/72] Cognizant Technology Solutions India Pvt Ltd: Solution Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_cognizant_technology_sol_69696364.docx
+(node:20344) TimeoutNegativeWarning: -6300.750999999931 is a negative number.
+Timeout duration was set to 1.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Simplify Copilot: clicked 'Apply Now'.
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69696364
+
+[7/72] Deloitte: Tax Senior Global Employer Services Technology Center (GESTC) Informatica Solution Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_deloitte_69761753.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Simplify Copilot: clicked 'Apply Now'.
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69761753
+
+[8/72] Broadcom: Staff Software Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Software Architect ΓÇö .NET ┬╖ AWS ┬╖ Microservices
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_software_architect_broadcom_staff_software_architect_r02.docx
+  Clicked 'Apply'.
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Auto-filled 12 field(s) from profile and learned answers.
+  Filled career-site account fields (email=1 password_boxes=0).
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: added skill Amazon Web Services (AWS) (search box).
+  Filled 1 Workday field(s).
+  Simplify Copilot needs 'Next'. Clicked it.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: added skill Azure (search box).
+  Filled 1 Workday field(s).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: added skill Azure (search box).
+  Filled 1 Workday field(s).
+  Simplify Copilot needs 'Next'. Clicked it.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: added skill Azure (search box).
+  Filled 1 Workday field(s).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: added skill Azure (search box).
+  Filled 1 Workday field(s).
+  Simplify Copilot needs 'Next'. Clicked it.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: added skill Azure (search box).
+  Filled 1 Workday field(s).
+  Staying on this form until Submit (up to 90s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Filled career-site account fields (email=1 password_boxes=0).
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: added skill Azure (search box).
+  Filled 1 Workday field(s).
+  Simplify Copilot needs 'Next'. Clicked it.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: added skill Azure (search box).
+  Filled 1 Workday field(s).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: added skill Azure (search box).
+  Filled 1 Workday field(s).
+  Simplify Copilot needs 'Next'. Clicked it.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: added skill SQL (search box).
+  Filled 1 Workday field(s).
+  Still no confirmation after 90s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://broadcom.wd1.myworkdayjobs.com/en-US/External_Career/job/IND-Hyderabad-115-IT-Park-Area/Staff-Software-Architect_R027167-3/apply/applyManually
+
+[9/72] Apple: Engineering Manager- Finance Engineering
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Engineering Manager ΓÇö .NET ┬╖ Engineering Manager
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_engineering_manager_apple_69753747.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69753747
+
+[10/72] Simcorp: Principal Software Engineer - AI and C# with Azure
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Principal Software Engineer ΓÇö .NET ┬╖ Azure ┬╖ C#
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_principal_software_engineer_simcorp_300926504090.docx
+  Naukri buttons (9): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'flex items-center gap-[6px] ml-[10px]', 't': 'Go to company site', 'w': 145, 'h': 19, 'x': 268, 'y': 516}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '84 Reviews', 'w': 62, 'h': 15, 'x': 1121, 'y': 227}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 437}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Opened company site from Naukri: https://simcorp.wd3.myworkdayjobs.com/en-US/SimCorp_Jobs/job/Hyderabad/Principal-Software-Engineer--
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Clicked 'Apply'.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Filled career-site account fields (email=1 password_boxes=2).
+  Portal password #1 did not advance; trying next.
+  Filled career-site account fields (email=1 password_boxes=1).
+  Create Account rejected. Closing this application.
+  Skipping this job. Closing the tab and opening the next leftover.
+  Portal login failed. Closing this tab and opening the next leftover.
+  AUTH_FAILED ok=False https://simcorp.wd3.myworkdayjobs.com/en-US/SimCorp_Jobs/job/Hyderabad/Principal-Software-Engineer---AI-and-C--with-Azure_R-212773-2/apply/applyManually
+
+[11/72] Lendingtree Research Services: Staff Software Engineer (C#/.NET, Microservices & Azure)
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Azure ┬╖ Microservices
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_lendingtree_research_ser_111126000005.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-staff-software-engineer-c-net-microservices-azure-lendingtree-research-services-hyderabad-8-to-13-years-111126000005
+
+[12/72] Amgen: Senior Software Engineer, Full Stack ΓÇö Decision Intelligence
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_amgen_senior_software_engineer_ful.docx
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Staying on this form until Submit (up to 90s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Still no confirmation after 90s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://community.workday.com/maintenance-page?d=1&s=1&e=1&o=
+
+[13/72] Simcorp: Lead Software Engineer (C#/APL)
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ C#
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_simcorp_271026500938.docx
+  Naukri buttons (9): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'flex items-center gap-[6px] ml-[10px]', 't': 'Go to company site', 'w': 145, 'h': 19, 'x': 258, 'y': 497}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '84 Reviews', 'w': 62, 'h': 15, 'x': 1121, 'y': 227}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 437}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Opened company site from Naukri: https://simcorp.wd3.myworkdayjobs.com/en-US/SimCorp_Jobs/job/Noida/Lead-Software-Engineer--C--APL-_R
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Clicked 'Apply'.
+  Clicked 'Apply Manually'.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Filled career-site account fields (email=1 password_boxes=2).
+  Portal password #1 did not advance; trying next.
+  Filled career-site account fields (email=1 password_boxes=1).
+  Create Account rejected. Closing this application.
+  Skipping this job. Closing the tab and opening the next leftover.
+  Portal login failed. Closing this tab and opening the next leftover.
+  AUTH_FAILED ok=False https://simcorp.wd3.myworkdayjobs.com/en-US/SimCorp_Jobs/job/Noida/Lead-Software-Engineer--C--APL-_R-212871/apply/applyManually
+
+[14/72] Simcorp: Lead Software Engineer - C# .net
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ C#
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_simcorp_151026503276.docx
+  Naukri buttons (9): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'flex items-center gap-[6px] ml-[10px]', 't': 'Go to company site', 'w': 145, 'h': 19, 'x': 260, 'y': 497}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '84 Reviews', 'w': 62, 'h': 15, 'x': 1121, 'y': 227}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 437}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Opened company site from Naukri: https://simcorp.wd3.myworkdayjobs.com/en-US/SimCorp_Jobs/job/Hyderabad/Lead-Software-Engineer---C--n
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Clicked 'Apply'.
+  Clicked 'Apply Manually'.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Filled career-site account fields (email=1 password_boxes=2).
+  Portal password #1 did not advance; trying next.
+  Filled career-site account fields (email=1 password_boxes=1).
+  Create Account rejected. Closing this application.
+  Skipping this job. Closing the tab and opening the next leftover.
+  Portal login failed. Closing this tab and opening the next leftover.
+  AUTH_FAILED ok=False https://simcorp.wd3.myworkdayjobs.com/en-US/SimCorp_Jobs/job/Hyderabad/Lead-Software-Engineer---C--net_R-212853-1/apply/applyManually
+
+[15/72] Indusind Bank: Senior .Net Developer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_indusind_bank_220926020739.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-senior-net-developer-indusind-bank-hyderabad-5-to-6-years-220926020739
+
+[16/72] Amazon: Sr. Application Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ AWS ┬╖ Microservices
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_amazon_10570012.docx
+  Filled 1 email / confirm-email field(s).
+  Filled career-site account fields (email=1 password_boxes=0).
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  AMAZON SIGN-IN ΓÇö please sign in on this tab (Desktop / Take control)
+  Amazon: Sr. Application Architect
+  https://passport.amazon.jobs/
+  Leaving this tab open. Starting the next leftover now.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  Left this tab open for you.
+  Starting the next leftover.
+  OWNER_SIGNIN ok=False https://passport.amazon.jobs/
+
+[17/72] Epiq Systems: Staff Software Engineer/ Solution Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_epiq_systems_290926500641.docx
+  Naukri buttons (8): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '401 Reviews', 'w': 67, 'h': 15, 'x': 1121, 'y': 460}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 670}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Opened company site from Naukri: https://epiqsystems.wd503.myworkdayjobs.com/en-US/Epiq_Careers/job/IND-Hyderabad-Sohini-Tech-Park-3r
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Staying on this form until Submit (up to 90s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Still no confirmation after 90s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://epiqsystems.wd503.myworkdayjobs.com/en-US/Epiq_Careers/job/IND-Hyderabad-Sohini-Tech-Park-3rd-Floor-Financial-District/Staff-Software-Engineer--Solution-Architect_R0035035
+
+[18/72] Elemica: Principal Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Principal Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_principal_software_engineer_elemica_281026501801.docx
+  Naukri buttons (9): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'flex items-center gap-[6px] ml-[10px]', 't': 'Go to company site', 'w': 145, 'h': 19, 'x': 258, 'y': 691}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '26 Reviews', 'w': 61, 'h': 15, 'x': 1121, 'y': 460}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 670}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Opened company site from Naukri: https://elemica.wd501.myworkdayjobs.com/en-US/Elemica_Careers/job/Hyderabad-India---Office/Principal
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Clicked 'Apply'.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Filled career-site account fields (email=1 password_boxes=2).
+  Portal password #1 did not advance; trying next.
+  Filled career-site account fields (email=1 password_boxes=1).
+  Create Account rejected. Closing this application.
+  Skipping this job. Closing the tab and opening the next leftover.
+  Portal login failed. Closing this tab and opening the next leftover.
+  AUTH_FAILED ok=False https://elemica.wd501.myworkdayjobs.com/en-US/Elemica_Careers/job/Hyderabad%2C-India---Office/Principal-Software-Engineer_JR100109/apply/applyManually?locations=a7494a88c8c6100108de888a93510000
+
+[19/72] F5: Principal Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Principal Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_principal_software_engineer_f5_121126926093.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-principal-software-engineer-f5-networks-innovation-private-limited-hyderabad-bengaluru-bengaluru-hyderabad-10-to-15-years-121126926093
+
+[20/72] Amazon: Sr. Principal Software Engineer, Shipping Tech & Services
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Amazon sign-in already parked. Leaving that tab; skipping this duplicate.
+
+[21/72] Icresset: Principal Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Principal Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_principal_software_engineer_icresset_110423500983.docx
+  Naukri buttons (6): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Opened company site from Naukri: https://icresset.com/job/528
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Staying on this form until Submit (up to 15s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Still no confirmation after 15s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://icresset.com/job/528
+
+[22/72] Labcorp Endpoint: Principal Software Engineer - Bangalore / Hyderabad
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Principal Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_principal_software_engineer_labcorp_endpoint_161026027195.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-principal-software-engineer-bangalore-hyderabad-labcorp-endpoint-hyderabad-bengaluru-10-to-20-years-161026027195
+
+[23/72] Lloyds Technology Centre: Principal Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Principal Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_principal_software_engineer_lloyds_technology_centre_030926503127.docx
+  Naukri buttons (8): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '378 Reviews', 'w': 68, 'h': 15, 'x': 1121, 'y': 227}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 491}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-principal-software-engineer-lloyds-technology-centre-india-hyderabad-3-to-7-years-030926503127
+
+[24/72] highradius: Principal Product Solution Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Integration
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_highradius_7802439003.docx
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Staying on this form until Submit (up to 90s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Still no confirmation after 90s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://boards.greenhouse.io/embed/job_app?for=highradius&token=7802439003
+
+[25/72] Redwood Software India: Principal Software Engineer (AI CoE)
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Principal Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_principal_software_engineer_redwood_software_india_111126032677.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-principal-software-engineer-ai-coe-redwood-software-india-hyderabad-12-to-20-years-111126032677
+
+[26/72] Trinet Group: Principal Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Principal Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_principal_software_engineer_trinet_group_041126502202.docx
+  Naukri buttons (7): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '80 Reviews', 'w': 62, 'h': 15, 'x': 1122, 'y': 227}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-principal-software-engineer-trinet-group-inc-hyderabad-12-to-17-years-041126502202
+
+[27/72] Armis: Staff Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_armis_291026502763.docx
+  Naukri buttons (6): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-staff-software-engineer-armis-hyderabad-9-to-14-years-291026502763
+
+[28/72] coinbase: Staff Software Engineer, Security Platform
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ System Design ┬╖ Stakeholder
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_coinbase_8167571.docx
+  Clicked 'Apply now'.
+  Filled 1 email / confirm-email field(s).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Auto-filled 29 field(s) from profile and learned answers.
+  Learned 3 new/changed field(s).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Selected 'Career' for how did you hear.
+  Simplify Copilot needs 'Submit application'. Clicked it.
+  Auto-filled 7 field(s) from profile and learned answers.
+  Clicked ATS submit 'Submit application' (open-source handler, skipped Copilot overlay).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Selected 'Career' for how did you hear.
+  Simplify Copilot needs 'Submit application'. Clicked it.
+  Auto-filled 8 field(s) from profile and learned answers.
+  Clicked ATS submit 'Submit application' (open-source handler, skipped Copilot overlay).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Selected 'Career' for how did you hear.
+  Skipping repeated Copilot 'Submit application' ΓÇö no page change.
+  Auto-filled 8 field(s) from profile and learned answers.
+  Clicked ATS submit 'Submit application' (open-source handler, skipped Copilot overlay).
+  Staying on this form until Submit (up to 90s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Learned 3 new/changed field(s).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Selected 'Career' for how did you hear.
+  Skipping repeated Copilot 'Submit application' ΓÇö no page change.
+  Auto-filled 8 field(s) from profile and learned answers.
+  Clicked ATS submit 'Submit application' (open-source handler, skipped Copilot overlay).
+  Learned 3 new/changed field(s).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Selected 'Career' for how did you hear.
+  Skipping repeated Copilot 'Submit application' ΓÇö no page change.
+  Auto-filled 8 field(s) from profile and learned answers.
+  Clicked ATS submit 'Submit application' (open-source handler, skipped Copilot overlay).
+  Learned 3 new/changed field(s).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Selected 'Career' for how did you hear.
+  Skipping repeated Copilot 'Submit application' ΓÇö no page change.
+  Auto-filled 8 field(s) from profile and learned answers.
+  Clicked ATS submit 'Submit application' (open-source handler, skipped Copilot overlay).
+  Learned 3 new/changed field(s).
+  Filled career-site account fields (email=1 password_boxes=0).
+  Selected 'Career' for how did you hear.
+  Skipping repeated Copilot 'Submit application' ΓÇö no page change.
+  Auto-filled 8 field(s) from profile and learned answers.
+  Clicked ATS submit 'Submit application' (open-source handler, skipped Copilot overlay).
+  Same issue repeated 3 times. Changing tactics on this form.
+  Auto-filled 6 field(s) from profile and learned answers.
+  Clicked ATS submit 'Submit application' (open-source handler, skipped Copilot overlay).
+  Still no confirmation after 90s. Learned 12 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://job-boards.greenhouse.io/embed/job_app?token=8167571&for=coinbase&gh_jid=8167571
+
+[29/72] Armis: Staff Software Engineer, Integrations
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Integration
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_armis_121126503215.docx
+  Naukri buttons (6): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Browse other jobs', 'w': 141, 'h': 39, 'x': 679, 'y': 568}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri listing has no Quick apply (Browse other jobs). Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-staff-software-engineer-integrations-armis-hyderabad-ahmedabad-8-to-13-years-121126503215
+
+[30/72] Deliveroo: Staff Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_deliveroo_210926501070.docx
+  Naukri buttons (7): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '48 Reviews', 'w': 62, 'h': 15, 'x': 1121, 'y': 227}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-staff-software-engineer-deliveroo-hyderabad-9-to-10-years-210926501070
+
+[31/72] Outreach: Sr. Staff Software Engineer, Mobile
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_outreach_061126501702.docx
+  Naukri buttons (7): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '10 Reviews', 'w': 60, 'h': 15, 'x': 1121, 'y': 227}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Opened company site from Naukri: https://jobs.lever.co/outreach/f2707d54-16cb-4d5b-be8f-a50365e8a25c
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Clicked 'APPLY FOR THIS JOB'.
+  Staying on this form until Submit (up to 90s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Still no confirmation after 90s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://jobs.lever.co/outreach/f2707d54-16cb-4d5b-be8f-a50365e8a25c/apply
+
+[32/72] State Street: Principal Engineer ΓÇô Knowledge, Data & RAG Engineering- Assistant Vice President
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Principal Software Engineer ΓÇö .NET ┬╖ Azure ┬╖ Kafka
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_principal_software_engineer_state_street_principal_engineer_knowledge.docx
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Clicked 'Apply'.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Clicked Sign in with email.
+  Filled career-site account fields (email=1 password_boxes=1).
+  Signed in with portal password #1.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Simplify Copilot needs 'Save and Continue'. Clicked it.
+  Auto-filled 12 field(s) from profile and learned answers.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: how did you hear ΓÇö selected an option.
+  Workday: previously worked = No (clicked).
+  Workday: added skill Azure (search box).
+  Filled 3 Workday field(s).
+  Staying on this form until Submit (up to 90s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Learned 1 new/changed field(s).
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: how did you hear ΓÇö selected an option.
+  Workday: previously worked = No (clicked).
+  Workday: added skill Azure (search box).
+  Filled 3 Workday field(s).
+  Simplify Copilot needs 'Save and Continue'. Clicked it.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: how did you hear ΓÇö selected an option.
+  Workday: previously worked = No (clicked).
+  Workday: added skill Azure (search box).
+  Filled 3 Workday field(s).
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: how did you hear ΓÇö selected an option.
+  Workday: previously worked = No (clicked).
+  Workday: added skill Azure (search box).
+  Filled 3 Workday field(s).
+  Skipping repeated Copilot 'Save and Continue' ΓÇö no page change.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: how did you hear ΓÇö selected an option.
+  Workday: previously worked = No (clicked).
+  Workday: added skill Azure (search box).
+  Filled 3 Workday field(s).
+  Auto-filled 1 field(s) from profile and learned answers.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: how did you hear ΓÇö selected an option.
+  Workday: previously worked = No (clicked).
+  Workday: added skill Azure (search box).
+  Filled 3 Workday field(s).
+  Skipping repeated Copilot 'Save and Continue' ΓÇö no page change.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: how did you hear ΓÇö selected an option.
+  Workday: previously worked = No (clicked).
+  Workday: added skill Azure (search box).
+  Filled 3 Workday field(s).
+  Auto-filled 1 field(s) from profile and learned answers.
+  Still no confirmation after 90s. Learned 1 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://statestreet.wd1.myworkdayjobs.com/en-US/Global/job/Hyderabad%2C-India/Principal-Engineer---Knowledge--Data---RAG-Engineering--Assistant-Vice-President_R-800062/apply/applyManually
+
+[33/72] Outreach: Staff Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_outreach_061126501615.docx
+  Naukri buttons (7): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '10 Reviews', 'w': 60, 'h': 15, 'x': 1121, 'y': 227}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Opened company site from Naukri: https://jobs.lever.co/outreach/18e15790-4e2f-4d5f-b072-8ed74c604ad3
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Clicked 'APPLY FOR THIS JOB'.
+  Clicked ATS submit 'SUBMIT APPLICATION' (open-source handler, skipped Copilot overlay).
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  CAPTCHA ΓÇö please solve it now in Desktop / Take control
+  Outreach: Staff Software Engineer
+  https://jobs.lever.co/outreach/18e15790-4e2f-4d5f-b072-8ed74c604ad3/apply
+  Parked this tab. Starting the next leftover now.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  CAPTCHA parked. Opening the next leftover now.
+  Left this tab open for you.
+  Starting the next leftover.
+  CAPTCHA ok=False https://jobs.lever.co/outreach/18e15790-4e2f-4d5f-b072-8ed74c604ad3/apply
+
+[34/72] Outreach: Staff Software Engineer, Mobile
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_outreach_061126501704.docx
+  Naukri buttons (7): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '10 Reviews', 'w': 60, 'h': 15, 'x': 1121, 'y': 227}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Opened company site from Naukri: https://jobs.lever.co/outreach/565a94cf-8197-4f03-979c-e97dcda97b76
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Clicked 'APPLY FOR THIS JOB'.
+  Clicked ATS submit 'SUBMIT APPLICATION' (open-source handler, skipped Copilot overlay).
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  CAPTCHA ΓÇö please solve it now in Desktop / Take control
+  Outreach: Staff Software Engineer, Mobile
+  https://jobs.lever.co/outreach/565a94cf-8197-4f03-979c-e97dcda97b76/apply
+  Parked this tab. Starting the next leftover now.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  CAPTCHA parked. Opening the next leftover now.
+  Left this tab open for you.
+  Starting the next leftover.
+  CAPTCHA ok=False https://jobs.lever.co/outreach/565a94cf-8197-4f03-979c-e97dcda97b76/apply
+
+[35/72] The Hartford: Staff Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_the_hartford_250926502280.docx
+  Naukri buttons (10): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '19 Reviews', 'w': 59, 'h': 15, 'x': 1121, 'y': 227}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 437}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1054, 'y': 437}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1104, 'y': 437}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-staff-software-engineer-the-hartford-hyderabad-7-to-12-years-250926502280
+
+[36/72] State Street: PAM Engineering Manager - Vice President
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Engineering Manager ΓÇö .NET ┬╖ Azure ┬╖ AWS
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_engineering_manager_state_street_pam_engineering_manager_vice.docx
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Clicked 'Continue Application'.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Auto-filled 2 field(s) from profile and learned answers.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: how did you hear ΓÇö selected an option.
+  Workday: previously worked = No (clicked).
+  Workday: added skill Azure (search box).
+  Filled 3 Workday field(s).
+  Auto-filled 1 field(s) from profile and learned answers.
+  Workday: added skill Azure.
+  Filled 1 Workday field(s).
+  Simplify Copilot needs 'Save and Continue'. Clicked it.
+  Staying on this form until Submit (up to 90s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Simplify Copilot needs 'Save and Continue'. Clicked it.
+  Skipping repeated Copilot 'Save and Continue' ΓÇö no page change.
+  Skipping repeated Copilot 'Save and Continue' ΓÇö no page change.
+  Skipping repeated Copilot 'Save and Continue' ΓÇö no page change.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Skipping repeated Copilot 'Save and Continue' ΓÇö no page change.
+  Skipping repeated Copilot 'Save and Continue' ΓÇö no page change.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  PAUSED ΓÇö I filled what I can. Enter leftover fields in Desktop / Take control
+  State Street: PAM Engineering Manager - Vice President
+  https://statestreet.wd1.myworkdayjobs.com/en-US/Global/job/Hyderabad%2C-India/PAM-Engineering-Manager---Vice-President_R-793874-1/apply
+  - Errors Found
+  I will learn what you type and continue this same application.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  Leftover fields remain. Still filling until this stay ends.
+  Skipping repeated Copilot 'Save and Continue' ΓÇö no page change.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Still no confirmation after 90s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://statestreet.wd1.myworkdayjobs.com/en-US/Global/job/Hyderabad%2C-India/PAM-Engineering-Manager---Vice-President_R-793874-1/apply
+
+[37/72] Trinet Group: Staff Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_trinet_group_161026503840.docx
+  Naukri buttons (7): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '80 Reviews', 'w': 62, 'h': 15, 'x': 1122, 'y': 227}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-staff-software-engineer-trinet-group-inc-hyderabad-8-to-13-years-161026503840
+
+[38/72] Y Combinator: Senior/Staff Engineer: Backend
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_y_combinator_230626504402.docx
+  Naukri buttons (7): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 437}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-senior-staff-engineer-backend-y-combinator-hyderabad-6-to-11-years-230626504402
+
+[39/72] Blue Yonder: IN-Lead Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_blue_yonder_190326504795.docx
+  Naukri buttons (6): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Browse other jobs', 'w': 141, 'h': 39, 'x': 679, 'y': 568}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri listing has no Quick apply (Browse other jobs). Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-in-lead-software-engineer-blue-yonder-hyderabad-8-to-13-years-190326504795
+
+[40/72] State Street: Senior Software Engineer, Manager
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_state_street_senior_software_engineer_jav.docx
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Staying on this form until Submit (up to 90s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Workday: no catalog skill matched. Leftover: Type to Add Skills ΓÇö pick one in Desktop.
+  Still no confirmation after 90s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://statestreet.wd1.myworkdayjobs.com/en-US/Global/job/Hyderabad-India/Senior-Software-Engineer---Java-Fullstack--Officer_R-798073
+
+[41/72] Blue Yonder: Lead Software Engineer Workday Finance
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_blue_yonder_280726501047.docx
+  Naukri buttons (8): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '787 Reviews', 'w': 68, 'h': 15, 'x': 1121, 'y': 227}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 437}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-lead-software-engineer-workday-finance-jda-software-hyderabad-10-to-15-years-280726501047
+
+[42/72] Honeybee Tech Solutions: Senior Backend Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_honeybee_tech_solutions_231026932130.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-senior-backend-engineer-honeybee-tech-solutions-private-limited-hyderabad-6-to-8-years-231026932130
+
+[43/72] Navitas It Business Consulting: Senior Backend Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_navitas_it_business_cons_151026503354.docx
+  Naukri buttons (7): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '6 Reviews', 'w': 54, 'h': 15, 'x': 1122, 'y': 227}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-senior-backend-engineer-navitas-it-business-consulting-pvt-ltd-hyderabad-7-to-12-years-151026503354
+
+[44/72] Ngram: Senior Backend Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_ngram_240724500737.docx
+  Naukri buttons (6): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-senior-backend-engineer-ngram-hyderabad-4-to-8-years-240724500737
+
+[45/72] Nxtwave Disruptive Technologies(Hiring for a Client): Senior Backend Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_nxtwave_disruptive_techn_191026012307.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-senior-backend-engineer-nxtwave-disruptive-technologies-hiring-for-a-client-hyderabad-4-to-8-years-191026012307
+
+[46/72] Rarr Technologies: Senior Backend Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_rarr_technologies_190626500041.docx
+  Naukri buttons (8): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '39 Reviews', 'w': 61, 'h': 15, 'x': 1122, 'y': 227}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 472}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-senior-backend-engineer-rarr-technologies-hyderabad-5-to-9-years-190626500041
+
+[47/72] Tekskills: Senior Backend Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_tekskills_131026922400.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-senior-backend-engineer-tekskills-india-private-limited-hyderabad-7-to-11-years-131026922400
+
+[48/72] Timecode Technologies: Senior Software Engineer Backend & Integration
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ Integration
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_timecode_technologies_101126011087.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-senior-software-engineer-backend-integration-timecode-technologies-hyderabad-6-to-8-years-101126011087
+
+[49/72] Blue Yonder: Technical Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Rest ┬╖ CI/CD
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_blue_yonder_462756.docx
+  Opening Instahyre Google login...
+  Instahyre session already logged in.
+  Clicked Instahyre 'Apply now'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Staying on this form until Submit (up to 50s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Still no confirmation after 50s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://www.instahyre.com/job-462756-technical-architect-at-blue-yonder-bangalore-hyderabad/
+
+[50/72] vidaXL: Solution Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Azure ┬╖ AWS
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_vidaxl_448921.docx
+  Opening Instahyre Google login...
+  Instahyre session already logged in.
+  Clicked Instahyre 'Apply now'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Staying on this form until Submit (up to 50s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Still no confirmation after 50s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://www.instahyre.com/job-448921-solution-architect-at-vidaxl-hyderabad/
+
+[51/72] Nasuni: Principal Software Engineer - File System
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Principal Software Engineer ΓÇö .NET ┬╖ AWS ┬╖ Microservices
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_principal_software_engineer_nasuni_444359.docx
+  Opening Instahyre Google login...
+  Instahyre session already logged in.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Staying on this form until Submit (up to 50s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Still no confirmation after 50s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://www.instahyre.com/job-444359-principal-software-engineer-file-system-at-nasuni-hyderabad-work-from-home/
+
+[52/72] Blue Yonder: Lead Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ Azure ┬╖ AWS
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_blue_yonder_446387.docx
+  Opening Instahyre Google login...
+  Instahyre session already logged in.
+  Clicked Instahyre 'Apply now'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Staying on this form until Submit (up to 50s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Still no confirmation after 50s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://www.instahyre.com/job-446387-lead-software-engineer-at-blue-yonder-hyderabad/
+
+[53/72] Qapita: Lead Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ Azure ┬╖ AWS
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_qapita_445293.docx
+  Opening Instahyre Google login...
+  Instahyre session already logged in.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Staying on this form until Submit (up to 50s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Still no confirmation after 50s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://www.instahyre.com/job-445293-lead-software-engineer-at-qapita-hyderabad/
+
+[54/72] Nasuni: Senior Software Engineer - File System
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ AWS ┬╖ Microservices
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_nasuni_444372.docx
+  Opening Instahyre Google login...
+  Instahyre session already logged in.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Staying on this form until Submit (up to 50s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Still no confirmation after 50s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://www.instahyre.com/job-444372-senior-software-engineer-file-system-at-nasuni-hyderabad/
+
+[55/72] Wipro: Senior Architect - Claude
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Azure ┬╖ AWS
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_wipro_462560.docx
+  Opening Instahyre Google login...
+  Instahyre session already logged in.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Staying on this form until Submit (up to 50s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Clicked 'Apply to 0 jobs'.
+  Same issue repeated 3 times. Changing tactics on this form.
+  Clicked 'Apply to 0 jobs'.
+  Still no confirmation after 50s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  WAITING_EXPIRED ok=False https://www.instahyre.com/job-462560-senior-architect-claude-at-wipro-bangalore-chennai-hyderabad/
+
+[56/72] EPAM: Senior Solution Architect - .NET Full Stack
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_epam_69688375.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69688375
+
+[57/72] Citiustech Healthcare Technology Private Limited: Solution Architect - Finance
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_citiustech_healthcare_te_69682312.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69682312
+
+[58/72] Citiustech Healthcare Technology Private Limited: Solution Architect - HR
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_citiustech_healthcare_te_69682292.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69682292
+
+[59/72] Citiustech Healthcare Technology Private Limited: Solution Architect - ITAM
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_citiustech_healthcare_te_69682291.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69682291
+
+[60/72] Citiustech Healthcare Technology Private Limited: Solution Architect - Platform
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_citiustech_healthcare_te_69682313.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69682313
+
+[61/72] PS Collaborations: Associate Technical Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_ps_collaborations_69682329.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69682329
+
+[62/72] brace infotech private limited: Technical Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_brace_infotech_private_l_69745413.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69745413
+
+[63/72] CES Usa Inc: Oracle EBS & Cloud Apps Technical Lead
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ Technical Lead
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_ces_usa_inc_69711298.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69711298
+
+[64/72] DigitalOcean: Staff Software Engineer, Applied ML
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_digitalocean_69761410.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69761410
+
+[65/72] EPAM: Lead Software Engineer - Camunda
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_epam_69688601.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69688601
+
+[66/72] EY: DE-Application Engineer Technical Lead- II-VG-CS0048-B1
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ Technical Lead
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_ey_69718006.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69718006
+
+[67/72] ett careermove: Alteryx Technical Lead
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ Technical Lead
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_ett_careermove_69743275.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69743275
+
+[68/72] Artech Infosystems Private Limited: Senior Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_artech_infosystems_priva_67256996.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/67256996
+
+[69/72] Avenue Code: Senior Software Engineer (Golang & React)
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ React
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_avenue_code_69731061.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69731061
+
+[70/72] Chubb: Senior Software Engineer - Playwright Automation
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_chubb_69746068.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69746068
+
+[71/72] Techno-comp Computer Services Private Limited: Senior Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_techno_comp_computer_ser_69682420.docx
+  Watching Simplify Copilot (microsoft copilot studio,┬á).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.foundit.in/job/69682420
+
+[72/72] Techno-comp Computer Services Private Limited: Senior Software Engineer - 1512
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_techno_comp_computer_ser_69682421.docx
+  Foundit Akamai challenge. Warming session from homepage...
+  Foundit still blocked after warmup. Skipping other Foundit leftovers this round.
+  Board blocked this environment. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.foundit.in/job/69682421
+  Only 0 new submits (target 50). Discovering more leftovers.
+  Discovering fresh Hyderabad career portals and India boards...
+Hyderabad GCC career portals...
+  Phenom Charles Schwab www.schwabjobs.com
+    +5 rows
+  Phenom Fidelity jobs.fidelity.com
+    +0 rows
+  Phenom Vanguard www.vanguardjobs.com
+    +0 rows
+  Phenom American Express jobs.americanexpress.com
+    +0 rows
+  Phenom DTCC careers.dtcc.com
+    +0 rows
+  Workday State Street
+    +8 rows
+  Workday BNY Mellon
+    skip (no API)
+  Phenom Invesco careers.invesco.com
+    +0 rows
+  Workday Franklin Templeton
+    skip (no API)
+  Phenom Synchrony jobs.synchrony.com
+    +0 rows
+  Phenom UBS jobs.ubs.com
+    +0 rows
+  Workday SS&C
+    skip (no API)
+  Phenom ICE careers.ice.com
+    +0 rows
+  Apple jobs.apple.com
+    +0 rows
+  Workday Analog Devices
+    skip (no API)
+  Workday Western Digital
+    skip (no API)
+  Workday Applied Materials
+    +0 rows
+  Phenom Cotiviti careers.cotiviti.com
+    +0 rows
+  Extra Eightfold Hyd GCCs
+    +0 rows
+New GCC raw rows: 13
+Preferred campus career search...
+  Workday Wells Fargo
+    skip (no API)
+  Workday Bank of America
+    skip (no API)
+  Workday HSBC
+    skip (no API)
+  Workday Thomson Reuters
+    skip (no API)
+  Workday Qualcomm
+    skip (no API)
+  Workday Broadcom
+    +3 rows
+  Workday IBM
+    skip (no API)
+  Workday Oracle
+    skip (no API)
+  Workday Optum
+    skip (no API)
+  Workday Amgen
+    +7 rows
+  Workday Novartis
+    skip (no API)
+  Workday Deloitte
+    skip (no API)
+  Workday KPMG
+    skip (no API)
+  Workday GE Vernova
+    skip (no API)
+  Workday Accenture
+    skip (no API)
+  Workday Cognizant
+    skip (no API)
+  Workday Verizon
+    skip (no API)
+  Workday OpenText
+    skip (no API)
+  Workday Parexel
+    skip (no API)
+  Workday Syneos Health
+    skip (no API)
+  Workday GE Vernova
+    skip (no API)
+Microsoft careers...
+  Apple jobs.apple.com
+    +0 rows
+  Amazon.jobs Hyderabad
+    +3 rows
+  Phenom Synchrony jobs.synchrony.com
+    +0 rows
+  Phenom Electronic Arts jobs.ea.com
+    +0 rows
+  Phenom Parexel jobs.parexel.com
+    +0 rows
+  Phenom ArcelorMittal jobs.arcelormittal.com
+    +0 rows
+  Phenom McDonalds careers.mcdonalds.com
+    +0 rows
+  Eightfold preferred campuses
+    +0 rows
+  Greenhouse preferred campuses
+    +3 rows
+  Meta careers Hyderabad
+    +0 rows
+Preferred campus raw rows now: 29
+
+Unique 1569 open 725 ready 590
+Open ATS {'Greenhouse': 5, 'Amazon': 2, 'Workday': 6, 'Foundit': 636, 'SmartRecruiters': 1, 'Naukri': 64, 'Instahyre': 11}
+Open companies [('Microsoft Corp', 28), ('Renesas Electronics', 20), ('Google India', 18), ('Vanguard', 16), ('Micron Technology', 15), ('vanguard india', 13), ('Blue Yonder', 12), ('Nasuni', 11), ('Outreach', 10), ('FactSet', 9), ('TriNet', 9), ('marriott tech accelerator', 8), ('SimCorp', 7), ('providence india', 6), ('Clean Harbors', 6), ('innovapptive inc', 6), ('Medtronic', 6), ('Silicon Labs', 6), ('Qapita', 6), ('Quest Global', 6)]
+ 1 Greenhouse | Zenoti | Senior Software Engineer - .NET + AI | Hyderabad, Telangana, India
+ 2 Amazon | Amazon | Sr. Application Architect | IN, TS, Hyderabad Hyderabad, Tel
+ 3 Workday | Amgen | SAP Technical Architect - PFF | India - Hyderabad
+ 4 Workday | Broadcom | Staff Software Architect | IND-Hyderabad 115 IT Park Area
+ 5 Amazon | Amazon | Sr. Principal Software Engineer, Shipping Tech & Services | IN, TS, Hyderabad Hyderabad, Tel
+ 6 Foundit | The Wells Fargo Foundation | Lead Software Engineer (KAFKA, MULESOFT, IDMC, APIGEE, API D | Hyderabad, India
+ 7 Workday | Amgen | Senior Software Engineer, Full Stack ΓÇö Decision Intelligence | India - Hyderabad
+ 8 Foundit | Cognizant Consulting | Solution Architect | Hyderabad, India
+ 9 Foundit | Microsoft Corp | Solution Architect Manager | Hyderabad, India
+10 Foundit | People tech | SAP Technical Architect | Hyderabad
+11 Naukri | Tech Mahindra | SAP BTP Solution Architect | 15-24 Yrs Not disclosed Hybrid -
+12 Foundit | Zensar Technologies | SAP ABAP Technical Architect | Hyderabad, India
+13 Foundit | Zensar Technologies | Wealth Management Solution Architect | Hyderabad, India
+14 Foundit | amazon web services (aws) | Solution Architect, AGS-APJ-India-ISV-SA | Hyderabad, India
+15 Foundit | Microsoft Corp | Principal Engineer Architect | Hyderabad, India
+16 Foundit | Syneos Health | Principal Engineer Cloud Automation and Standards | Hyderabad, India
+17 Foundit | Amazon Alliance | Principal Software Engineer, Amazon Shipping | Hyderabad, India
+18 Foundit | Amazon Alliance | Principal Software Engineer, Delivery Experience (DEX) | Hyderabad, India
+19 Foundit | Amazon Alliance | Sr. Principal Software Engineer, Shipping Tech & Services | Hyderabad, India
+20 Foundit | Amazon Robotics | Sr. Principal Software Engineer, Shipping Tech & Services | Hyderabad, India
+21 Foundit | Amazon Thunder | Principal Software Engineer, Amazon Shipping | Hyderabad, India
+22 Foundit | Microsoft Corp | Principal Engineering Manager | Hyderabad, India
+23 Foundit | Microsoft Corp | Principal Software Engineering Manager | Hyderabad, India
+24 Foundit | Microsoft Corp | Principal Software Engineering Manager - Databases | Hyderabad, India
+25 Foundit | Microsoft Corp | Principal Software Engineering Manager- GitHub India | Hyderabad, India
+26 Foundit | Synchrony | AVP , Principal Engineer - AI Agent Engineering | Hyderabad, India
+27 Foundit | Synchrony | AVP Principal Engineer | Hyderabad, India
+28 Foundit | mcdonald's global office in india | Principal Engineer | Hyderabad, India
+29 Foundit | providence india | Principal Engineering Program Manager | Hyderabad, India
+30 Foundit | providence india | Principal Software Engineer | Hyderabad, India
+31 Naukri | Synchrony | AVP Sys Admin & AI Solution Architect (L10) | 7-12 Yrs Not disclosed Hyderabad
+32 Naukri | Thomson Reuters | Staff Software Engineer I | 6-11 Yrs Not disclosed Hyderabad
+33 Foundit | Cognizant Consulting | Engineering Manager | Hyderabad, India
+34 Foundit | Microsoft Corp | Principal Group Engineering Manager | Hyderabad, India
+35 Foundit | Synchrony | VP Engineering Manager | Hyderabad, India
+36 Foundit | providence india | Lead Software Engineer | Hyderabad, India
+37 Foundit | Microsoft Corp | Senior Software Engineer - Backend + Cloud | Hyderabad, India
+38 Foundit | Alter Domus | Senior Software Engineer | Hyderabad, India
+39 Foundit | Amazon Alliance | Senior Software Development Engineer, Payroll Tech | Hyderabad, India
+40 Foundit | Amazon Robotics | Senior Software Development Engineer, Payroll Tech | Hyderabad, India
+41 Foundit | Microsoft Corp | Senior Software Engineer | Hyderabad, India
+42 Foundit | Microsoft Corp | Senior Software Engineer - Product | Hyderabad, India
+43 Foundit | Microsoft Corp | Senior Software Engineer - Windows Systems | Hyderabad, India
+44 Foundit | providence india | Senior Software Engineer | Hyderabad, India
+45 Foundit | Baker Hughes | SAP HCM/Payroll Solution Architect | Hyderabad, Bengaluru, Malaysia, 
+46 Greenhouse | highradius | Principal Product Solution Architect | Hyderabad, Telangana, India
+47 Foundit | Blue Yonder | Staff Software Engineer I - NodeJS, Microservices, Cloud & T | Hyderabad, India
+48 Foundit | Microchip Technology | Principal Engineer - Characterization | Hyderabad, India
+49 Workday | State Street | Principal Engineer ΓÇô Knowledge, Data & RAG Engineering- Assi | Hyderabad, India
+50 Foundit | TTEC India Customer Solutions Private Limited | Systems Software Principal Engineer | Delhi, Hyderabad, Bengaluru
+Schwab matched in-scope: 5
+  Senior Manager Software Development And Engineering Lead Pl | Hyderabad | https://www.schwabjobs.com/job/hyderabad/senior-manager-software-development-and-engineering-lead-pl/33995/98043406640
+  Manager Software Development And Engineering | Hyderabad | https://www.schwabjobs.com/job/hyderabad/manager-software-development-and-engineering/33995/101024130304
+  Manager Software Development And Engineering | Hyderabad | https://www.schwabjobs.com/job/hyderabad/manager-software-development-and-engineering/33995/103197791536
+  Solutions Architect Brokerage Services | Hyderabad | https://www.schwabjobs.com/job/hyderabad/solutions-architect-brokerage-services/33995/91969140928
+  Solutions Architect Brokerage Services | Hyderabad | https://www.schwabjobs.com/job/hyderabad/solutions-architect-brokerage-services/33995/91969140928
+Instahyre...
+  stop at offset 700 status 429
+  scanned 700
+Foundit...
+  Foundit cards 680
+Indeed India RSS...
+  'technical architect' status 403 bytes 27941
+  'solution architect' status 403 bytes 27938
+  'software architect' status 403 bytes 27938
+  'principal engineer' status 403 bytes 27938
+  'staff software engineer' status 403 bytes 27953
+  'engineering manager' status 403 bytes 27941
+  'technical lead' status 403 bytes 27926
+  'senior software engineer' status 403 bytes 27956
+  '.net architect' status 403 bytes 27926
+  'lead software engineer' status 403 bytes 27950
+  'principal software engineer' status 403 bytes 27965
+  'staff engineer' status 403 bytes 27926
+  Indeed items 0
+Naukri...
+  api 'technical architect' status 406
+  html 'technical architect' status 200 bytes 38729
+  api 'solution architect' status 406
+  html 'solution architect' status 200 bytes 38722
+  api 'software architect' status 406
+  html 'software architect' status 200 bytes 38722
+  api 'principal engineer' status 406
+  html 'principal engineer' status 200 bytes 38721
+  api 'staff software engineer' status 406
+  html 'staff software engineer' status 200 bytes 38757
+  api 'engineering manager' status 406
+  html 'engineering manager' status 200 bytes 38728
+  Naukri cards 0
+Cutshort...
+  s://cutshort.io/api/jobs 'architect' 404 
+  cutshort.io/explore/jobs 'architect' 404 
+  cutshort.io/profile/jobs 'architect' 200 text/html; charset=utf-8
+  s://cutshort.io/api/jobs 'staff engineer' 404 
+  cutshort.io/explore/jobs 'staff engineer' 404 
+  cutshort.io/profile/jobs 'staff engineer' 200 text/html; charset=utf-8
+  s://cutshort.io/api/jobs 'principal engineer' 404 
+  cutshort.io/explore/jobs 'principal engineer' 404 
+  cutshort.io/profile/jobs 'principal engineer' 200 text/html; charset=utf-8
+  s://cutshort.io/api/jobs 'senior software engineer' 404 
+  cutshort.io/explore/jobs 'senior software engineer' 404 
+  cutshort.io/profile/jobs 'senior software engineer' 200 text/html; charset=utf-8
+  Cutshort cards 0
+Shine...
+  'technical architect' status 404
+  'solution architect' status 404
+  'software architect' status 404
+  'principal engineer' status 404
+  'staff software engineer' status 404
+  'engineering manager' status 404
+  Shine cards 0
+Hirist...
+  'technical architect' status 404
+  'solution architect' status 404
+  'software architect' status 404
+  'principal engineer' status 404
+  'staff software engineer' status 404
+  'engineering manager' status 404
+  Hirist cards 0
+TimesJobs...
+  'technical architect' status 200 bytes 13803
+  'solution architect' status 200 bytes 13803
+  'software architect' status 200 bytes 13803
+  'principal engineer' status 200 bytes 13803
+  'staff software engineer' status 200 bytes 13803
+  TimesJobs cards 0
+Remote OK / Remotive / WWR...
+  RemoteOK rows 97 status 200
+  Remotive rows 16 status 200
+  WWR items 25 status 200
+LinkedIn guest search...
+  'technical architect' status 200 bytes 31409
+  'solution architect' status 200 bytes 30557
+  'software architect' status 200 bytes 29850
+  LinkedIn cards 30
+Everywhere raw matched rows: 358
+
+Unique 1581 open 734 ready 598
+Open ATS {'Greenhouse': 5, 'Amazon': 2, 'Workday': 6, 'Foundit': 645, 'SmartRecruiters': 1, 'Naukri': 64, 'Instahyre': 11}
+Open companies [('Microsoft Corp', 28), ('Renesas Electronics', 20), ('Google India', 18), ('Vanguard', 16), ('Micron Technology', 15), ('vanguard india', 13), ('Blue Yonder', 12), ('Nasuni', 11), ('TriNet', 10), ('Outreach', 10), ('FactSet', 9), ('marriott tech accelerator', 8), ('SimCorp', 7), ('providence india', 6), ('Clean Harbors', 6), ('innovapptive inc', 6), ('Medtronic', 6), ('Silicon Labs', 6), ('Qapita', 6), ('Quest Global', 6)]
+ 1 Greenhouse | Zenoti | Senior Software Engineer - .NET + AI | Hyderabad, Telangana, India
+ 2 Amazon | Amazon | Sr. Application Architect | IN, TS, Hyderabad Hyderabad, Tel
+ 3 Workday | Amgen | SAP Technical Architect - PFF | India - Hyderabad
+ 4 Workday | Broadcom | Staff Software Architect | IND-Hyderabad 115 IT Park Area
+ 5 Amazon | Amazon | Sr. Principal Software Engineer, Shipping Tech & Services | IN, TS, Hyderabad Hyderabad, Tel
+ 6 Foundit | The Wells Fargo Foundation | Lead Software Engineer (KAFKA, MULESOFT, IDMC, APIGEE, API D | Hyderabad, India
+ 7 Workday | Amgen | Senior Software Engineer, Full Stack ΓÇö Decision Intelligence | India - Hyderabad
+ 8 Foundit | Cognizant Consulting | Solution Architect | Hyderabad, India
+ 9 Foundit | Microsoft Corp | Solution Architect Manager | Hyderabad, India
+10 Foundit | People tech | SAP Technical Architect | Hyderabad
+11 Naukri | Tech Mahindra | SAP BTP Solution Architect | 15-24 Yrs Not disclosed Hybrid -
+12 Foundit | Zensar Technologies | SAP ABAP Technical Architect | Hyderabad, India
+13 Foundit | Zensar Technologies | Wealth Management Solution Architect | Hyderabad, India
+14 Foundit | amazon web services (aws) | Solution Architect, AGS-APJ-India-ISV-SA | Hyderabad, India
+15 Foundit | Microsoft Corp | Principal Engineer Architect | Hyderabad, India
+16 Foundit | Syneos Health | Principal Engineer Cloud Automation and Standards | Hyderabad, India
+17 Foundit | Amazon Alliance | Principal Software Engineer, Amazon Shipping | Hyderabad, India
+18 Foundit | Amazon Alliance | Principal Software Engineer, Delivery Experience (DEX) | Hyderabad, India
+19 Foundit | Amazon Alliance | Sr. Principal Software Engineer, Shipping Tech & Services | Hyderabad, India
+20 Foundit | Amazon Robotics | Sr. Principal Software Engineer, Shipping Tech & Services | Hyderabad, India
+21 Foundit | Amazon Thunder | Principal Software Engineer, Amazon Shipping | Hyderabad, India
+22 Foundit | Microsoft Corp | Principal Engineering Manager | Hyderabad, India
+23 Foundit | Microsoft Corp | Principal Software Engineering Manager | Hyderabad, India
+24 Foundit | Microsoft Corp | Principal Software Engineering Manager - Databases | Hyderabad, India
+25 Foundit | Microsoft Corp | Principal Software Engineering Manager- GitHub India | Hyderabad, India
+26 Foundit | Synchrony | AVP , Principal Engineer - AI Agent Engineering | Hyderabad, India
+27 Foundit | Synchrony | AVP Principal Engineer | Hyderabad, India
+28 Foundit | mcdonald's global office in india | Principal Engineer | Hyderabad, India
+29 Foundit | providence india | Principal Engineering Program Manager | Hyderabad, India
+30 Foundit | providence india | Principal Software Engineer | Hyderabad, India
+31 Naukri | Synchrony | AVP Sys Admin & AI Solution Architect (L10) | 7-12 Yrs Not disclosed Hyderabad
+32 Naukri | Thomson Reuters | Staff Software Engineer I | 6-11 Yrs Not disclosed Hyderabad
+33 Foundit | Cognizant Consulting | Engineering Manager | Hyderabad, India
+34 Foundit | Microsoft Corp | Principal Group Engineering Manager | Hyderabad, India
+35 Foundit | Synchrony | VP Engineering Manager | Hyderabad, India
+36 Foundit | providence india | Lead Software Engineer | Hyderabad, India
+37 Foundit | Microsoft Corp | Senior Software Engineer - Backend + Cloud | Hyderabad, India
+38 Foundit | Alter Domus | Senior Software Engineer | Hyderabad, India
+39 Foundit | Amazon Alliance | Senior Software Development Engineer, Payroll Tech | Hyderabad, India
+40 Foundit | Amazon Robotics | Senior Software Development Engineer, Payroll Tech | Hyderabad, India
+41 Foundit | Microsoft Corp | Senior Software Engineer | Hyderabad, India
+42 Foundit | Microsoft Corp | Senior Software Engineer - Product | Hyderabad, India
+43 Foundit | Microsoft Corp | Senior Software Engineer - Windows Systems | Hyderabad, India
+44 Foundit | providence india | Senior Software Engineer | Hyderabad, India
+45 Foundit | Baker Hughes | SAP HCM/Payroll Solution Architect | Hyderabad, Bengaluru, Malaysia, 
+46 Greenhouse | highradius | Principal Product Solution Architect | Hyderabad, Telangana, India
+47 Foundit | Blue Yonder | Staff Software Engineer I - NodeJS, Microservices, Cloud & T | Hyderabad, India
+48 Foundit | Microchip Technology | Principal Engineer - Characterization | Hyderabad, India
+49 Workday | State Street | Principal Engineer ΓÇô Knowledge, Data & RAG Engineering- Assi | Hyderabad, India
+50 Foundit | TTEC India Customer Solutions Private Limited | Systems Software Principal Engineer | Delhi, Hyderabad, Bengaluru
+PENDING 453
+  Zenoti | Senior Software Engineer - .NET + AI | Hyderabad, Telangana, India | Greenhouse
+  Amazon | Sr. Application Architect | IN, TS, Hyderabad Hyderabad, Telangana, IND | Amazon
+  Broadcom | Staff Software Architect | IND-Hyderabad 115 IT Park Area | Workday
+  Amazon | Sr. Principal Software Engineer, Shipping Tech & Services | IN, TS, Hyderabad Hyderabad, Telangana, IND | Amazon
+  Amgen | Senior Software Engineer, Full Stack ΓÇö Decision Intelligence | India - Hyderabad | Workday
+  Cognizant Consulting | Solution Architect | Hyderabad, India | Foundit
+  Microsoft Corp | Solution Architect Manager | Hyderabad, India | Foundit
+  Zensar Technologies | Wealth Management Solution Architect | Hyderabad, India | Foundit
+  amazon web services (aws) | Solution Architect, AGS-APJ-India-ISV-SA | Hyderabad, India | Foundit
+  Microsoft Corp | Principal Engineer Architect | Hyderabad, India | Foundit
+  Syneos Health | Principal Engineer Cloud Automation and Standards | Hyderabad, India | Foundit
+  Amazon Alliance | Principal Software Engineer, Amazon Shipping | Hyderabad, India | Foundit
+  Amazon Alliance | Principal Software Engineer, Delivery Experience (DEX) | Hyderabad, India | Foundit
+  Amazon Alliance | Sr. Principal Software Engineer, Shipping Tech & Services | Hyderabad, India | Foundit
+  Amazon Robotics | Sr. Principal Software Engineer, Shipping Tech & Services | Hyderabad, India | Foundit
+  Amazon Thunder | Principal Software Engineer, Amazon Shipping | Hyderabad, India | Foundit
+  Microsoft Corp | Principal Engineering Manager | Hyderabad, India | Foundit
+  Microsoft Corp | Principal Software Engineering Manager | Hyderabad, India | Foundit
+  Microsoft Corp | Principal Software Engineering Manager - Databases | Hyderabad, India | Foundit
+  Microsoft Corp | Principal Software Engineering Manager- GitHub India | Hyderabad, India | Foundit
+  Synchrony | AVP Principal Engineer | Hyderabad, India | Foundit
+  mcdonald's global office in india | Principal Engineer | Hyderabad, India | Foundit
+  providence india | Principal Engineering Program Manager | Hyderabad, India | Foundit
+  providence india | Principal Software Engineer | Hyderabad, India | Foundit
+  Thomson Reuters | Staff Software Engineer I | 6-11 Yrs Not disclosed Hyderabad | Naukri
+  Naukri SRP senior-software-engineer p1...
+  Naukri jobapi captured 20 rows (total 20).
+  Naukri SRP senior-software-engineer p1: +20 jobapi rows.
+  Naukri SRP senior-software-engineer p2...
+  Naukri jobapi captured 20 rows (total 40).
+  Naukri jobapi captured 20 rows (total 60).
+  Naukri SRP senior-software-engineer p2: +40 jobapi rows.
+  Naukri SRP senior-software-engineer p3...
+  Naukri jobapi captured 20 rows (total 80).
+  Naukri jobapi captured 20 rows (total 100).
+  Naukri SRP senior-software-engineer p3: +40 jobapi rows.
+  Naukri SRP senior-software-engineer p4...
+  Naukri jobapi captured 20 rows (total 120).
+  Naukri jobapi captured 20 rows (total 140).
+  Naukri SRP senior-software-engineer p4: +40 jobapi rows.
+  Naukri SRP lead-software-engineer p1...
+  Naukri jobapi captured 20 rows (total 160).
+  Naukri SRP lead-software-engineer p1: +20 jobapi rows.
+  Naukri SRP lead-software-engineer p2...
+  Naukri jobapi captured 20 rows (total 180).
+  Naukri jobapi captured 20 rows (total 200).
+  Naukri SRP lead-software-engineer p2: +40 jobapi rows.
+  Naukri SRP lead-software-engineer p3...
+  Naukri jobapi captured 20 rows (total 220).
+  Naukri jobapi captured 20 rows (total 240).
+  Naukri SRP lead-software-engineer p3: +40 jobapi rows.
+  Naukri SRP lead-software-engineer p4...
+  Naukri jobapi captured 20 rows (total 260).
+  Naukri jobapi captured 20 rows (total 280).
+  Naukri SRP lead-software-engineer p4: +40 jobapi rows.
+  Naukri SRP principal-software-engineer p1...
+  Naukri jobapi captured 20 rows (total 300).
+  Naukri SRP principal-software-engineer p1: +20 jobapi rows.
+  Naukri SRP principal-software-engineer p2...
+  Naukri jobapi captured 16 rows (total 316).
+  Naukri jobapi captured 20 rows (total 336).
+  Naukri jobapi captured 16 rows (total 352).
+  Naukri SRP principal-software-engineer p2: +52 jobapi rows.
+  Naukri SRP principal-software-engineer p3...
+  Naukri jobapi captured 20 rows (total 372).
+  Naukri SRP principal-software-engineer p3: +20 jobapi rows.
+  Naukri SRP principal-software-engineer p4...
+  Naukri jobapi captured 16 rows (total 388).
+  Naukri jobapi captured 20 rows (total 408).
+  Naukri SRP principal-software-engineer p4: +36 jobapi rows.
+  Naukri SRP staff-software-engineer p1...
+  Naukri jobapi captured 16 rows (total 424).
+  Naukri jobapi captured 20 rows (total 444).
+  Naukri jobapi captured 20 rows (total 464).
+  Naukri SRP staff-software-engineer p1: +56 jobapi rows.
+  Naukri SRP staff-software-engineer p2...
+  Naukri jobapi captured 20 rows (total 484).
+  Naukri jobapi captured 20 rows (total 504).
+  Naukri SRP staff-software-engineer p2: +40 jobapi rows.
+  Naukri SRP staff-software-engineer p3...
+  Naukri jobapi captured 20 rows (total 524).
+  Naukri jobapi captured 20 rows (total 544).
+  Naukri SRP staff-software-engineer p3: +40 jobapi rows.
+  Naukri SRP staff-software-engineer p4...
+  Naukri jobapi captured 20 rows (total 564).
+  Naukri jobapi captured 20 rows (total 584).
+  Naukri SRP staff-software-engineer p4: +40 jobapi rows.
+  Naukri SRP technical-architect p1...
+  Naukri jobapi captured 20 rows (total 604).
+  Naukri jobapi captured 20 rows (total 624).
+  Naukri SRP technical-architect p1: +40 jobapi rows.
+  Naukri SRP technical-architect p2...
+  Naukri jobapi captured 20 rows (total 644).
+  Naukri jobapi captured 20 rows (total 664).
+  Naukri SRP technical-architect p2: +40 jobapi rows.
+  Naukri SRP technical-architect p3...
+  Naukri jobapi captured 20 rows (total 684).
+  Naukri jobapi captured 20 rows (total 704).
+  Naukri SRP technical-architect p3: +40 jobapi rows.
+  Naukri SRP technical-architect p4...
+  Naukri jobapi captured 20 rows (total 724).
+  Naukri SRP technical-architect p4: +20 jobapi rows.
+  Naukri SRP solution-architect p1...
+  Naukri jobapi captured 20 rows (total 744).
+  Naukri jobapi captured 20 rows (total 764).
+  Naukri jobapi captured 20 rows (total 784).
+  Naukri SRP solution-architect p1: +60 jobapi rows.
+  Naukri SRP solution-architect p2...
+  Naukri jobapi captured 20 rows (total 804).
+  Naukri SRP solution-architect p2: +20 jobapi rows.
+  Naukri SRP solution-architect p3...
+  Naukri jobapi captured 20 rows (total 824).
+  Naukri SRP solution-architect p3: +20 jobapi rows.
+  Naukri SRP solution-architect p4...
+  Naukri jobapi captured 20 rows (total 844).
+  Naukri SRP solution-architect p4: +20 jobapi rows.
+  Naukri SRP software-architect p1...
+  Naukri jobapi captured 20 rows (total 864).
+  Naukri jobapi captured 20 rows (total 884).
+  Naukri SRP software-architect p1: +40 jobapi rows.
+  Naukri SRP software-architect p2...
+  Naukri jobapi captured 20 rows (total 904).
+  Naukri jobapi captured 20 rows (total 924).
+  Naukri SRP software-architect p2: +40 jobapi rows.
+  Naukri SRP software-architect p3...
+  Naukri jobapi captured 20 rows (total 944).
+  Naukri SRP software-architect p3: +20 jobapi rows.
+  Naukri SRP software-architect p4...
+  Naukri jobapi captured 20 rows (total 964).
+  Naukri jobapi captured 20 rows (total 984).
+  Naukri jobapi captured 20 rows (total 1004).
+  Naukri SRP software-architect p4: +60 jobapi rows.
+  Naukri SRP dot-net p1...
+  Naukri jobapi captured 20 rows (total 1024).
+  Naukri jobapi captured 20 rows (total 1044).
+  Naukri SRP dot-net p1: +40 jobapi rows.
+  Naukri SRP dot-net p2...
+  Naukri jobapi captured 20 rows (total 1064).
+  Naukri SRP dot-net p2: +20 jobapi rows.
+  Naukri SRP dot-net p3...
+  Naukri jobapi captured 20 rows (total 1084).
+  Naukri jobapi captured 20 rows (total 1104).
+  Naukri SRP dot-net p3: +40 jobapi rows.
+  Naukri SRP dot-net p4...
+  Naukri jobapi captured 20 rows (total 1124).
+  Naukri jobapi captured 20 rows (total 1144).
+  Naukri SRP dot-net p4: +40 jobapi rows.
+  Naukri SRP dotnet p1...
+  Naukri jobapi captured 20 rows (total 1164).
+  Naukri SRP dotnet p1: +20 jobapi rows.
+  Naukri SRP dotnet p2...
+  Naukri jobapi captured 20 rows (total 1184).
+  Naukri jobapi captured 20 rows (total 1204).
+  Naukri SRP dotnet p2: +40 jobapi rows.
+  Naukri SRP dotnet p3...
+  Naukri jobapi captured 20 rows (total 1224).
+  Naukri SRP dotnet p3: +20 jobapi rows.
+  Naukri SRP dotnet p4...
+  Naukri jobapi captured 20 rows (total 1244).
+  Naukri jobapi captured 20 rows (total 1264).
+  Naukri SRP dotnet p4: +40 jobapi rows.
+  Naukri SRP dot-net-developer p1...
+  Naukri jobapi captured 20 rows (total 1284).
+  Naukri jobapi captured 20 rows (total 1304).
+  Naukri SRP dot-net-developer p1: +40 jobapi rows.
+  Naukri SRP dot-net-developer p2...
+  Naukri jobapi captured 20 rows (total 1324).
+  Naukri SRP dot-net-developer p2: +20 jobapi rows.
+  Naukri SRP dot-net-developer p3...
+  Naukri jobapi captured 20 rows (total 1344).
+  Naukri SRP dot-net-developer p3: +20 jobapi rows.
+  Naukri SRP dot-net-developer p4...
+  Naukri jobapi captured 20 rows (total 1364).
+  Naukri jobapi captured 20 rows (total 1384).
+  Naukri SRP dot-net-developer p4: +40 jobapi rows.
+  Naukri SRP c-sharp p1...
+  Naukri jobapi captured 9 rows (total 1393).
+  Naukri SRP c-sharp p1: +9 jobapi rows.
+  Naukri SRP c-sharp p2...
+  Naukri jobapi captured 9 rows (total 1402).
+  Naukri SRP c-sharp p2: +9 jobapi rows.
+  Naukri SRP c-sharp p3...
+  Naukri jobapi captured 9 rows (total 1411).
+  Naukri SRP c-sharp p3: +9 jobapi rows.
+  Naukri SRP c-sharp p4...
+  Naukri jobapi captured 9 rows (total 1420).
+  Naukri SRP c-sharp p4: +9 jobapi rows.
+  Naukri SRP full-stack p1...
+  Naukri jobapi captured 20 rows (total 1440).
+  Naukri SRP full-stack p1: +20 jobapi rows.
+  Naukri SRP full-stack p2...
+  Naukri jobapi captured 20 rows (total 1460).
+  Naukri jobapi captured 19 rows (total 1479).
+  Naukri SRP full-stack p2: +39 jobapi rows.
+  Naukri SRP full-stack p3...
+  Naukri jobapi captured 20 rows (total 1499).
+  Naukri jobapi captured 19 rows (total 1518).
+  Naukri SRP full-stack p3: +39 jobapi rows.
+  Naukri SRP full-stack p4...
+  Naukri jobapi captured 20 rows (total 1538).
+  Naukri jobapi captured 19 rows (total 1557).
+  Naukri SRP full-stack p4: +39 jobapi rows.
+  Naukri SRP backend-developer p1...
+  Naukri jobapi captured 20 rows (total 1577).
+  Naukri jobapi captured 20 rows (total 1597).
+  Naukri SRP backend-developer p1: +40 jobapi rows.
+  Naukri SRP backend-developer p2...
+  Naukri jobapi captured 20 rows (total 1617).
+  Naukri jobapi captured 20 rows (total 1637).
+  Naukri SRP backend-developer p2: +40 jobapi rows.
+  Naukri SRP backend-developer p3...
+  Naukri jobapi captured 20 rows (total 1657).
+  Naukri jobapi captured 20 rows (total 1677).
+  Naukri SRP backend-developer p3: +40 jobapi rows.
+  Naukri SRP backend-developer p4...
+  Naukri jobapi captured 20 rows (total 1697).
+  Naukri jobapi captured 20 rows (total 1717).
+  Naukri SRP backend-developer p4: +40 jobapi rows.
+  Naukri SRP microservices p1...
+  Naukri jobapi captured 20 rows (total 1737).
+  Naukri jobapi captured 19 rows (total 1756).
+  Naukri SRP microservices p1: +39 jobapi rows.
+  Naukri SRP microservices p2...
+  Naukri SRP microservices p2 failed (Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.naukri.com/microservices-jobs-in-hyderabad-secunderabad-2", waiting until "domcontentloaded"
+).
+  Naukri SRP microservices p3...
+  Naukri jobapi captured 20 rows (total 1776).
+  Naukri jobapi captured 20 rows (total 1796).
+  Naukri jobapi captured 19 rows (total 1815).
+  Naukri SRP microservices p3: +59 jobapi rows.
+  Naukri SRP microservices p4...
+  Naukri jobapi captured 20 rows (total 1835).
+  Naukri jobapi captured 19 rows (total 1854).
+  Naukri SRP microservices p4: +39 jobapi rows.
+  Naukri SRP technical-lead p1...
+  Naukri jobapi captured 20 rows (total 1874).
+  Naukri jobapi captured 20 rows (total 1894).
+  Naukri SRP technical-lead p1: +40 jobapi rows.
+  Naukri SRP technical-lead p2...
+  Naukri jobapi captured 20 rows (total 1914).
+  Naukri SRP technical-lead p2: +20 jobapi rows.
+  Naukri SRP technical-lead p3...
+  Naukri jobapi captured 20 rows (total 1934).
+  Naukri SRP technical-lead p3: +20 jobapi rows.
+  Naukri SRP technical-lead p4...
+  Naukri jobapi captured 20 rows (total 1954).
+  Naukri jobapi captured 20 rows (total 1974).
+  Naukri SRP technical-lead p4: +40 jobapi rows.
+  Naukri SRP engineering-manager p1...
+  Naukri jobapi captured 20 rows (total 1994).
+  Naukri jobapi captured 20 rows (total 2014).
+  Naukri SRP engineering-manager p1: +40 jobapi rows.
+  Naukri SRP engineering-manager p2...
+  Naukri jobapi captured 20 rows (total 2034).
+  Naukri SRP engineering-manager p2: +20 jobapi rows.
+  Naukri SRP engineering-manager p3...
+  Naukri jobapi captured 20 rows (total 2054).
+  Naukri jobapi captured 20 rows (total 2074).
+  Naukri SRP engineering-manager p3: +40 jobapi rows.
+  Naukri SRP engineering-manager p4...
+  Naukri jobapi captured 20 rows (total 2094).
+  Naukri SRP engineering-manager p4: +20 jobapi rows.
+  Naukri SRP senior-backend-engineer p1...
+  Naukri jobapi captured 19 rows (total 2113).
+  Naukri SRP senior-backend-engineer p1: +19 jobapi rows.
+  Naukri SRP senior-backend-engineer p2...
+  Naukri jobapi captured 19 rows (total 2132).
+  Naukri SRP senior-backend-engineer p2: +19 jobapi rows.
+  Naukri SRP senior-backend-engineer p3...
+  Naukri jobapi captured 19 rows (total 2151).
+  Naukri SRP senior-backend-engineer p3: +19 jobapi rows.
+  Naukri SRP senior-backend-engineer p4...
+  Naukri jobapi captured 19 rows (total 2170).
+  Naukri jobapi captured 19 rows (total 2189).
+  Naukri SRP senior-backend-engineer p4: +38 jobapi rows.
+  Naukri SRP net-architect p1...
+  Naukri jobapi captured 20 rows (total 2209).
+  Naukri SRP net-architect p1: +20 jobapi rows.
+  Naukri SRP net-architect p2...
+  Naukri jobapi captured 20 rows (total 2229).
+  Naukri SRP net-architect p2: +20 jobapi rows.
+  Naukri SRP net-architect p3...
+  Naukri jobapi captured 20 rows (total 2249).
+  Naukri jobapi captured 20 rows (total 2269).
+  Naukri SRP net-architect p3: +40 jobapi rows.
+  Naukri SRP net-architect p4...
+  Naukri jobapi captured 20 rows (total 2289).
+  Naukri SRP net-architect p4: +20 jobapi rows.
+  Naukri SRP azure p1...
+  Naukri jobapi captured 20 rows (total 2309).
+  Naukri jobapi captured 20 rows (total 2329).
+  Naukri SRP azure p1: +40 jobapi rows.
+  Naukri SRP azure p2...
+  Naukri jobapi captured 20 rows (total 2349).
+  Naukri SRP azure p2: +20 jobapi rows.
+  Naukri SRP azure p3...
+  Naukri jobapi captured 20 rows (total 2369).
+  Naukri SRP azure p3: +20 jobapi rows.
+  Naukri SRP azure p4...
+  Naukri jobapi captured 20 rows (total 2389).
+  Naukri jobapi captured 20 rows (total 2409).
+  Naukri jobapi captured 20 rows (total 2429).
+  Naukri SRP azure p4: +60 jobapi rows.
+  Naukri SRP kafka p1...
+  Naukri jobapi captured 20 rows (total 2449).
+  Naukri jobapi captured 20 rows (total 2469).
+  Naukri SRP kafka p1: +40 jobapi rows.
+  Naukri SRP kafka p2...
+  Naukri jobapi captured 20 rows (total 2489).
+  Naukri jobapi captured 20 rows (total 2509).
+  Naukri SRP kafka p2: +40 jobapi rows.
+  Naukri SRP kafka p3...
+  Naukri jobapi captured 20 rows (total 2529).
+  Naukri jobapi captured 20 rows (total 2549).
+  Naukri SRP kafka p3: +40 jobapi rows.
+  Naukri SRP kafka p4...
+  Naukri jobapi captured 20 rows (total 2569).
+  Naukri SRP kafka p4: +20 jobapi rows.
+
+Unique 1773 open 862 ready 710
+Open ATS {'Greenhouse': 5, 'Amazon': 2, 'Workday': 6, 'Foundit': 645, 'SmartRecruiters': 1, 'Naukri': 192, 'Instahyre': 11}
+Open companies [('Microsoft Corp', 28), ('Renesas Electronics', 20), ('Google India', 18), ('Vanguard', 17), ('Micron Technology', 15), ('vanguard india', 13), ('Blue Yonder', 12), ('Nasuni', 11), ('FactSet', 10), ('TriNet', 10), ('Outreach', 10), ('marriott tech accelerator', 8), ('Epam Systems', 7), ('SimCorp', 7), ('Medtronic', 7), ('Experian', 6), ('providence india', 6), ('Clean Harbors', 6), ('innovapptive inc', 6), ('Nagarro', 6)]
+ 1 Greenhouse | Zenoti | Senior Software Engineer - .NET + AI | Hyderabad, Telangana, India
+ 2 Amazon | Amazon | Sr. Application Architect | IN, TS, Hyderabad Hyderabad, Tel
+ 3 Workday | Amgen | SAP Technical Architect - PFF | India - Hyderabad
+ 4 Workday | Broadcom | Staff Software Architect | IND-Hyderabad 115 IT Park Area
+ 5 Amazon | Amazon | Sr. Principal Software Engineer, Shipping Tech & Services | IN, TS, Hyderabad Hyderabad, Tel
+ 6 Foundit | The Wells Fargo Foundation | Lead Software Engineer (KAFKA, MULESOFT, IDMC, APIGEE, API D | Hyderabad, India
+ 7 Workday | Amgen | Senior Software Engineer, Full Stack ΓÇö Decision Intelligence | India - Hyderabad
+ 8 Naukri | Wells Fargo | Senior Software Engineer - .Net/GCP/Agentic AI | 6-11 Yrs Not disclosed Hyderabad
+ 9 Naukri | Cognizant | Solution Architect | 12-14 Yrs Not disclosed Hyderaba
+10 Foundit | Cognizant Consulting | Solution Architect | Hyderabad, India
+11 Foundit | Microsoft Corp | Solution Architect Manager | Hyderabad, India
+12 Foundit | People tech | SAP Technical Architect | Hyderabad
+13 Naukri | Tech Mahindra | SAP BTP Solution Architect | 15-24 Yrs Not disclosed Hybrid -
+14 Foundit | Zensar Technologies | SAP ABAP Technical Architect | Hyderabad, India
+15 Foundit | Zensar Technologies | Wealth Management Solution Architect | Hyderabad, India
+16 Foundit | amazon web services (aws) | Solution Architect, AGS-APJ-India-ISV-SA | Hyderabad, India
+17 Foundit | Microsoft Corp | Principal Engineer Architect | Hyderabad, India
+18 Foundit | Syneos Health | Principal Engineer Cloud Automation and Standards | Hyderabad, India
+19 Foundit | Amazon Alliance | Principal Software Engineer, Amazon Shipping | Hyderabad, India
+20 Foundit | Amazon Alliance | Principal Software Engineer, Delivery Experience (DEX) | Hyderabad, India
+21 Foundit | Amazon Alliance | Sr. Principal Software Engineer, Shipping Tech & Services | Hyderabad, India
+22 Foundit | Amazon Robotics | Sr. Principal Software Engineer, Shipping Tech & Services | Hyderabad, India
+23 Foundit | Amazon Thunder | Principal Software Engineer, Amazon Shipping | Hyderabad, India
+24 Foundit | Microsoft Corp | Principal Engineering Manager | Hyderabad, India
+25 Foundit | Microsoft Corp | Principal Software Engineering Manager | Hyderabad, India
+26 Foundit | Microsoft Corp | Principal Software Engineering Manager - Databases | Hyderabad, India
+27 Foundit | Microsoft Corp | Principal Software Engineering Manager- GitHub India | Hyderabad, India
+28 Naukri | Providence College Of Engineering | Principal Software Engineer | 10-15 Yrs Not disclosed Hyderaba
+29 Foundit | Synchrony | AVP , Principal Engineer - AI Agent Engineering | Hyderabad, India
+30 Foundit | Synchrony | AVP Principal Engineer | Hyderabad, India
+31 Foundit | mcdonald's global office in india | Principal Engineer | Hyderabad, India
+32 Foundit | providence india | Principal Engineering Program Manager | Hyderabad, India
+33 Foundit | providence india | Principal Software Engineer | Hyderabad, India
+34 Naukri | Optum | Lead Software Engineer - AWS Contact Center Migrations | 8-13 Yrs 25-40 Lacs PA Hybrid - 
+35 Naukri | Synchrony | AVP Sys Admin & AI Solution Architect (L10) | 7-12 Yrs Not disclosed Hyderabad
+36 Naukri | Thomson Reuters | Staff Software Engineer I | 6-11 Yrs Not disclosed Hyderabad
+37 Naukri | Cognizant | Technical Lead- OneTrust | 4-9 Yrs Not disclosed Hyderabad,
+38 Foundit | Cognizant Consulting | Engineering Manager | Hyderabad, India
+39 Foundit | Microsoft Corp | Principal Group Engineering Manager | Hyderabad, India
+40 Naukri | Opentext | OpenText is hiring For Lead Software Developer - Hyderabad | 8-12 Yrs 35-60 Lacs PA Hyderabad
+41 Naukri | Optum | Engineering Manager | 6-11 Yrs Not disclosed Hybrid - 
+42 Foundit | Synchrony | VP Engineering Manager | Hyderabad, India
+43 Naukri | Tech Mahindra | Network Operations Technical Lead / Manager_ Hyderabad | 12-17 Yrs Not disclosed Hyderaba
+44 Naukri | Wells Fargo | Lead Software Engineer | 5-10 Yrs Not disclosed Hyderabad
+45 Foundit | providence india | Lead Software Engineer | Hyderabad, India
+46 Foundit | Microsoft Corp | Senior Software Engineer - Backend + Cloud | Hyderabad, India
+47 Foundit | Alter Domus | Senior Software Engineer | Hyderabad, India
+48 Naukri | Alter Domus | Sr Software Engineer | 5-10 Yrs Not disclosed Hyderabad
+49 Foundit | Amazon Alliance | Senior Software Development Engineer, Payroll Tech | Hyderabad, India
+50 Foundit | Amazon Robotics | Senior Software Development Engineer, Payroll Tech | Hyderabad, India
+  Naukri browser discover: 2569 jobapi rows, 555 Quick-apply unique, 113 leftover Naukri in queue.
+  After discovery pass 1: leftover 96 (0 career, 96 Naukri).
+
+=== Apply leftover jobs (80), other-boards mixed in ===
+
+[1/80] Wells Fargo: Senior Software Engineer - .Net/GCP/Agentic AI
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_wells_fargo_121126931817.docx
+  Naukri buttons (14): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '9.9K Reviews', 'w': 71, 'h': 15, 'x': 1121, 'y': 460}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 643}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1054, 'y': 643}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1104, 'y': 643}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1154, 'y': 643}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1204, 'y': 643}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1254, 'y': 643}, {'id': '', 'cls': '!mb-4 ml-auto text-title14Sb text-n200 underline', 't': 'View all', 'w': 50, 'h': 22, 'x': 1267, 'y': 1641}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-senior-software-engineer-net-gcp-agentic-ai-wells-fargo-international-solutions-private-ltd-hyderabad-6-to-11-years-121126931817
+
+[2/80] Cognizant: Solution Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_cognizant_021126003957.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-solution-architect-cognizant-hyderabad-12-to-14-years-021126003957
+
+[3/80] Providence College Of Engineering: Principal Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Principal Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_principal_software_engineer_providence_college_of_en_170926503886.docx
+  Naukri buttons (8): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'flex items-center gap-[6px] ml-[10px]', 't': 'Go to company site', 'w': 145, 'h': 19, 'x': 268, 'y': 497}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '7 Reviews', 'w': 54, 'h': 15, 'x': 1122, 'y': 250}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Opened company site from Naukri: https://careers.providence.in/job/Hyderabad-Principal-Software-Engineer-Tela/59799344/
+  Simplify Copilot: Autofill this page not in DOM; sending Alt+Shift+F.
+  Learned 1 new/changed field(s).
+  Clicked 'Apply now ┬╗'.
+  Filled career-site account fields (email=1 password_boxes=1).
+  All portal passwords rejected on this Sign In / Create Account page.
+  Skipping this job. Closing the tab and opening the next leftover.
+  Portal login failed. Closing this tab and opening the next leftover.
+  AUTH_FAILED ok=False https://career44.sapsf.com/portalcareer?_s.crb=mS0R7syn%252fKxzaEKQ%252fkMkiirz3TgTBS1gygWdSC%252fbGSg%253d
+
+[4/80] Optum: Lead Software Engineer - AWS Contact Center Migrations
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ AWS
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_optum_131126033351.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-lead-software-engineer-aws-contact-center-migrations-optum-hyderabad-8-to-13-years-131126033351
+
+[5/80] Cognizant: Technical Lead- OneTrust
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ Technical Lead
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_cognizant_141026031384.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-technical-lead-onetrust-cognizant-hyderabad-pune-bengaluru-4-to-9-years-141026031384
+
+[6/80] Opentext: OpenText is hiring For Lead Software Developer - Hyderabad
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_opentext_131026032048.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-opentext-is-hiring-for-lead-software-developer-hyderabad-opentext-hyderabad-8-to-12-years-131026032048
+
+[7/80] Optum: Engineering Manager
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Engineering Manager ΓÇö .NET ┬╖ Engineering Manager
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_engineering_manager_optum_041126026714.docx
+  Naukri session already logged in.
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-engineering-manager-optum-hyderabad-chennai-bengaluru-6-to-11-years-041126026714
+
+[8/80] Tech Mahindra: Network Operations Technical Lead / Manager_ Hyderabad
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ Technical Lead
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_tech_mahindra_111126032694.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-network-operations-technical-lead-manager-hyderabad-tech-mahindra-hyderabad-12-to-17-years-111126032694
+
+[9/80] Wells Fargo: Lead Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_wells_fargo_121126921569.docx
+  Naukri buttons (14): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '9.9K Reviews', 'w': 71, 'h': 15, 'x': 1121, 'y': 460}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 705}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1054, 'y': 705}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1104, 'y': 705}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1154, 'y': 705}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1204, 'y': 705}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1254, 'y': 705}, {'id': '', 'cls': '!mb-4 ml-auto text-title14Sb text-n200 underline', 't': 'View all', 'w': 50, 'h': 22, 'x': 1267, 'y': 1703}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-lead-software-engineer-wells-fargo-international-solutions-private-ltd-hyderabad-bengaluru-5-to-10-years-121126921569
+
+[10/80] Alter Domus: Sr Software Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_alter_domus_041126501616.docx
+  Naukri buttons (8): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '181 Reviews', 'w': 65, 'h': 15, 'x': 1121, 'y': 227}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 402}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-sr-software-engineer-alter-domus-hyderabad-5-to-10-years-041126501616
+
+[11/80] Opentext: OpenText is hiring For Sr Software Developer - Hyderabad
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_opentext_131026032205.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-opentext-is-hiring-for-sr-software-developer-hyderabad-opentext-hyderabad-5-to-8-years-131026032205
+
+[12/80] Optum: Senior Software Engineering Lead
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_optum_191026901318.docx
+  Naukri buttons (12): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '9.1K Reviews', 'w': 69, 'h': 15, 'x': 1123, 'y': 227}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 375}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1054, 'y': 375}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1104, 'y': 375}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1154, 'y': 375}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1204, 'y': 375}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-senior-software-engineering-lead-optum-global-solutions-india-private-limited-hyderabad-9-to-14-years-191026901318
+
+[13/80] Optum: Sr. Software Engineer Lead
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_optum_151026032178.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-sr-software-engineer-lead-optum-hyderabad-chennai-bengaluru-7-to-12-years-151026032178
+
+[14/80] Zenoti: Senior Software Engineer - Dot Net + AI
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_zenoti_300926502749.docx
+  Naukri buttons (11): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '225 Reviews', 'w': 68, 'h': 15, 'x': 1122, 'y': 227}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 437}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1054, 'y': 437}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1104, 'y': 437}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1154, 'y': 437}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-senior-software-engineer-dot-net-ai-zenoti-hyderabad-5-to-7-years-300926502749
+
+[15/80] Capgemini: Azure Solution Architect - Pan India
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Azure
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_capgemini_021126007735.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-azure-solution-architect-pan-india-capgemini-hyderabad-bengaluru-mumbai-all-areas-12-to-22-years-021126007735
+
+[16/80] Epam Systems: Senior Solution Architect - .NET Full Stack with Cloud
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_epam_systems_121026010550.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-senior-solution-architect-net-full-stack-with-cloud-epam-systems-hyderabad-chennai-bengaluru-14-to-18-years-121026010550
+
+[17/80] Experian: Solution Architect (Microsoft .NET/Azure Cloud)
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Azure
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_experian_121026919391.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-solution-architect-microsoft-net-azure-cloud-experian-services-india-private-limited-hyderabad-13-to-18-years-121026919391
+
+[18/80] Genpact: Azure Cloud Architect - Hyderabad - Work from office
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Cloud Architect ΓÇö .NET ┬╖ Azure
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_cloud_architect_genpact_051026003909.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-azure-cloud-architect-hyderabad-work-from-office-genpact-hyderabad-9-to-14-years-051026003909
+
+[19/80] Valuelabs: Azure Cloud Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Cloud Architect ΓÇö .NET ┬╖ Azure
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_cloud_architect_valuelabs_081026050451.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-azure-cloud-architect-valuelabs-noida-hyderabad-bengaluru-6-to-15-years-081026050451
+
+[20/80] Virtusa: Virtusa - Lead Software Engineer - .Net (11-13 yrs)
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Lead ΓÇö .NET
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_lead_virtusa_240926028449.docx
+  Naukri buttons (11): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on hirist.com Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '6.9K Reviews', 'w': 71, 'h': 15, 'x': 1121, 'y': 227}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 491}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1054, 'y': 491}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1104, 'y': 491}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1154, 'y': 491}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-virtusa-lead-software-engineer-net-11-13-yrs-virtusa-consulting-services-pvt-ltd-hyderabad-chennai-bengaluru-11-to-13-years-240926028449
+
+[21/80] Platinus Technologies: Senior .NET Developer | Freelance / Part-Time !!
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Senior Software Engineer ΓÇö .NET
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_senior_software_engineer_platinus_technologies_021126007601.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-senior-net-developer-freelance-part-time-platinus-technologies-hyderabad-8-to-13-years-021126007601
+
+[22/80] Tiger Analytics: Databricks Architect / Senior Architect | Azure | GenAI | PySpark | Da
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Azure
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_tiger_analytics_031126012431.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-databricks-architect-senior-architect-azure-genai-pyspark-da-tiger-analytics-hyderabad-chennai-bengaluru-9-to-14-years-031126012431
+
+[23/80] Virtusa: .NET Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: .NET Architect ΓÇö .NET
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_net_architect_virtusa_121126008301.docx
+  Naukri session already logged in.
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-net-architect-virtusa-hyderabad-chennai-bengaluru-14-to-20-years-121126008301
+
+[24/80] ABC Fitness Solutions: Principal Engineer - Software Architecture and Modernization
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Software Architect ΓÇö .NET ┬╖ Software Architecture
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_software_architect_abc_fitness_solutions_131126502493.docx
+  Naukri buttons (8): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '20 Reviews', 'w': 62, 'h': 15, 'x': 1122, 'y': 227}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 367}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-principal-engineer-software-architecture-and-modernization-abc-fitness-solutions-hyderabad-15-to-20-years-131126502493
+
+[25/80] Bristol Myers Squibb: Technical Architect, Revenue Management Systems
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_bristol_myers_squibb_270526503803.docx
+  Naukri buttons (10): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '405 Reviews', 'w': 69, 'h': 15, 'x': 1122, 'y': 227}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 437}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1054, 'y': 437}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1104, 'y': 437}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-technical-architect-revenue-management-systems-bristol-myers-squibb-india-pvt-ltd-hyderabad-8-to-9-years-270526503803
+
+[26/80] E Solutions: AIML Solution Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_e_solutions_031126011905.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-aiml-solution-architect-e-solutions-hyderabad-10-to-20-years-031126011905
+
+[27/80] EY: BCM-Technical Architect-Banking Domain-Manager-GDSF02
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_ey_141026928650.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-bcm-technical-architect-banking-domain-manager-gdsf02-ernst-young-llp-hyderabad-9-to-14-years-141026928650
+
+[28/80] Enrich And Enlight Business Consulting: Solution Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_enrich_and_enlight_busin_121126013430.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-solution-architect-enrich-and-enlight-business-consulting-hyderabad-10-to-12-years-121126013430
+
+[29/80] European Company: Lead Workday Integration Developer / Consultant (Technical Architect)
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Integration
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_european_company_021126000391.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-lead-workday-integration-developer-consultant-technical-architect-european-company-hyderabad-chennai-bengaluru-12-to-20-years-021126000391
+
+[30/80] Evoke Technologies: MERN full Stack Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Full Stack Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_full_stack_architect_evoke_technologies_051126015984.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-mern-full-stack-architect-evoke-technologies-hyderabad-9-to-14-years-051126015984
+
+[31/80] GSN Consulting: PeopleSoft Technical Architect - HYD - 8+ Yrs
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_gsn_consulting_071126008326.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-peoplesoft-technical-architect-hyd-8-yrs-gsn-consulting-hyderabad-10-to-18-years-071126008326
+
+[32/80] GSPANN: Technical Architect - Workato
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_gspann_091126003555.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-technical-architect-workato-gspann-hyderabad-bengaluru-delhi-ncr-11-to-21-years-091126003555
+
+[33/80] ITC Infotech: Kinaxis Solution Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_itc_infotech_041126011778.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-kinaxis-solution-architect-itc-infotech-hyderabad-chennai-bengaluru-11-to-21-years-041126011778
+
+[34/80] Indypay Technologies: Solution Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_indypay_technologies_041126008863.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-solution-architect-indypay-technologies-hyderabad-12-to-20-years-041126008863
+
+[35/80] Innominds Software: Solution Architect -Immediate need- Innominds Software - Hyderabad
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_innominds_software_151026015471.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-solution-architect-immediate-need-innominds-software-hyderabad-innominds-software-hyderabad-10-to-15-years-151026015471
+
+[36/80] Intworks Solutions: Solution Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_intworks_solutions_200526501538.docx
+  Naukri buttons (6): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-solution-architect-intworks-hyderabad-12-to-17-years-200526501538
+
+[37/80] Invesco: Prin. Solutions Architect I, Invest Tech
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_invesco_281026918058.docx
+  Naukri buttons (12): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '547 Reviews', 'w': 68, 'h': 15, 'x': 1122, 'y': 460}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 608}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1054, 'y': 608}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1104, 'y': 608}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1154, 'y': 608}, {'id': '', 'cls': '!mb-4 ml-auto text-title14Sb text-n200 underline', 't': 'View all', 'w': 50, 'h': 22, 'x': 1267, 'y': 1985}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-prin-solutions-architect-i-invest-tech-invesco-hyderabad-pvt-ltd-hyderabad-14-to-18-years-281026918058
+
+[38/80] Jiva Infotech Solutions: Technical Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_jiva_infotech_solutions_250326507416.docx
+  Naukri buttons (6): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-technical-architect-jiva-infotech-inc-hyderabad-10-to-12-years-250326507416
+
+[39/80] Luxoft: Insurance Solution Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_luxoft_131026927918.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-insurance-solution-architect-luxoft-india-llp-hyderabad-11-to-18-years-131026927918
+
+[40/80] Ontime Global: AWS Full stack Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Full Stack Architect ΓÇö .NET ┬╖ AWS
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_full_stack_architect_ontime_global_131126009944.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-aws-full-stack-architect-ontime-global-hyderabad-bengaluru-12-to-20-years-131126009944
+
+[41/80] Ontime Global: Job Openings For Technical architect agentic ai,power platform,copilot
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_ontime_global_041126029168.docx
+  Watching Simplify Copilot (microsoft copilot studio).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-openings-for-technical-architect-agentic-ai-power-platform-copilot-ontime-global-hyderabad-bengaluru-12-to-20-years-041126029168
+
+[42/80] Ontime Global: Technical Architect(Agentic ai)
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_ontime_global_051126010803.docx
+  Watching Simplify Copilot (microsoft copilot studio).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-technical-architect-agentic-ai-ontime-global-hyderabad-bengaluru-12-to-18-years-051126010803
+
+[43/80] Ontime Global: Technical Architect(Microsoft copilot)
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_ontime_global_121126027444.docx
+  Watching Simplify Copilot (technical architect(microsoft copilot)).
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-technical-architect-microsoft-copilot-ontime-global-hyderabad-bengaluru-12-to-20-years-121126027444
+
+[44/80] Qentelli: AI Technical Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_qentelli_021126012453.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-ai-technical-architect-qentelli-hyderabad-10-to-20-years-021126012453
+
+[45/80] Sansid Solutions: Senior Technical Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_sansid_solutions_291026032946.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-senior-technical-architect-sansid-solutions-hyderabad-14-to-22-years-291026032946
+
+[46/80] Techprojects: Solution Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_techprojects_111126034984.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-solution-architect-techprojects-hyderabad-10-to-20-years-111126034984
+
+[47/80] Techwave Consulting: SAAS Technical Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_techwave_consulting_131126502901.docx
+  Naukri buttons (13): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '549 Reviews', 'w': 68, 'h': 15, 'x': 1121, 'y': 460}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 670}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1054, 'y': 670}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1104, 'y': 670}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1154, 'y': 670}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1204, 'y': 670}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1254, 'y': 670}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-saas-technical-architect-techwave-hyderabad-10-to-15-years-131126502901
+
+[48/80] Valuelabs: Solution Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_valuelabs_041126013646.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-solution-architect-valuelabs-hyderabad-10-to-17-years-041126013646
+
+[49/80] Virtusa: Martech Solution Architect (Adobe)
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_virtusa_121126011632.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-martech-solution-architect-adobe-virtusa-hyderabad-chennai-bengaluru-14-to-24-years-121126011632
+
+[50/80] Wallero Technologies: Technical Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_wallero_technologies_040926502867.docx
+  Naukri buttons (9): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'flex items-center gap-[6px] ml-[10px]', 't': 'Go to company site', 'w': 145, 'h': 19, 'x': 268, 'y': 497}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '53 Reviews', 'w': 61, 'h': 15, 'x': 1121, 'y': 227}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 437}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-technical-architect-wallero-technologies-hyderabad-10-to-15-years-040926502867
+
+[51/80] XTGlobal: Solution Architect MCA Rule 3 Compliance
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_xtglobal_300326502894.docx
+  Staying on this form until Submit (up to 90s). If a CAPTCHA appears, solve it in this agent's Desktop / Take control.
+  Auto-filled 1 field(s) from profile and learned answers.
+  Naukri buttons (9): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '133 Reviews', 'w': 65, 'h': 15, 'x': 1123, 'y': 460}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 670}, {'id': '', 'cls': '!mb-4 ml-auto text-title14Sb text-n200 underline', 't': 'View all', 'w': 50, 'h': 22, 'x': 1267, 'y': 1819}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Still no confirmation after 90s. Learned 0 field(s).
+  Could not finish this form. Moving to the next leftover.
+  ERROR ok=False https://www.naukri.com/job-listings-solution-architect-mca-rule-3-compliance-xenosoft-technologies-india-pvt-ltd-hyderabad-10-to-15-years-300326502894
+
+[52/80] XTGlobal: Solutions Architect - ORC
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Solutions Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_solutions_architect_xtglobal_300326502811.docx
+  Naukri buttons (9): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '133 Reviews', 'w': 65, 'h': 15, 'x': 1123, 'y': 460}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 670}, {'id': '', 'cls': '!mb-4 ml-auto text-title14Sb text-n200 underline', 't': 'View all', 'w': 50, 'h': 22, 'x': 1267, 'y': 1819}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-solutions-architect-orc-xenosoft-technologies-india-pvt-ltd-hyderabad-15-to-20-years-300326502811
+
+[53/80] Yash Technologies: Technical Architect
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_yash_technologies_300926501436.docx
+  Naukri buttons (12): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '2.2K Reviews', 'w': 71, 'h': 15, 'x': 1121, 'y': 460}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 724}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1054, 'y': 724}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1104, 'y': 724}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1154, 'y': 724}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1204, 'y': 724}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-technical-architect-yash-technologies-hyderabad-10-to-14-years-300926501436
+
+[54/80] Yash Technologies: Technical Architect - Dataflow (GCP)
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Technical Architect ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_technical_architect_yash_technologies_250926501778.docx
+  Naukri buttons (12): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '2.2K Reviews', 'w': 71, 'h': 15, 'x': 1121, 'y': 460}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 724}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1054, 'y': 724}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1104, 'y': 724}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1154, 'y': 724}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1204, 'y': 724}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-technical-architect-dataflow-gcp-yash-technologies-hyderabad-12-to-17-years-250926501778
+
+[55/80] Nagarro: Senior Staff Engineer, Cloud
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_nagarro_291025503108.docx
+  Naukri buttons (12): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '5.2K Reviews', 'w': 71, 'h': 15, 'x': 1122, 'y': 227}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 472}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1054, 'y': 472}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1104, 'y': 472}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1154, 'y': 472}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1204, 'y': 472}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-senior-staff-engineer-cloud-nagarro-software-pvt-ltd-hyderabad-4-to-14-years-291025503108
+
+[56/80] Phenom People: Principal Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Principal Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_principal_software_engineer_phenom_people_121026014276.docx
+  Already applied earlier. Closing this tab and moving on.
+  SUBMITTED ok=True https://www.naukri.com/job-listings-principal-engineer-phenom-people-hyderabad-9-to-13-years-121026014276
+
+[57/80] SS&C Technologies: Principal Software Engineer - Mobile Developer Lead
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Principal Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_principal_software_engineer_ss_c_technologies_220726502240.docx
+  Naukri buttons (11): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '2.0K Reviews', 'w': 72, 'h': 15, 'x': 1119, 'y': 227}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1004, 'y': 472}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1054, 'y': 472}, {'id': '', 'cls': 'flex cursor-pointer rounded-md bg-n700', 't': '', 'w': 36, 'h': 36, 'x': 1104, 'y': 472}, {'id': '', 'cls': 'cursor-pointer text-body14Sb leading-[18px] text-n300 underline', 't': '', 'w': 36, 'h': 36, 'x': 1154, 'y': 472}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-principal-software-engineer-mobile-developer-lead-ss-c-technologies-hyderabad-10-to-15-years-220726502240
+
+[58/80] Mihira Ai: Senior Staff Engineer, Software validation
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_mihira_ai_170626501394.docx
+  Naukri buttons (7): [{'id': '', 'cls': 'nI-gNb-sb__expand', 't': '', 'w': 258, 'h': 42, 'x': 859, 'y': 19}, {'id': '', 'cls': 'nI-gNb-sb__icon-wrapper', 't': '', 'w': 28, 'h': 28, 'x': 1083, 'y': 26}, {'id': '', 'cls': 'nI-gNb-drawer__icon', 't': '', 'w': 108, 'h': 48, 'x': 1242, 'y': 16}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': 'Apply on company site Apply attempted', 'w': 250, 'h': 39, 'x': 50, 'y': 826}, {'id': '', 'cls': 'text-label12R leading-[15px] text-n300 underline underline-offset-[2px]', 't': '6 Reviews', 'w': 54, 'h': 15, 'x': 1121, 'y': 227}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 49, 'x': 15, 'y': 993}, {'id': '', 'cls': 'inline-flex items-center transition-colors focus-visible:outline-none disabled:p', 't': '', 'w': 458, 'h': 44, 'x': 489, 'y': 993}]
+  Naukri company-site link did not open. Next leftover.
+  Could not finish this form. Moving to the next leftover.
+  STUCK ok=False https://www.naukri.com/job-listings-senior-staff-engineer-software-validation-mihira-ai-hyderabad-10-to-15-years-170626501394
+
+[59/80] Nagarro: Senior Staff Engineer
+  Opening this application only. Will close it on submit, closed posting, or locked login.
+  Tailored: Staff Software Engineer ΓÇö .NET ┬╖ Cloud ┬╖ Distributed Systems
+  Resume: C:\Code\Local_JobsHyderabad\data\resume\tailored\Rafi_Ahmed_staff_software_engineer_nagarro_301025502800.docx
+Traceback (most recent call last):
+  File "C:\Code\Local_JobsHyderabad\cloud_apply.py", line 6766, in <module>
+    main(limit=args.limit, headed=args.headed, wait_seconds=wait)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Code\Local_JobsHyderabad\cloud_apply.py", line 6586, in main
+    page = context.new_page()
+  File "C:\Code\Local_JobsHyderabad\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 2746, in new_page
+    return mapping.from_impl(self._sync(self._impl_obj.new_page()))
+                             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Code\Local_JobsHyderabad\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Code\Local_JobsHyderabad\.venv\Lib\site-packages\playwright\_impl\_browser_context.py", line 353, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Code\Local_JobsHyderabad\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 78, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Code\Local_JobsHyderabad\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 636, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+  Daily email report written to C:\Code\Local_JobsHyderabad\data\applications\DAILY_EMAIL.md
+  RESEND_API_KEY missing (set the same secret the Notification Job uses).
+  Gmail SMTP skipped (no GMAIL_APP_PASSWORD / GOOGLE_PASSWORD).
+
+  ========================================
+  DAILY EMAIL NOT SENT to rafi.success@gmail.com
+  Set RESEND_API_KEY on this environment (same key as Notification Job).
+  ========================================
+
+[00:41:04] Apply runner exited with code 1.
+  Daily email report written to C:\Code\Local_JobsHyderabad\data\applications\DAILY_EMAIL.md
+  RESEND_API_KEY missing (set the same secret the Notification Job uses).
+  Gmail SMTP skipped (no GMAIL_APP_PASSWORD / GOOGLE_PASSWORD).
+  Chrome bin C:\Program Files\Google\Chrome\Application\chrome.exe profile C:\Code\Local_JobsHyderabad\data\chrome_profile + Simplify Copilot
+  Gmail compose: Chrome is not signed in as rafi.success@gmail.com.
+
+  ========================================
+  DAILY EMAIL NOT SENT to rafi.success@gmail.com
+  Set RESEND_API_KEY on this environment (same key as Notification Job).
+  ========================================
+
+[00:41:32] Daily results email failed (exit 1).
+[00:41:32] Runner exiting with code 1.

@@ -360,7 +360,7 @@
       "hub": "Financial District",
       "kind": "workday",
       "note": "",
-      "matched_jobs": 8
+      "matched_jobs": 6
     },
     {
       "company": "BNY Mellon",
@@ -752,7 +752,7 @@
       "hub": "Financial District / Hitec",
       "kind": "existing",
       "note": "",
-      "matched_jobs": 4
+      "matched_jobs": 3
     },
     {
       "company": "Apple",
